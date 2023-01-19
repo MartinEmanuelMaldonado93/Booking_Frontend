@@ -2,7 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import hotelsRoute from "./routes/hotels.js";
-import Hotel from "./models/Hotel.js";
+import authRoute from "./routes/auth.js"
+import usersRoute from "./routes/users.js"
 
 dotenv.config();
 const app = express();
@@ -24,14 +25,12 @@ mongoose.connection.on("disconnected", () => console.log("mongoDB disconnected !
 app.use(express.json());
 // Create the routes 
 
-// app.use("/api/auth", authRoute);
-// app.use("/api/users", authRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
 // app.use("/api/rooms", authRoute);
 
 app.use((err, req, res, next) => {
-    // console.log("hi im middleware");
-    // next();
     const errorStatus = err.status || 500;
     const errorMessage = err.message || "Something went wrong.";
 

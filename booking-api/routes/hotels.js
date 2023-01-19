@@ -5,11 +5,11 @@ const router = express.Router();
 
 // CREATE 
 router.post("/", createHotel);
+// READ 
+router.get("/", getHotels);
 // UPDATE
 router.put("/:id", updateHotel);
 // DELETE
 router.delete("/:id", deleteHotel);
-//GET 
-router.get("/", getHotels);
 
 export default router;
