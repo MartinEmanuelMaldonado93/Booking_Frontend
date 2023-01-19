@@ -1,7 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import authRoute from "./routes/auth.js";
+import hotelsRoute from "./routes/hotels.js";
+import Hotel from "./models/Hotel.js";
 
 dotenv.config();
 const app = express();
@@ -19,14 +20,31 @@ const connect = async () => {
 
 mongoose.connection.on("connected", () => console.log("mongoDB connected !"));
 mongoose.connection.on("disconnected", () => console.log("mongoDB disconnected !"));
+// middleware
+app.use(express.json());
+// Create the routes 
 
-app.use("/api/auth", authRoute);
-app.use("/api/users", authRoute);
-app.use("/api/hotels", authRoute);
-app.use("/api/rooms", authRoute);
+// app.use("/api/auth", authRoute);
+// app.use("/api/users", authRoute);
+app.use("/api/hotels", hotelsRoute);
+// app.use("/api/rooms", authRoute);
+
+app.use((err, req, res, next) => {
+    // console.log("hi im middleware");
+    // next();
+    const errorStatus = err.status || 500;
+    const errorMessage = err.message || "Something went wrong.";
+
+    return res.status(errorStatus).json({
+        success: false,
+        status: errorStatus,
+        message: errorMessage,
+        stack: err.stack,
+    });
+});
 
 const PORT = 8800;
 app.listen(PORT, () => {
     connect();
-    console.log(`Running on port  https://192.168.1.36:${PORT}`);
+    console.log(`Running on port  http://localhost:${PORT}`);
 });
