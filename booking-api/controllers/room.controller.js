@@ -1,4 +1,25 @@
+import Hotel from "../models/Hotel.js";
 import Room from "../models/Room.js";
+
+export const createRoom = async (req, res, next) => {
+  const hotelId = req.params.hotelid;
+  const newRoom = new Room(req.body); // an instance of room
+  console.log(hotelId);
+  try {
+    const savedRoom = await newRoom.save(); //save in mongodb
+    try {
+      await Hotel.findByIdAndUpdate(hotelId, {
+        $push: { rooms: savedRoom._id }, // send id of room
+      });
+    } catch (error) {
+      next(error);
+    }
+
+    res.status(200).json(savedRoom);
+  } catch (error) {
+    next(error);
+  }
+};
 
 export const updateRoom = async (req, res) => {
   try {
@@ -31,7 +52,7 @@ export const getRoom = async (req, res, next) => {
   }
 };
 
-export const getUsers = async (req, res, next) => {
+export const getRooms = async (req, res, next) => {
   try {
     const rooms = await Room.find();
     res.status(200).json(rooms);
