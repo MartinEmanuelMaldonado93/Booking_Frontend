@@ -16,7 +16,9 @@ router.put("/:id", verifyAdmin, updateHotel);
 // DELETE
 router.delete("/:id", verifyAdmin, deleteHotel);
 // GET
-router.get("/", getHotels);
 router.get("/:id", getHotel);
+router.get("/", getHotels);
+router.get("/countByCity", countByCity);
+router.get("/countByType", countByType);
 
 export default router;

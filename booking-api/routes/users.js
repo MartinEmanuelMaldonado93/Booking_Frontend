@@ -9,7 +9,7 @@ import { verifyAdmin, verifyUser } from "../utils/verifyToken.js";
 
 const router = express.Router();
 // GET
-router.get("/", verifyAdmin, getUser);
+router.get("/:id", verifyAdmin, getUser);
 // GET ALL
 router.get("/", verifyAdmin, getUsers);
 // UPDATE
