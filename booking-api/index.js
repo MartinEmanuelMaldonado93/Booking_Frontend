@@ -6,7 +6,7 @@ import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
-
+import cors from "cors";
 const PORT = 8800;
 dotenv.config();
 const app = express();
@@ -19,6 +19,7 @@ mongoose.connection.on("disconnected", () =>
 // middleware
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 // Create the routes
 app.use("/api/auth", authRoute);
