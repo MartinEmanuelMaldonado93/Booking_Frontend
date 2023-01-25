@@ -1,26 +1,18 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Hotel from "./pages/Hotel";
+import List from "./pages/List";
 import "./index.css";
-// import "../tailwind/index.css";
-import { Navbar } from "@components";
-import Header from "./components/header/Header";
-import Featured from "./components/featured/Featured";
-import PropertyList from "@components/propertyList/PropertyList";
 
 function App() {
   return (
-    <div className=''>
-      {/* <Navbar /> */}
-      {/* <Header /> */}
-      {/* <Featured /> */}
-      <PropertyList />
-      {/* <div className='homeContainer'>
-        <h1 className='homeTitle'>Browse by property type</h1>
-        <h1 className='homeTitle'>Homes guests love</h1>
-        <FeaturedProperties />
-        <MailList />
-        <Footer />
-      </div> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/hotels' element={<List />} />
+        <Route path='/hotels/:id' element={<Hotel />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

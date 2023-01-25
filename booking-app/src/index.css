@@ -1,5 +1,5 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
-@import
-url('https://taniarascia.github.io/primitive/css/main.css');
+@tailwind utilities;
+/* @import
+url('https://taniarascia.github.io/primitive/css/main.css'); */

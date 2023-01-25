@@ -1,16 +1,11 @@
+import format from "date-fns/format";
 import { useState } from "react";
-import {
-  FaBed,
-  FaCalendarDay,
-  FaCar,
-  FaPersonBooth,
-  FaMosque,
-  FaPlane,
-  FaTaxi,
-} from "react-icons/fa";
+import { FaBed, FaCalendarDay, FaPersonBooth } from "react-icons/fa";
+import DateRange from "react-date-range";
+import RecreationOptions from "./RecreationOptions";
 
 function Header() {
-  const [destination, setDestination] = useState("");
+  const [destination, setDestination] = useState<string>("");
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
     {
@@ -26,57 +21,46 @@ function Header() {
     room: 1,
   });
 
+  // const handleOption = (name:string, operation:string) => {
+  //   setOptions((prev) => {
+  //     return {
+  //       ...prev,
+  //       // [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+  //     };
+  //   });
+  // };
+
   return (
     <>
-      <div className='header navbar'>
-        <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
+      <RecreationOptions />
+      <h1 className='text-3xl'>A lifetime of discounts? It's Genius.</h1>
+      <p className='headerDesc'>
+        Get rewarded for your travels – unlock instant savings of 10% or more
+        with a free Lamabooking account
+      </p>
+      <button className='btn btn-outlin btn-info gap-2 rounded-lg'>
+        Sign in / Register
+      </button>
+      <div className='flex bg-blue-200'>
+        <div className='headerSearchItem'>
           <FaBed />
-          <span>Stays</span>
+          <input
+            type='text'
+            placeholder='Where are you going?'
+            className='headerSearchInput'
+            onChange={(e) => setDestination(e.target.value)}
+          />
         </div>
-        <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
-          <FaPlane />
-          <span>Flights</span>
-        </div>
-        <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
-          <FaCar />
-          <span>Car rentals</span>
-        </div>
-        <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
-          <FaMosque />
-          <span>Attractions</span>
-        </div>
-        <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
-          <FaTaxi />
-          <span>Airport taxis</span>
-        </div>
-      </div>
-      <>
-        <h1 className='headerTitle'>A lifetime of discounts? It's Genius.</h1>
-        <p className='headerDesc'>
-          Get rewarded for your travels – unlock instant savings of 10% or more
-          with a free Lamabooking account
-        </p>
-        <button className='headerBtn'>Sign in / Register</button>
-        <div className='headerSearch'>
-          <div className='headerSearchItem'>
-            {/* <FontAwesomeIcon icon={faBed} className="headerIcon" /> */}
-            <input
-              type='text'
-              placeholder='Where are you going?'
-              className='headerSearchInput'
-              onChange={(e) => setDestination(e.target.value)}
-            />
-          </div>
-          <div className='headerSearchItem'>
-            {/* <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" /> */}
-            {/* <span
-                  onClick={() => setOpenDate(!openDate)}
-                  className="headerSearchText"
-                >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
-                  date[0].endDate,
-                  "MM/dd/yyyy"
-                )}`}</span> */}
-            {/* {openDate && (
+        <div className='headerSearchItem'>
+          <FaCalendarDay />
+          <span
+            onClick={() => setOpenDate(!openDate)}
+            className='headerSearchText'
+          >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+            date[0].endDate,
+            "MM/dd/yyyy"
+          )}`}</span>
+          {/* {openDate && (
                   <DateRange
                     editableDateInputs={true}
                     onChange={(item) => setDate([item.selection])}
@@ -86,84 +70,76 @@ function Header() {
                     minDate={new Date()}
                   />
                 )} */}
-          </div>
-          <div className='headerSearchItem'>
-            {/* <FontAwesomeIcon icon={faPerson} className="headerIcon" /> */}
-            {/* <span
-                  onClick={() => setOpenOptions(!openOptions)}
-                  className="headerSearchText"
-                >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span> */}
-
-            <div className='options'>
-              <div className='optionItem'>
-                <span className='optionText'>Adult</span>
-                <div className='optionCounter'>
-                  <button
-                    disabled={options.adult <= 1}
-                    className='optionCounterButton'
-                    // onClick={() => handleOption("adult", "d")}
-                  >
-                    -
-                  </button>
-                  <span className='optionCounterNumber'>
-                    {/* {options.adult} */}
-                  </span>
-                  <button
-                    className='optionCounterButton'
-                    // onClick={() => handleOption("adult", "i")}
-                  >
-                    +
-                  </button>
-                </div>
+        </div>
+        <div className='flex'>
+          <FaPersonBooth />
+          <span
+            onClick={() => setOpenOptions(!openOptions)}
+            className='headerSearchText'
+          >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
+          <div className='options flex'>
+            <div className='optionItem'>
+              <span className='optionText'>Adult</span>
+              <div className='optionCounter'>
+                <button
+                  disabled={options.adult <= 1}
+                  className='optionCounterButton'
+                  // onClick={() => handleOption("adult", "d")}
+                >
+                  -
+                </button>
+                <span className='optionCounterNumber'>{options.adult}</span>
+                <button
+                  className='optionCounterButton'
+                  // onClick={() => handleOption("adult", "i")}
+                >
+                  +
+                </button>
               </div>
-              <div className='optionItem'>
-                <span className='optionText'>Children</span>
-                <div className='optionCounter'>
-                  <button
-                    disabled={options.children <= 0}
-                    className='optionCounterButton'
-                    // onClick={() => handleOption("children", "d")}
-                  >
-                    -
-                  </button>
-                  <span className='optionCounterNumber'>
-                    {/* {options.children} */}
-                  </span>
-                  <button
-                    className='optionCounterButton'
-                    // onClick={() => handleOption("children", "i")}
-                  >
-                    +
-                  </button>
-                </div>
+            </div>
+            <div className='optionItem'>
+              <span className='optionText'>Children</span>
+              <div className='optionCounter'>
+                <button
+                  disabled={options.children <= 0}
+                  className='optionCounterButton'
+                  // onClick={() => handleOption("children", "d")}
+                >
+                  -
+                </button>
+                <span className='optionCounterNumber'>{options.children}</span>
+                <button
+                  className='optionCounterButton'
+                  // onClick={() => handleOption("children", "i")}
+                >
+                  +
+                </button>
               </div>
-              <div className='optionItem'>
-                <span className='optionText'>Room</span>
-                <div className='optionCounter'>
-                  <button
-                    disabled={options.room <= 1}
-                    className='optionCounterButton'
-                    // onClick={() => handleOption("room", "d")}
-                  >
-                    -
-                  </button>
-                  <span className='optionCounterNumber'>
-                    {/* {options.room} */}
-                  </span>
-                  <button
-                    className='optionCounterButton'
-                    // onClick={() => handleOption("room", "i")}
-                  >
-                    +
-                  </button>
-                </div>
+            </div>
+            <div className='optionItem'>
+              <span className='optionText'>Room</span>
+              <div className='optionCounter'>
+                <button
+                  disabled={options.room <= 1}
+                  className='optionCounterButton'
+                  // onClick={() => handleOption("room", "d")}
+                >
+                  -
+                </button>
+                <span className='optionCounterNumber'>{options.room}</span>
+                <button
+                  className='optionCounterButton'
+                  // onClick={() => handleOption("room", "i")}
+                >
+                  +
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </> 
+      </div>
     </>
   );
 }
 
-export default Header;
+export { Header };

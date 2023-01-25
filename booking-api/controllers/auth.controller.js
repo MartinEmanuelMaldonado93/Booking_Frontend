@@ -42,7 +42,7 @@ export const login = async (req, res, next) => {
       { id: user._id, isAdmin: user.isAdmin },
       process.env.JWT
     );
-    console.log(token);
+    //console.log(token);
     const { password, isAdmin, ...otherDetails } = user._doc;
     // console.log(user._doc);
     res
@@ -51,7 +51,7 @@ export const login = async (req, res, next) => {
       })
       .status(200)
       .json({ ...otherDetails });
-    console.log(res.cookie.access_token);
+    //console.log(res.cookie.access_token);
   } catch (error) {
     next(error);
   }

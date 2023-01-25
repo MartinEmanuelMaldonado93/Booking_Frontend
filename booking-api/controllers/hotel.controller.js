@@ -34,15 +34,15 @@ export const deleteHotel = async (req, res) => {
 };
 
 export const getHotels = async (req, res, next) => {
-  const { min, max, ...others } = req.query;
+  const { min, max, limit, ...others } = req.query;
   try {
     const hotels = await Hotel.find({
       ...others,
-      // chepeastPrice: {
-      //   $gt: min | 1,
-      //   $lt: max | 99,
-      // },
-    }).limit(req.query.limit); // search featured property
+      cheapestPrice: {
+        $gt: min || 1, // greater than...
+        $lt: max || 999, // less than...
+      },
+    }).limit(limit); // search featured property
     res.status(200).json(hotels);
   } catch (error) {
     next(error);
@@ -57,6 +57,8 @@ export const countByCity = async (req, res, next) => {
         (city) => Hotel.countDocuments({ city: city }) // method by mongo, much faster an performant
       )
     );
+
+    // setTimeout(() => res.status(200).json(hotels), 1500);
     res.status(200).json(hotels);
   } catch (error) {
     next(error);

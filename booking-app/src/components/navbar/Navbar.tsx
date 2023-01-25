@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className='navbar bg-base-100'>
+    <div className='navbar bg-blue-600'>
       <h2 className='flex-1'>
-        <button className='btn btn-ghost normal-case text-xl'>
+        <Link to="/" className='btn btn-ghost normal-case text-cyan-50 text-xl'>
           MartinBooking
-        </button>
+        </Link>
       </h2>
       <div className='navItems flex-none'>
         <button className='btn btn-primary'>Register</button>
@@ -16,4 +17,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export {Navbar};
