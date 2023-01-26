@@ -1,13 +1,17 @@
 import format from "date-fns/format";
 import { useState } from "react";
 import { FaBed, FaCalendarDay, FaPersonBooth } from "react-icons/fa";
-import DateRange from "react-date-range";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { DateRange } from "react-date-range";
 import RecreationOptions from "./RecreationOptions";
+import { itemDateRange } from "@types";
+import type { Range } from "react-date-range/index";
 
 function Header() {
   const [destination, setDestination] = useState<string>("");
   const [openDate, setOpenDate] = useState(false);
-  const [date, setDate] = useState([
+  const [dates, setDates] = useState<Range[]>([
     {
       startDate: new Date(),
       endDate: new Date(),
@@ -32,15 +36,15 @@ function Header() {
 
   return (
     <>
-      <RecreationOptions />
-      <h1 className='text-3xl'>A lifetime of discounts? It's Genius.</h1>
+      {/* <RecreationOptions /> */}
+      {/* <h1 className='text-3xl'>A lifetime of discounts? It's Genius.</h1>
       <p className='headerDesc'>
         Get rewarded for your travels – unlock instant savings of 10% or more
         with a free Lamabooking account
       </p>
       <button className='btn btn-outlin btn-info gap-2 rounded-lg'>
         Sign in / Register
-      </button>
+      </button> */}
       <div className='flex bg-blue-200'>
         <div className='headerSearchItem'>
           <FaBed />
@@ -56,20 +60,23 @@ function Header() {
           <span
             onClick={() => setOpenDate(!openDate)}
             className='headerSearchText'
-          >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
-            date[0].endDate,
+          >{`${format(dates[0].startDate!, "MM/dd/yyyy")} to ${format(
+            dates[0].endDate!,
             "MM/dd/yyyy"
           )}`}</span>
-          {/* {openDate && (
-                  <DateRange
-                    editableDateInputs={true}
-                    onChange={(item) => setDate([item.selection])}
-                    moveRangeOnFirstSelection={false}
-                    ranges={date}
-                    className="date"
-                    minDate={new Date()}
-                  />
-                )} */}
+          {openDate && (
+            <DateRange
+              editableDateInputs={true}
+              onChange={(item) => {
+                console.log(item);
+                setDates([item.selection])
+              }}
+              moveRangeOnFirstSelection={false}
+              ranges={dates}
+              minDate={new Date()}
+              className='date'
+            />
+          )}
         </div>
         <div className='flex'>
           <FaPersonBooth />

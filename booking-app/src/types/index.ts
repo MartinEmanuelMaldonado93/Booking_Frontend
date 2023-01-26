@@ -29,6 +29,12 @@ export type User = {
 };
 
 export type HotelByType = {
-  type: string,
-  count: number,
+  type: string;
+  count: number;
+};
+
+export type itemDateRange = {
+  startDate: Date;
+  endDate: Date | 0;
+  key: string;
 };
