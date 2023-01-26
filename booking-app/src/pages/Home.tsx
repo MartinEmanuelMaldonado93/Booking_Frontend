@@ -19,9 +19,9 @@ function Home() {
         <div className="w-full"></div>
         <h1 className='homeTitle'>Browse by property type</h1>
         <h1 className='homeTitle'>Homes guests love</h1>
-        {/* <FeaturedProperties /> */}
-        <MailList />
-        <Footer />
+        <FeaturedProperties />
+        {/* <MailList /> */}
+        {/* <Footer /> */}
       </div>
     </div>
   );

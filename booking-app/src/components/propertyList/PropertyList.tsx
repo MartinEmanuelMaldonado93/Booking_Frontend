@@ -1,6 +1,6 @@
 import { UseFetch } from "@hooks";
-import { HotelByType } from "src/types";
-import { hotelPhotos } from "./hotelPhotos";
+import { HotelByType } from "@types";
+import { hotelPhotos } from "@constants";
 
 /** Show types of properties like hotels, apartment, etc.. */
 function PropertyList() {
@@ -11,9 +11,9 @@ function PropertyList() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className='flex-row '>
+    <div className='flex flex-wrap '>
       {data &&
-        hotelPhotos.map( (src: string, i: number) => (
+        hotelPhotos.map((src: string, i: number) => (
           <div className='pList' key={src}>
             <div className='pListItem'>
               <img src={src} alt='' className='pListImg' />

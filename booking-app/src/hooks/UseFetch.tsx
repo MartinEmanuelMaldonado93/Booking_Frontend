@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+/** Receive exact route url */
 function UseFetch<T>(url: string) {
   const [data, setData] = useState<T>();
   const [loading, setLoading] = useState<boolean>();

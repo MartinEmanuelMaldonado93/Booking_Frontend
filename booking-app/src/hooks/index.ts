@@ -1,2 +1,3 @@
 import UseFetch from "./UseFetch";
-export { UseFetch };
+import UseHotelByIdUrl from "./UseHotelByIdUrl";
+export { UseFetch, UseHotelByIdUrl };
