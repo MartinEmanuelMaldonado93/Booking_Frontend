@@ -1,16 +1,24 @@
+import { optionsHotel } from "@types";
 import { Dispatch, ReactNode, createContext, useReducer } from "react";
-
-type initial_state = {
-  city: undefined | string;
-  dates: string[] | undefined;
-  options: {
-    adult: undefined | string;
-    children: undefined | string;
-    room: undefined | number;
-  };
-  dispatch?: Dispatch<unknown>,
+import type { Range } from "react-date-range/index";
+type propsProvider = {
+  children?: ReactNode;
 };
-const INITIAL_STATE: initial_state = {
+
+type SearchedDestination = {
+  city: undefined | string;
+  dates?: Range[];
+  options: optionsHotel;
+};
+type SearchAction = {
+  type: "NEW_SEARCH" | "RESET_SEARCH"; // literal type ideally besides enums.
+  payload: SearchedDestination;
+};
+type DestinationContext = {
+  state: SearchedDestination;
+  dispatch: Dispatch<SearchAction>;
+};
+const INITIAL_STATE: SearchedDestination = {
   city: undefined,
   dates: [],
   options: {
@@ -19,19 +27,20 @@ const INITIAL_STATE: initial_state = {
     room: undefined,
   },
 };
-
-export const SearchContext = createContext(INITIAL_STATE);
-
-type props = {
-  children?: ReactNode;
+const INITIAL_CONTEXT: DestinationContext = {
+  state: INITIAL_STATE,
+  dispatch: () => null,
 };
-export const SearchContextProvider = ({ children }: props) => {
-  const [state, dispatch] = useReducer(SearchReducer, INITIAL_STATE);
+export const SearchContext = createContext<DestinationContext>(INITIAL_CONTEXT);
 
-  function SearchReducer(state: any, action: any) {
-    switch (action.type) {
+export const SearchContextProvider = ({ children }: propsProvider) => {
+  const [state, dispatch] = useReducer(dispatchSearch, INITIAL_STATE);
+  
+  function dispatchSearch(state: SearchedDestination, action: SearchAction) {
+    const { type, payload } = action;
+    switch (type) {
       case "NEW_SEARCH":
-        return action.payload;
+        return payload; // new data
       case "RESET_SEARCH":
         return INITIAL_STATE;
       default:
@@ -39,14 +48,7 @@ export const SearchContextProvider = ({ children }: props) => {
     }
   }
   return (
-    <SearchContext.Provider
-      value={{
-        city: state.city,
-        dates: state.dates,
-        options: state.options,
-        dispatch,
-      }}
-    >
+    <SearchContext.Provider value={{ state, dispatch }}>
       {children}
     </SearchContext.Provider>
   );

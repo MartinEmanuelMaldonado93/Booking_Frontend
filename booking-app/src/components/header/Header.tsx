@@ -1,15 +1,18 @@
 import format from "date-fns/format";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaBed, FaCalendarDay, FaPersonBooth } from "react-icons/fa";
 import { DateRange } from "react-date-range";
 import RecreationOptions from "./RecreationOptions";
 import { itemDateRange, optionsHotel } from "@types";
 import type { Range } from "react-date-range/index";
 import { CalendarDays, Destination, OptionsHotel } from "@components";
+import { SearchContext } from "@context";
+import { useNavigate } from "react-router-dom";
+
 type props = {
-  type?:string
-}
-function Header({}:props) {
+  type?: string;
+};
+function Header({}: props) {
   const [dates, setDates] = useState<Range[]>([
     {
       startDate: new Date(),
@@ -22,22 +25,44 @@ function Header({}:props) {
     children: 0,
     room: 0,
   });
+  const [destination, setDestination] = useState("");
+  const { dispatch } = useContext(SearchContext);
+  const navigate = useNavigate();
+
+  function handleSearch() {
+    dispatch({
+      type: "NEW_SEARCH",
+      payload: { city: destination, dates, options },
+    });
+    // console.log("/hotes", { state: { destination, dates, options } });
+    navigate("/hotels", { state: { destination, dates, options } });
+  }
 
   return (
     <>
-      {/* <RecreationOptions /> */}
-      {/* <h1 className='text-3xl'>A lifetime of discounts? It's Genius.</h1>
-      <p className='headerDesc'>
-        Get rewarded for your travels – unlock instant savings of 10% or more
-        with a free Lamabooking account
-      </p>
-      <button className='btn btn-outlin btn-info gap-2 rounded-lg'>
-        Sign in / Register
-      </button> */}
+      <RecreationOptions />
+      <h1 className='text-3xl'>A lifetime of discounts? It's Genius.</h1>
+      <div className='flex justify-between'>
+        <p className=''>
+          Get rewarded for your travels – unlock instant savings of 10% or more
+          with a free Lamabooking account
+        </p>
+        <button className='btn btn-info w-min rounded-lg'>
+          Sign in / Register
+        </button>
+      </div>
       <div className='flex bg-blue-200'>
-        {/* <Destination />
-        <CalendarDays dates={dates} setDates={setDates} /> */}
+        <Destination
+          destination={destination}
+          setDestination={setDestination}
+        />
+        <CalendarDays dates={dates} setDates={setDates} />
         <OptionsHotel options={options} setOptions={setOptions} />
+        <div className='headerSearchItem'>
+          <button className='btn btn-secondary' onClick={handleSearch}>
+            Search
+          </button>
+        </div>
       </div>
     </>
   );

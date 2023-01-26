@@ -29,6 +29,10 @@ export default defineConfig({
         find: "@utils",
         replacement: path.resolve(__dirname, "src/utils/index"),
       },
+      {
+        find: "@context",
+        replacement: path.resolve(__dirname, "src/context/SearchContext"),
+      },
     ],
   },
 });

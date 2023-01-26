@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { FaBed } from "react-icons/fa";
 
-function Destination() {
-  const [destination, setDestination] = useState("");
-
+type props = {
+  destination: string;
+  setDestination: Dispatch<SetStateAction<string>>;
+};
+/** Input of destination */
+function Destination({ destination, setDestination }: props) {
   return (
     <div className='flex '>
       <FaBed />

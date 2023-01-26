@@ -14,10 +14,10 @@ function PropertyList() {
     <div className='flex flex-wrap '>
       {data &&
         hotelPhotos.map((src: string, i: number) => (
-          <div className='pList' key={src}>
-            <div className='pListItem'>
-              <img src={src} alt='' className='pListImg' />
-              <div className='pListTitles'>
+          <div className='' key={src}>
+            <div className=''>
+              <img src={src} alt='' className='rounded-md max-w-[15rem]' />
+              <div className=''>
                 <h1>{data[i].type}</h1>
                 <h2>
                   {data[i].count} {data[i].type}

@@ -40,7 +40,7 @@ export type itemDateRange = {
 };
 
 export type optionsHotel = {
-  adult: number;
-  children: number;
-  room: number;
+  adult?: number;
+  children?: number;
+  room?: number;
 };

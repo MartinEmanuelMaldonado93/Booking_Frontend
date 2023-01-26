@@ -11,27 +11,27 @@ type props = {
   setDates: Dispatch<SetStateAction<Range[]>>;
 };
 function CalendarDays({ dates, setDates }: props) {
-  const [isOpen, setIsOpen] = useState(false);
   const FromDate = format(dates[0].startDate!, "MM/dd/yyyy");
   const ToDate = format(dates[0].endDate!, "MM/dd/yyyy");
-  const toggleOpen = () => setIsOpen((p) => !p);
 
   return (
-    <div className='flex'>
+    <div className='flex dropdown dropdown-hover dropdown-bottom '>
       <FaCalendarDay />
-      <span className='cursor-pointer' onClick={toggleOpen}>
+      <span tabIndex={0} className='flex gap-4 text-lg cursor-pointer'>
         {`${FromDate} to ${ToDate}`}
       </span>
-      {isOpen && (
+      <div
+        tabIndex={0}
+        className='dropdown-content menu bg-base-100 relative max-w-xs p-2 border border-gray rounded-md shadow-md text-center'
+      >
         <DateRange
           editableDateInputs={true}
           onChange={(item) => setDates([item.selection])}
           moveRangeOnFirstSelection={false}
           ranges={dates}
           minDate={new Date()}
-          className='relative'
         />
-      )}
+      </div>
     </div>
   );
 }
