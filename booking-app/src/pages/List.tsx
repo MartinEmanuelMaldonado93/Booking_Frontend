@@ -5,11 +5,10 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import { UseFetch } from "@hooks";
 import { Hotel } from "@types";
+import { getIDHotelLocation } from "@utils";
 
 const List = () => {
-  const location = useLocation();
-  const hotelId = location.pathname.split("/")[2];
-  console.log("hotel id", hotelId);
+  const hotelId = getIDHotelLocation();
   // const [destination, setDestination] = useState(location.state.destination);
   // const [date, setDate] = useState(location.state.date);
   const [date, setDate] = useState([new Date()]);

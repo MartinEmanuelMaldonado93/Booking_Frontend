@@ -18,11 +18,12 @@ import {
   FaRegWindowClose,
   FaSearchLocation,
 } from "react-icons/fa";
-import { UseFetch, UseHotelByIdUrl } from "@hooks";
+import { UseFetch  } from "@hooks";
 import { Hotel } from "@types";
+import { getIDHotelLocation } from "@utils";
 
 const HotelPage = () => {
-  const idHotel = UseHotelByIdUrl();
+  const idHotel = getIDHotelLocation();
   const { data, loading } = UseFetch<Hotel | undefined>(
     `http://localhost:8800/api/hotels/find/${idHotel}`
   );

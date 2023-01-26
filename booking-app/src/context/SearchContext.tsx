@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useReducer } from "react";
+import { Dispatch, ReactNode, createContext, useReducer } from "react";
 
 type initial_state = {
   city: undefined | string;
@@ -8,6 +8,7 @@ type initial_state = {
     children: undefined | string;
     room: undefined | number;
   };
+  dispatch?: Dispatch<unknown>,
 };
 const INITIAL_STATE: initial_state = {
   city: undefined,

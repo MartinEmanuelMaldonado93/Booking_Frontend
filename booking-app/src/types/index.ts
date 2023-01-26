@@ -38,3 +38,9 @@ export type itemDateRange = {
   endDate: Date | 0;
   key: string;
 };
+
+export type optionsHotel = {
+  adult: number;
+  children: number;
+  room: number;
+};

@@ -21,6 +21,7 @@
       "@types": ["src/types/index"],
       "@hooks": ["src/hooks/index"],
       "@constants":["src/constants/hotelPhotos"],
+      "@utils":["src/utils/index"],
     }
   },
   "include": ["src"],

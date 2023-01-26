@@ -1,3 +1,3 @@
 import UseFetch from "./UseFetch";
-import UseHotelByIdUrl from "./UseHotelByIdUrl";
-export { UseFetch, UseHotelByIdUrl };
+// import getIDHotelLocation from "../utils/getIDHotelLocation";
+export { UseFetch };
