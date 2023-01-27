@@ -148,6 +148,3 @@ const HotelPage = () => {
 };
 
 export default HotelPage;
-// function useFetch(arg0: string): { data: any; loading: any; error: any } {
-//   throw new Error("Function not implemented.");
-// }

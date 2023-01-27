@@ -34,14 +34,13 @@ function Header({}: props) {
       type: "NEW_SEARCH",
       payload: { city: destination, dates, options },
     });
-    // console.log("/hotes", { state: { destination, dates, options } });
-    navigate("/hotels", { state: { destination, dates, options } });
+    navigate("/hotels", { state: { destination, dates, options } });// to List.tsx
   }
 
   return (
-    <>
+    <div>
       <RecreationOptions />
-      <h1 className='text-3xl'>A lifetime of discounts? It's Genius.</h1>
+      <div className='text-2xl'>A lifetime of discounts? It's Genius.</div>
       <div className='flex justify-between'>
         <p className=''>
           Get rewarded for your travels – unlock instant savings of 10% or more
@@ -64,7 +63,7 @@ function Header({}: props) {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

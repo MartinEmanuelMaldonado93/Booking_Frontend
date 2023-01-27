@@ -11,9 +11,9 @@ import {
 function Home() {
   return (
     <div className='h-screen flex flex-col justify-between'>
-      <Navbar />
+      {/* <Navbar /> */}
       <Header />
-      <PropertyList />
+      {/* <PropertyList /> */}
       <div className='flex flex-wrap gap-4'>
         {/* <Featured /> */}
         <div className="w-full"></div>

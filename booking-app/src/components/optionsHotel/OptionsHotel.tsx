@@ -7,16 +7,20 @@ type props = {
 };
 function OptionsHotel({ options, setOptions }: props) {
   const [isOpen, setIsOpen] = useState(false);
+
   const handleOption = (name: keyof optionsHotel, operation: string) => {
+    let prevCount = options[name] || 0;
+    const actualCount = operation === "i" ? ++prevCount : --prevCount;
+
     setOptions((prev) => ({
       ...prev,
-      [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+      [name]: actualCount,
     }));
   };
-  const { adult, children, room } = options;
+  const { adult , children, room } = options;
 
   return (
-    <div className='flex mx-4 gap-2 items-center dropdown dropdown-hover dropdown-bottom dropdown-end'>
+    <div className='flex  gap-2 items-center dropdown dropdown-hover dropdown-bottom dropdown-end'>
       <FaPersonBooth />
       <span
         tabIndex={0}
