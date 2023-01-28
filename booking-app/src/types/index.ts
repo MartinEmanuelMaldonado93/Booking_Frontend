@@ -1,10 +1,11 @@
 export type Hotel = {
+  _id?: number;
   name: string;
   type: string;
   city: string;
   address: string;
   distance: string;
-  photos: string[];
+  photos: string[] | undefined;
   title: string;
   desc: string;
   rating?: number; // min 0 max 5

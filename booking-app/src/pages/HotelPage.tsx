@@ -9,8 +9,8 @@
 //   faCircleXmark,
 //   faLocationDot,
 // } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Footer, Header, MailList, Navbar } from "@components";
 import {
   FaAngleLeft,
@@ -18,9 +18,10 @@ import {
   FaRegWindowClose,
   FaSearchLocation,
 } from "react-icons/fa";
-import { UseFetch  } from "@hooks";
+import { UseFetch } from "@hooks";
 import { Hotel } from "@types";
-import { getIDHotelLocation } from "@utils";
+import { getDifferenceOfDays, getIDHotelLocation } from "@utils";
+import { SearchContext } from "@context";
 
 const HotelPage = () => {
   const idHotel = getIDHotelLocation();
@@ -28,27 +29,23 @@ const HotelPage = () => {
     `http://localhost:8800/api/hotels/find/${idHotel}`
   );
 
-  // useEffect(() => {
-  //   console.log("data hotel!", data);
-  // }, [data]);
-
   const [slideNumber, setSlideNumber] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [open, setOpen] = useState(false);
 
   //   const { user } = useContext(AuthContext);
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  //   const { dates, options } = useContext(SearchContext);
-  //   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
-  //   function dayDifference(date1, date2) {
-  //     const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-  //     const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
-  //     return diffDays;
-  //   }
+  const { state, dispatch } = useContext(SearchContext);
 
-  //   const days = dayDifference(dates[0].endDate, dates[0].startDate);
+  let d1, d2, totalDays;
+  if (state.dates && state.dates.length > 0) {
+    d1 = state.dates[0].startDate!;
+    d2 = state.dates[0].endDate!;
 
+    totalDays = getDifferenceOfDays(d1, d2);
+  }
+  // console.log("heee - heeee", totalDays);
   // const handleOpen = (i) => {
   //   setSlideNumber(i);
   //   setOpen(true);

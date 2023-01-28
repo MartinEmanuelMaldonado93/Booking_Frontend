@@ -8,3 +8,4 @@ export { PropertyList } from "./propertyList/PropertyList";
 export { CalendarDays } from "./calendar/CalendarDays";
 export { OptionsHotel } from "./optionsHotel/OptionsHotel";
 export { Destination } from "./destination/Destination";
+export { SearchItem } from "./searchItem/SearchItem";

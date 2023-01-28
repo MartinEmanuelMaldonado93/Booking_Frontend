@@ -1,6 +1,12 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Navbar, Header, CalendarDays, OptionsHotel } from "@components";
+import {
+  Navbar,
+  Header,
+  CalendarDays,
+  OptionsHotel,
+  SearchItem,
+} from "@components";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import { UseFetch } from "@hooks";
@@ -74,7 +80,7 @@ const List = () => {
                     type='number'
                     min={1}
                     className='lsOptionInput'
-                    placeholder={options.adult}
+                    placeholder={options.adult?.toString()}
                   />
                 </div>
                 <div className='lsOptionItem'>
@@ -83,7 +89,7 @@ const List = () => {
                     type='number'
                     min={0}
                     className='lsOptionInput'
-                    placeholder={options.children}
+                    placeholder={options.children?.toString()}
                   />
                 </div>
                 <div className='lsOptionItem'>
@@ -92,7 +98,7 @@ const List = () => {
                     type='number'
                     min={1}
                     className='lsOptionInput'
-                    placeholder={options.room}
+                    placeholder={options.room?.toString()}
                   />
                 </div>
               </div>
@@ -100,8 +106,8 @@ const List = () => {
             <button>Search</button>
           </div>
           <div className='listResult'>
+            <SearchItem hotelItem={data}/>
             {/* <SearchItem />
-            <SearchItem />
             <SearchItem />
             <SearchItem />
             <SearchItem />

@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 type props = {
   type?: string;
 };
-function Header({}: props) {
+function Header({ type }: props) {
   const [dates, setDates] = useState<Range[]>([
     {
       startDate: new Date(),
@@ -26,7 +26,7 @@ function Header({}: props) {
     room: 0,
   });
   const [destination, setDestination] = useState("");
-  const { dispatch } = useContext(SearchContext);
+  const { state, dispatch } = useContext(SearchContext);
   const navigate = useNavigate();
 
   function handleSearch() {
@@ -34,7 +34,7 @@ function Header({}: props) {
       type: "NEW_SEARCH",
       payload: { city: destination, dates, options },
     });
-    navigate("/hotels", { state: { destination, dates, options } });// to List.tsx
+    navigate("/hotels", { state: { destination, dates, options } }); // to List.tsx
   }
 
   return (

@@ -1,3 +1,3 @@
 import getIDHotelLocation from "./getIDHotelLocation";
-
-export { getIDHotelLocation };
+import getDifferenceOfDays from "./getDifferenceOfDays";
+export { getIDHotelLocation, getDifferenceOfDays };
