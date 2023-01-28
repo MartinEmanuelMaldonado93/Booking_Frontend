@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { createUser } from "src/redux/states/user";
-import getUser from "src/services/auth.service";
+import { createUser } from "../../redux/states/user";
+import getUser from "../../services/auth.service";
 
 function Login() {
   const dispatch = useDispatch();

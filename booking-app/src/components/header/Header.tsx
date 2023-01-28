@@ -38,19 +38,21 @@ function Header({ type }: props) {
   }
 
   return (
-    <div>
+    <div className='px-2 text-white'>
       <RecreationOptions />
-      <div className='text-2xl'>A lifetime of discounts? It's Genius.</div>
-      <div className='flex justify-between'>
-        <p className=''>
+      <div className='my-4 text-3xl font-bold'>
+        A lifetime of discounts? It's Genius.
+      </div>
+      <div className='flex flex-wrap my-4 gap-4'>
+        <p className='w-full'>
           Get rewarded for your travels – unlock instant savings of 10% or more
           with a free Lamabooking account
         </p>
-        <button className='btn btn-info w-min rounded-lg'>
+        <button className='btn py-3 px-2 min-h-0 h-auto rounded-sm text-black bg-cyan-50 border-none hover:bg-cyan-200'>
           Sign in / Register
         </button>
       </div>
-      <div className='flex bg-blue-200'>
+      <div className='flex p-2 py-1 justify-between items-center translate-y-2/4 rounded-md border-2 border-yellow-200 bg-white text-gray-700 hover:border-yellow-400'>
         <Destination
           destination={destination}
           setDestination={setDestination}
@@ -58,7 +60,10 @@ function Header({ type }: props) {
         <CalendarDays dates={dates} setDates={setDates} />
         <OptionsHotel options={options} setOptions={setOptions} />
         <div className='headerSearchItem'>
-          <button className='btn btn-secondary' onClick={handleSearch}>
+          <button
+            className='btn border-none py-3 px-2 min-h-0 h-auto bg-blue-700 hover:bg-blue-800'
+            onClick={handleSearch}
+          >
             Search
           </button>
         </div>

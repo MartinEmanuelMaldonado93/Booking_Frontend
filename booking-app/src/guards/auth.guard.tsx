@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
-import { PublicRoute } from "src/models";
+import { PublicRoute } from "../models";
 import { AppStore } from "src/redux/store";
 
 function AuthGuard() {

@@ -8,24 +8,24 @@ import {
 
 function RecreationOptions() {
   return (
-    <div className='header navbar'>
-      <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
+    <div className='navbar gap-2'>
+      <div className='btn rounded-full duration-300 bg-inherit hover:bg-inherit hover:text-black border-white gap-2'>
         <FaBed />
         <span>Stays</span>
       </div>
-      <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
+      <div className='btn rounded-full duration-300 bg-inherit hover:bg-inherit hover:text-black border-white gap-2'>
         <FaPlane />
         <span>Flights</span>
       </div>
-      <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
+      <div className='btn rounded-full duration-300 bg-inherit hover:bg-inherit hover:text-black border-white gap-2'>
         <FaCar />
         <span>Car rentals</span>
       </div>
-      <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
+      <div className='btn rounded-full duration-300 bg-inherit hover:bg-inherit hover:text-black border-white gap-2'>
         <FaMosque />
         <span>Attractions</span>
       </div>
-      <div className='btn btn-outlin btn-info gap-2 rounded-lg'>
+      <div className='btn rounded-full duration-300 bg-inherit hover:bg-inherit hover:text-black border-white gap-2'>
         <FaTaxi />
         <span>Airport taxis</span>
       </div>

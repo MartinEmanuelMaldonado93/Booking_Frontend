@@ -20,7 +20,7 @@ function OptionsHotel({ options, setOptions }: props) {
   const { adult , children, room } = options;
 
   return (
-    <div className='flex  gap-2 items-center dropdown dropdown-hover dropdown-bottom dropdown-end'>
+    <div className='flex  gap-2 items-center dropdown dropdown-hover dropdown-bottom '>
       <FaPersonBooth />
       <span
         tabIndex={0}
@@ -31,13 +31,13 @@ function OptionsHotel({ options, setOptions }: props) {
       </span>
       <div
         tabIndex={0}
-        className='dropdown-content menu bg-base-100 relative max-w-xs p-2 border border-gray rounded-md shadow-md text-center'
+        className='dropdown-content translate-x-1/2 menu bg-base-100 relative max-w-xs p-2 border border-gray rounded-md shadow-md text-center'
       >
         <div className='optionItem'>
           <span className='text-lg'>Adult</span>
           <div className='optionCounter'>
             <button
-              disabled={adult <= 1}
+              disabled={adult! <= 1}
               className='btn btn-primary btn-sm'
               onClick={() => handleOption("adult", "d")}
             >

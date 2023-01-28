@@ -11,17 +11,17 @@ import {
 function Home() {
   return (
     <div className='h-screen flex flex-col justify-between'>
-      {/* <Navbar /> */}
-      <Header />
-      {/* <PropertyList /> */}
-      <div className='flex flex-wrap gap-4'>
-        {/* <Featured /> */}
-        <div className="w-full"></div>
-        {/* <h1 className='homeTitle'>Browse by property type</h1> */}
-        {/* <h1 className='homeTitle'>Homes guests love</h1> */}
-        {/* <FeaturedProperties /> */}
-        {/* <MailList /> */}
-        {/* <Footer /> */}
+      <div className='px-4 bg-blue-600'>
+        <Navbar />
+        <Header />
+      </div>
+      <div className='my-10'>
+        <Featured />
+        <PropertyList />
+        <div className='w-full'></div>
+        <FeaturedProperties />
+        <MailList />
+        <Footer />
       </div>
     </div>
   );

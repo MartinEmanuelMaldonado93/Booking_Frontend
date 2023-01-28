@@ -11,26 +11,28 @@ function Featured() {
   if (loading) return <div className='animate-pulse text-4xl'>Loading...</div>;
 
   return (
-    <>
-      {data?.map((amount, i) => (
-        <div
-          key={Math.random()}
-          className='max-w-xs overflow-hidden bg-base-100  shadow-lg dark:bg-gray-800'
-        >
-          <img
-            src={citiesInfo[i].img}
-            alt=''
-            className='object-cover h-56 rounded-lg'
-          />
-          <div className='featuredTitles py-5 text-center'>
-            <h1>{citiesInfo[i].city}</h1>
-            <h2 className='text-sm text-gray-700 dark:text-gray-200'>
-              {data[i]} properties
-            </h2>
+    <div className='m-4 px-4'>
+      <div className='flex flex-wrap justify-between my-4'>
+        {data?.map((amount, i) => (
+          <div
+            key={Math.random()}
+            className='max-w-xs overflow-hidden bg-base-100  shadow-lg'
+          >
+            <img
+              src={citiesInfo[i].img}
+              alt=''
+              className='object-cover h-56 rounded-lg'
+            />
+            <div className='featuredTitles py-5 text-center'>
+              <h1>{citiesInfo[i].city}</h1>
+              <h2 className='text-sm text-gray-700 dark:text-gray-200'>
+                {data[i]} properties
+              </h2>
+            </div>
           </div>
-        </div>
-      ))}
-    </>
+        ))}
+      </div>
+    </div>
   );
 }
 

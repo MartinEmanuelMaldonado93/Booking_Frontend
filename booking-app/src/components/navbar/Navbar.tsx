@@ -1,20 +1,17 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className='navbar bg-blue-600'>
-      <h2 className='flex-1'>
-        <Link to="/" className='btn btn-ghost normal-case text-cyan-50 text-xl'>
-          MartinBooking
-        </Link>
-      </h2>
-      <div className='navItems flex-none'>
-        <button className='btn btn-primary'>Register</button>
-        <button className='btn btn-primary '>Login</button>
+    <div className='navbar text-white justify-between'>
+      <Link to='/' className='btn btn-ghost normal-case text-xl'>
+        MartinBooking
+      </Link>
+      <div className='flex gap-2'>
+        <button className='btn py-3 px-4 min-h-0 h-auto text-black bg-cyan-50 border-none hover:bg-cyan-200 '>Register</button>
+        <button className='btn py-3 px-4 min-h-0 h-auto text-black bg-cyan-50 border-none hover:bg-cyan-200 '>Login</button>
       </div>
     </div>
   );
 };
 
-export {Navbar};
+export { Navbar };

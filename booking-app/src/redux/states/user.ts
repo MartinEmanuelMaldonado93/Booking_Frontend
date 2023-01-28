@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { UserInfo } from "src/models";
+import { UserInfo } from "../../models";
 
 export const EmptyUserState: UserInfo = {
   email: "",
   isAdmin: false,
   password: "",
   userName: "",
+  _id: undefined,
 };
 
 export const userSlice = createSlice({

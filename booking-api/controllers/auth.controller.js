@@ -42,16 +42,13 @@ export const login = async (req, res, next) => {
       { id: user._id, isAdmin: user.isAdmin },
       process.env.JWT
     );
-    //console.log(token);
-    const { password, isAdmin, ...otherDetails } = user._doc;
-    // console.log(user._doc);
+    const { password, isAdmin, ...otherDetails } = user._doc;// don't send private data
     res
       .cookie("access_token", token, {
         httpOnly: false,
       })
       .status(200)
       .json({ ...otherDetails });
-    //console.log(res.cookie.access_token);
   } catch (error) {
     next(error);
   }
