@@ -68,12 +68,11 @@ const HotelPage = () => {
   if (loading && !data) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className='h-screen w-full grid'>
       <Navbar />
       {/* <Header type='list' /> */}
       <div className='hotelContainer'>
-        <div className='hotelContainer'>
-          {/* {open && (
+        {/* {open && (
               <div className='slider'>
                 <span className='close' onClick={() => setOpen(false)}>
                   <FaRegWindowClose />
@@ -93,64 +92,63 @@ const HotelPage = () => {
                 </span>
               </div>
             )} */}
-          <div className='hotelWrapper'>
-            <button className='bookNow'>Reserve or Book Now!</button>
-            <h1 className='hotelTitle'>{data?.name}</h1>
-            <div className='hotelAddress'>
-              <FaSearchLocation />
-              <span>{data?.address}</span>
-            </div>
-            <span className='hotelDistance'>
-              Excellent location – {data?.distance}m from center
-            </span>
-            <span className='hotelPriceHighlight'>
-              Book a stay over ${data?.cheapestPrice} at this property and get a
-              free airport taxi
-            </span>
-            <div className='hotelImages'>
-              {data?.photos?.map((photo, i) => (
-                <div className='hotelImgWrapper' key={i}>
-                  <img
-                    // onClick={() => handleOpen(i)}
-                    src={photo}
-                    alt=''
-                    className='hotelImg'
-                  />
-                </div>
-              ))}
-            </div>
-            <div className='hotelDetails'>
-              <div className='hotelDetailsTexts'>
-                <h1 className='hotelTitle'>{data?.title}</h1>
-                <p className='hotelDesc'>{data?.desc}</p>
+        <div className=''>
+          <button className='bookNow'>Reserve or Book Now!</button>
+          <h1 className='font-bold text-3xl'>{data?.name}</h1>
+          <div className=''>
+            <FaSearchLocation className='inline mx-2' />
+            <span>{data?.address}</span>
+          </div>
+          <span className='text-blue-600'>
+            Excellent location – {data?.distance}m from center
+          </span>
+          <div className='text-green-600'>
+            Book a stay over ${data?.cheapestPrice} at this property and get a
+            free airport taxi
+          </div>
+          <div className='hotelImages'>
+            {data?.photos?.map((photo, i) => (
+              <div className='hotelImgWrapper' key={i}>
+                <img
+                  // onClick={() => handleOpen(i)}
+                  src={photo}
+                  alt=''
+                  className='hotelImg'
+                />
               </div>
-              <div className='hotelDetailsPrice'>
-                <h1>Perfect for a {totalDays}-night stay!</h1>
-                <span>
-                  Located in the real heart of Krakow, this property has an
-                  excellent location score of 9.8!
-                </span>
-                <h2>
-                  <b>
-                    $
-                    {data
-                      ? totalDays *
-                        data.cheapestPrice *
-                        (state.options.room || 0)
-                      : null}
-                  </b>{" "}
-                  ({totalDays} nights)
-                </h2>
-                <button>Reserve or Book Now!</button>
-              </div>
+            ))}
+          </div>
+          <div className=''>
+            <div className=''>
+              <h1 className=''>{data?.title}</h1>
+              <p className=''>{data?.desc}</p>
             </div>
           </div>
-          <MailList />
-          <Footer />
+          <div className='grid gap-2 bg-blue-100 rounded-md border border-gray-300 p-2 max-w-[16rem]'>
+            <h1 className='font-bold text-gray-700'>
+              Perfect for a {totalDays}-night stay!
+            </h1>
+            <span>
+              Located in the real heart of Krakow, this property has an
+              excellent location score of 9.8!
+            </span>
+            <h2>
+              <b className='font-bold text-2xl'>
+                $
+                {data
+                  ? totalDays * data.cheapestPrice * (state.options.room || 0)
+                  : null}
+              </b>{" "}
+              ({totalDays} nights)
+            </h2>
+            <button className='btn btn-primary'>Reserve or Book Now!</button>
+          </div>
         </div>
-        {/* {openModal && <Reserve setOpen={setOpenModal} hotelId={id} />} */}
+        {/* <MailList /> */}
+        <Footer />
       </div>
-    </>
+      {/* {openModal && <Reserve setOpen={setOpenModal} hotelId={id} />} */}
+    </div>
   );
 };
 
