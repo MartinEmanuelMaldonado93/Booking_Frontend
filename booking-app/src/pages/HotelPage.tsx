@@ -38,14 +38,17 @@ const HotelPage = () => {
 
   const { state, dispatch } = useContext(SearchContext);
 
-  let d1, d2, totalDays;
+  let d1,
+    d2,
+    totalDays = 0;
   if (state.dates && state.dates.length > 0) {
     d1 = state.dates[0].startDate!;
     d2 = state.dates[0].endDate!;
 
     totalDays = getDifferenceOfDays(d1, d2);
   }
-  // console.log("heee - heeee", totalDays);
+  console.log("heee - heeee", totalDays);
+  console.log("hotel:", data);
   // const handleOpen = (i) => {
   //   setSlideNumber(i);
   //   setOpen(true);
@@ -62,11 +65,11 @@ const HotelPage = () => {
 
   //   setSlideNumber(newSlideNumber);
   // };
-  if (loading) return <div>Loading...</div>;
+  if (loading && !data) return <div>Loading...</div>;
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       {/* <Header type='list' /> */}
       <div className='hotelContainer'>
         <div className='hotelContainer'>
@@ -90,25 +93,25 @@ const HotelPage = () => {
                 </span>
               </div>
             )} */}
-          {/* <div className='hotelWrapper'>
+          <div className='hotelWrapper'>
             <button className='bookNow'>Reserve or Book Now!</button>
-            <h1 className='hotelTitle'>{data.name}</h1>
+            <h1 className='hotelTitle'>{data?.name}</h1>
             <div className='hotelAddress'>
               <FaSearchLocation />
-              <span>{data.address}</span>
+              <span>{data?.address}</span>
             </div>
             <span className='hotelDistance'>
-              Excellent location – {data.distance}m from center
+              Excellent location – {data?.distance}m from center
             </span>
             <span className='hotelPriceHighlight'>
-              Book a stay over ${data.cheapestPrice} at this property and get a
+              Book a stay over ${data?.cheapestPrice} at this property and get a
               free airport taxi
             </span>
             <div className='hotelImages'>
-              {data.photos?.map((photo, i) => (
+              {data?.photos?.map((photo, i) => (
                 <div className='hotelImgWrapper' key={i}>
                   <img
-                    onClick={() => handleOpen(i)}
+                    // onClick={() => handleOpen(i)}
                     src={photo}
                     alt=''
                     className='hotelImg'
@@ -118,23 +121,30 @@ const HotelPage = () => {
             </div>
             <div className='hotelDetails'>
               <div className='hotelDetailsTexts'>
-                <h1 className='hotelTitle'>{data.title}</h1>
-                <p className='hotelDesc'>{data.desc}</p>
+                <h1 className='hotelTitle'>{data?.title}</h1>
+                <p className='hotelDesc'>{data?.desc}</p>
               </div>
               <div className='hotelDetailsPrice'>
-                <h1>Perfect for a {days}-night stay!</h1>
+                <h1>Perfect for a {totalDays}-night stay!</h1>
                 <span>
                   Located in the real heart of Krakow, this property has an
                   excellent location score of 9.8!
                 </span>
                 <h2>
-                  <b>${days * data.cheapestPrice * options.room}</b> ({days}{" "}
-                  nights)
+                  <b>
+                    $
+                    {data
+                      ? totalDays *
+                        data.cheapestPrice *
+                        (state.options.room || 0)
+                      : null}
+                  </b>{" "}
+                  ({totalDays} nights)
                 </h2>
-                <button onClick={handleClick}>Reserve or Book Now!</button>
+                <button>Reserve or Book Now!</button>
               </div>
             </div>
-          </div> */}
+          </div>
           <MailList />
           <Footer />
         </div>

@@ -1,43 +1,43 @@
 import { Hotel } from "@types";
 import { Link } from "react-router-dom";
 type props = {
-  hotelItem: Hotel | undefined;
+  hotelItem: Hotel | undefined | null;
 };
-function SearchItem({ hotelItem }: props) {
-  if (!hotelItem) return <></>;
+function SearchItem({ hotelItem: hotel }: props) {
+  if (!hotel) return <></>;
 
   return (
-    <div className='searchItem'>
+    <div className='flex border border-gray-300 rounded-md p-2'>
       <img
-        src={hotelItem.photos ? hotelItem.photos.join(" ") : ""}
-        alt=''
-        className='siImg'
+        src={hotel.photos?.join(" ") ?? ""}
+        alt='hotel photography'
+        className='max-w-xs h-auto'
       />
-      <div className='siDesc'>
-        <h1 className='siTitle'>{hotelItem.name}</h1>
-        <span className='siDistance'>{hotelItem.distance}m from center</span>
-        <span className='siTaxiOp'>Free airport taxi</span>
-        <span className='siSubtitle'>
-          Studio Apartment with Air conditioning
-        </span>
-        <span className='siFeatures'>{hotelItem.desc}</span>
-        <span className='siCancelOp'>Free cancellation </span>
-        <span className='siCancelOpSubtitle'>
+      <div className='grid gap-2'>
+        <h1 className='text-lg'>{hotel.name}</h1>
+        <div className=''>{hotel.distance}m from center</div>
+        <div className='badge bg-green-600'>Free airport taxi</div>
+        <div className='font-bold'>Studio Apartment with Air conditioning</div>
+        <div className='siFeatures'>{hotel.desc}</div>
+        <div className='font-bold text-green-600'>Free cancellation </div>
+        <div className='italic text-green-600'>
           You can cancel later, so lock in this great price today!
-        </span>
+        </div>
       </div>
-      <div className='siDetails'>
-        {hotelItem.rating && (
+      <div className=''>
+        {hotel.rating && (
           <div className='siRating'>
             <span>Excellent</span>
-            <button>{hotelItem.rating}</button>
+            <button>{hotel.rating}</button>
           </div>
         )}
-        <div className='siDetailTexts'>
-          <span className='siPrice'>${hotelItem.cheapestPrice}</span>
-          <span className='siTaxOp'>Includes taxes and fees</span>
-          <Link to={`/hotels/${hotelItem._id}`}>
-            <button className='siCheckButton'>See availability</button>
+        <div className='grid gap-3'>
+          <div className='font-bold text-end text-xl'>
+            ${hotel.cheapestPrice}
+          </div>
+          <div className='text-gray-600'>Includes taxes and fees</div>
+          <Link to={`/hotels/${hotel._id}`}>
+            <button className='btn btn-primary'>See availability</button>
           </Link>
         </div>
       </div>

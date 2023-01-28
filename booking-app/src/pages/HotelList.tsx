@@ -20,29 +20,29 @@ const List = () => {
   const [destination, setDestination] = useState(
     location.state.destination as string
   );
-  const [dates, setDates] = useState(location.state.dates as Range[]);
   const [options, setOptions] = useState(
     location.state.options as optionsHotel
   );
-  const [min, setMin] = useState<number | undefined>(undefined);
-  const [max, setMax] = useState<number | undefined>(undefined);
+  const [dates, setDates] = useState(location.state.dates as Range[]);
+  const [minPrice, setMin] = useState<number>(0);
+  const [maxPrice, setMax] = useState<number>(999);
 
-  const { data, loading, error, reFetchData } = UseFetch<Hotel>(
-    `http://localhost:8800/api/hotels?city=${destination}&min=${min || 0}&max=${
-      max || 999
-    }`
+  const { data, loading, error, reFetchData } = UseFetch<Hotel[]>(
+    `http://localhost:8800/api/hotels?city=${destination}&min=${minPrice}&max=${maxPrice}`
   );
 
   useEffect(() => {
     console.log("data hotel!", data);
   }, [data]);
 
+  if (loading) return <div>Loading...</div>;
+
   return (
     <div>
       <Navbar />
       {/* <Header type='list' /> */}
       <div className='listContainer'>
-        <div className='flex '>
+        <div className='flex p-2'>
           {/* Aside */}
           <div className='p-2 rounded-md max-w-xs shadow-sm bg-yellow-400'>
             <h1 className='text-xl font-bold'>Search</h1>
@@ -105,16 +105,10 @@ const List = () => {
             </div>
             <button>Search</button>
           </div>
-          <div className='listResult'>
-            <SearchItem hotelItem={data}/>
-            {/* <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem /> */}
+          <div className='p-2'>
+            {data?.map((item) => (
+              <SearchItem hotelItem={item} />
+            ))}
           </div>
         </div>
       </div>
