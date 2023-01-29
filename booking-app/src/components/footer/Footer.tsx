@@ -5,12 +5,12 @@ function Footer() {
     <footer className='w-full bg-white dark:bg-gray-900'>
       <div className='container px-1 py-2 mx-auto'>
         <div className='text-center'>
-          <a
+          {/* <a
             href='#'
             className='text-2xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300'
           >
             Brand
-          </a>
+          </a> */}
 
           <p className='max-w-md mx-auto mt-2 text-gray-500 dark:text-gray-400'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.

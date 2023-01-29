@@ -10,29 +10,32 @@ const FeaturedProperties = () => {
   if (loading) return <div>"Loading..."</div>;
 
   return (
-    <div className=''>
+    <div className='m-2 p-2'>
       <div className='text-2xl text-gray-700'>Homes guests love</div>
-      {data?.map((hotel) => (
-        <div className='fpItem' key={hotel.title}>
-          <img
-            src={hotel.photos ? hotel.photos[0] : ""}
-            alt=''
-            className='fpImg'
-          />
-          <span className='fpName'>{hotel.name}</span>
-          <span className='fpCity'>{hotel.city}</span>
-          <span className='fpPrice'>Starting from {hotel.cheapestPrice}</span>
-          {hotel.rating && (
-            <div className='fpRating'>
-              <button>
+      <div className='flex flex-wrap p-2 justify-evenly'>
+        {data?.map((hotel) => (
+          <div className='' key={hotel.title}>
+            <img
+              // src={hotel.photos ? hotel.photos[0] : "https://picsum.photos/200/300"}
+              src={`https://picsum.photos/seed/${hotel.type}/200/300`}
+              alt=''
+              className='rounded-md min-w-[10rem] max-w-[12rem] h-full max-h-[8rem] object-cover shadow-md'
+            />
+            <div className='font-bold'>{hotel.name}</div>
+            <div className='capitalize'>{hotel.city}</div>
+            <div className='font-bold'>
+              Starting from ${hotel.cheapestPrice}
+            </div>
+            {hotel.rating && (
+              <div className=''>
                 {hotel.rating}{" "}
                 {"☆".repeat(Math.ceil(Math.random() * hotel.rating) / 2)}
-              </button>
-              <span>Excellent</span>
-            </div>
-          )}
-        </div>
-      ))}
+                <span>Excellent</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

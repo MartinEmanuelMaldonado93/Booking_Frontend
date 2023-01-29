@@ -38,7 +38,7 @@ function Header({ type }: props) {
   }
 
   return (
-    <div className='px-2 text-white'>
+    <div className='px-2 text-white '>
       <RecreationOptions />
       <div className='my-4 text-3xl font-bold'>
         A lifetime of discounts? It's Genius.
