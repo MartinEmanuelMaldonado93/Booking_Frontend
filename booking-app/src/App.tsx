@@ -14,13 +14,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path={PublicRoute.HOTELS} element={<List />} />
         <Route path={PublicRoute.HOTELS_ID} element={<HotelPage />} />
-        <Route path={PublicRoute.LOGIN} element={<Login />} />
-        {/* private routes : dashboard*/}
-        {/* <Route element={<AuthGuard />}>
-          <>
-            <div>private page, only registered users have permissions</div>
-          </>
-        </Route> */}
+        <Route element={<AuthGuard />}>
+          <Route path={PublicRoute.LOGIN} element={<Login />} />
+        </Route>
         <Route path='*' element={<div>404 Not found</div>} />
       </Routes>
     </BrowserRouter>
