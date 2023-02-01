@@ -49,8 +49,8 @@ const List = () => {
           <RecreationOptions />
         </div>
       </div>
-      <div className='flex p-2'>
-        <aside className='grid gap-2 p-2 rounded-md max-w-xs shadow-sm bg-yellow-400'>
+      <div className='flex justify-center flex-wrap lg:flex-nowrap p-2 max-w-[70rem]  m-auto'>
+        <aside className='grid sm:gap-2 p-2 rounded-md max-w-xs shadow-sm bg-purple-300'>
           <h2 className='text-xl font-bold'>Search</h2>
           <div className=''>
             <div className='font-bold'>Destination</div>
@@ -67,31 +67,32 @@ const List = () => {
               <OptionsHotel options={options} setOptions={setOptions} />
             </div>
           </div>
+
           <h2 className='font-bold'>Options</h2>
-          <div className='grid gap-2 grid-cols-2 justify-between p-3'>
+          <div className='grid justify-items-end gap-2 grid-cols-2 p-3'>
             <div className=''>
-              Min price <span>per night</span>
+              Min price <small>(per night)</small>
             </div>
-            <input type='number' className='input inline max-w-[5rem]' />
+            <input type='number' className='input max-w-[5rem]' />
             <span className=''>
-              Max price <small>per night</small>
+              Max price <small>(per night)</small>
             </span>
-            <input type='number' className='input inline max-w-[5rem]' />
-            <span className=''>Adult</span>
+            <input type='number' className='input max-w-[5rem]' />
+            <span className='justify-self-center'>Adult</span>
             <input
               type='number'
               min={1}
-              className='input inline max-w-[5rem]'
+              className='input max-w-[5rem]'
               placeholder={options.adult?.toString()}
             />
-            <span className=''>Children</span>
+            <span className='justify-self-center'>Children</span>
             <input
               type='number'
               min={0}
-              className='input inline max-w-[4rem]'
+              className='input max-w-[5rem]'
               placeholder={options.children?.toString()}
             />
-            <span className=''>Room</span>
+            <span className='justify-self-center'>Room</span>
             <input
               type='number'
               min={1}
@@ -101,7 +102,7 @@ const List = () => {
           </div>
           <button className='btn btn-primary'>Search</button>
         </aside>
-        <div className='p-2'>
+        <div className='p-2  '>
           {data?.map((item) => (
             <SearchItem hotelItem={item} />
           ))}

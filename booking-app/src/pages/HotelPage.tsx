@@ -106,14 +106,14 @@ const HotelPage = () => {
             Book a stay over ${data?.cheapestPrice} at this property and get a
             free airport taxi
           </div>
-          <div className='hotelImages'>
+          <div className=''>
             {data?.photos?.map((photo, i) => (
-              <div className='hotelImgWrapper' key={i}>
+              <div className='' key={i}>
                 <img
                   // onClick={() => handleOpen(i)}
                   src={photo}
                   alt=''
-                  className='hotelImg'
+                  className=''
                 />
               </div>
             ))}
@@ -144,7 +144,7 @@ const HotelPage = () => {
             <button className='btn btn-primary'>Reserve or Book Now!</button>
           </div>
         </div>
-        {/* <MailList /> */}
+        <MailList />
         <Footer />
       </div>
       {/* {openModal && <Reserve setOpen={setOpenModal} hotelId={id} />} */}

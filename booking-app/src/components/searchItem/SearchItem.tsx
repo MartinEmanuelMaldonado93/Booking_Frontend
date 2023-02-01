@@ -7,18 +7,19 @@ function SearchItem({ hotelItem: hotel }: props) {
   if (!hotel) return <></>;
 
   return (
-    <div className='flex border border-gray-300 rounded-md p-2'>
+    <div className='flex flex-wrap lg:flex-nowrap justify-center gap-6 border border-gray-300 rounded-md p-4'>
       <img
-        src={hotel.photos?.join(" ") ?? ""}
+        // src={hotel.photos?.pop() ?? ""}
+        src={`https://picsum.photos/seed/hotels/300/300`}
         alt='hotel photography'
-        className='max-w-xs h-auto'
+        className='rounded-sm shadow-md max-w-[14rem] h-full aspect-square m-2'
       />
-      <div className='grid gap-2'>
-        <h1 className='text-lg'>{hotel.name}</h1>
+      <div className='grid gap-2 w-full'>
+        <h1 className='text-lg font-bold'>{hotel.name}</h1>
         <div className=''>{hotel.distance}m from center</div>
-        <div className='badge bg-green-600'>Free airport taxi</div>
+        <div className='badge bg-green-600 border-none'>Free airport taxi</div>
         <div className='font-bold'>Studio Apartment with Air conditioning</div>
-        <div className='siFeatures'>{hotel.desc}</div>
+        <div className='bg-gray-300 rounded-sm p-2'>{hotel.desc}</div>
         <div className='font-bold text-green-600'>Free cancellation </div>
         <div className='italic text-green-600'>
           You can cancel later, so lock in this great price today!

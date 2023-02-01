@@ -44,7 +44,7 @@ function Header({ type }: props) {
   return (
     <div className='px-2 text-white '>
       <RecreationOptions />
-      <div className='my-4 text-3xl font-bold'>
+      <div className='my-4 text-lg sm:text-3xl font-bold'>
         A lifetime of discounts? It's Genius.
       </div>
       <div className='flex flex-wrap my-4 gap-4'>
@@ -56,7 +56,7 @@ function Header({ type }: props) {
           Sign in / Register
         </button>
       </div>
-      <div className='flex p-2 py-1 justify-between items-center translate-y-2/4 rounded-md border-2 border-yellow-200 bg-white text-gray-700 hover:border-yellow-400'>
+      <div className='flex flex-wrap p-2 py-1 justify-between items-center translate-y-2/4 rounded-md border-2 border-yellow-200 bg-white text-gray-700 hover:border-yellow-400'>
         <Destination
           destination={destination}
           setDestination={setDestination}

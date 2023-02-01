@@ -15,14 +15,14 @@ function CalendarDays({ dates, setDates }: props) {
   const ToDate = format(dates[0].endDate!, "MM/dd/yyyy");
 
   return (
-    <div className='flex items-center gap-2  dropdown dropdown-hover dropdown-bottom '>
+    <div className='flex flex-wrap items-center gap-2  dropdown dropdown-hover dropdown-bottom '>
       <FaCalendarDay />
       <span tabIndex={0} className='flex gap-4 text-lg cursor-pointer'>
         {`${FromDate} to ${ToDate}`}
       </span>
       <div
         tabIndex={0}
-        className='dropdown-content menu bg-base-100 relative max-w-xs p-2 border border-gray rounded-md shadow-md text-center'
+        className='dropdown-content menu relative max-w-xs p-2 border rounded-md bg-base-100 border-gray shadow-md text-center'
       >
         <DateRange
           editableDateInputs={true}

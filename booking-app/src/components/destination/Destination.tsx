@@ -13,7 +13,7 @@ function Destination({ destination, setDestination }: props) {
       <input
         type='text'
         placeholder='Where are you going?'
-        className='input py-1 max-w-ms'
+        className='input py-1 '
         onChange={(e) => setDestination(e.target.value)} // todo: implement throttle
       />
     </div>

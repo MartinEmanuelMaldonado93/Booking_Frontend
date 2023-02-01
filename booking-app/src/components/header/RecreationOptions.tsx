@@ -2,7 +2,7 @@ import { FaBed, FaCar, FaMosque, FaPlane, FaTaxi } from "react-icons/fa";
 
 function RecreationOptions() {
   return (
-    <div className='navbar gap-2'>
+    <div className='grid grid-cols-2 sm:navbar flex-wrap gap-2'>
       <div className='btn rounded-full duration-300 bg-inherit hover:bg-inherit hover:text-black border-white gap-2'>
         <FaBed />
         <span>Stays</span>
