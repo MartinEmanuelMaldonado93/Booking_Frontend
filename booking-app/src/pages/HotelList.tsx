@@ -6,6 +6,8 @@ import {
   CalendarDays,
   OptionsHotel,
   SearchItem,
+  RecreationOptions,
+  HeaderLayout,
 } from "@components";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
@@ -13,6 +15,8 @@ import { UseFetch } from "@hooks";
 import { Hotel, optionsHotel } from "@types";
 import { getIDHotelLocation } from "@utils";
 import type { Range } from "react-date-range/index";
+// import HeaderLayout from "@components";
+// import RecreationOptions from "src/components/header/RecreationOptions";
 
 const List = () => {
   // const hotelId = getIDHotelLocation();
@@ -38,81 +42,72 @@ const List = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div>
-      <Navbar />
-      {/* <Header type='list' /> */}
-      <div className='listContainer'>
-        <div className='flex p-2'>
-          {/* Aside */}
-          <div className='p-2 rounded-md max-w-xs shadow-sm bg-yellow-400'>
-            <h1 className='text-xl font-bold'>Search</h1>
-            <div className='lsItem'>
-              <div>Destination</div>
-              <input
-                className='input py-1 w-full max-w-xs capitalize'
-                placeholder={destination}
-                type='text'
-              />
-            </div>
+    <>
+      <div className='px-4 bg-blue-600 w-full flex justify-center'>
+        <div className='max-w-[70rem]'>
+          <Navbar />
+          <RecreationOptions />
+        </div>
+      </div>
+      <div className='flex p-2'>
+        <aside className='grid gap-2 p-2 rounded-md max-w-xs shadow-sm bg-yellow-400'>
+          <h2 className='text-xl font-bold'>Search</h2>
+          <div className=''>
+            <div className='font-bold'>Destination</div>
+            <input
+              className='input py-1 w-full max-w-xs capitalize'
+              placeholder={destination}
+              type='text'
+            />
+          </div>
+          <div>
+            <div>Check-in Date</div>
             <div className='bg-base-200 rounded-md p-2'>
-              <div>Check-in Date</div>
               <CalendarDays dates={dates} setDates={setDates} />
               <OptionsHotel options={options} setOptions={setOptions} />
             </div>
-            <div className='lsItem'>
-              <label>Options</label>
-              <div className='lsOptions'>
-                <div className='lsOptionItem'>
-                  <span className='lsOptionText'>
-                    Min price <small>per night</small>
-                  </span>
-                  <input type='number' className='lsOptionInput' />
-                </div>
-                <div className='lsOptionItem'>
-                  <span className='lsOptionText'>
-                    Max price <small>per night</small>
-                  </span>
-                  <input type='number' className='lsOptionInput' />
-                </div>
-                <div className='lsOptionItem'>
-                  <span className='lsOptionText'>Adult</span>
-                  <input
-                    type='number'
-                    min={1}
-                    className='lsOptionInput'
-                    placeholder={options.adult?.toString()}
-                  />
-                </div>
-                <div className='lsOptionItem'>
-                  <span className='lsOptionText'>Children</span>
-                  <input
-                    type='number'
-                    min={0}
-                    className='lsOptionInput'
-                    placeholder={options.children?.toString()}
-                  />
-                </div>
-                <div className='lsOptionItem'>
-                  <span className='lsOptionText'>Room</span>
-                  <input
-                    type='number'
-                    min={1}
-                    className='lsOptionInput'
-                    placeholder={options.room?.toString()}
-                  />
-                </div>
-              </div>
+          </div>
+          <h2 className='font-bold'>Options</h2>
+          <div className='grid gap-2 grid-cols-2 justify-between p-3'>
+            <div className=''>
+              Min price <span>per night</span>
             </div>
-            <button>Search</button>
+            <input type='number' className='input inline max-w-[5rem]' />
+            <span className=''>
+              Max price <small>per night</small>
+            </span>
+            <input type='number' className='input inline max-w-[5rem]' />
+            <span className=''>Adult</span>
+            <input
+              type='number'
+              min={1}
+              className='input inline max-w-[5rem]'
+              placeholder={options.adult?.toString()}
+            />
+            <span className=''>Children</span>
+            <input
+              type='number'
+              min={0}
+              className='input inline max-w-[4rem]'
+              placeholder={options.children?.toString()}
+            />
+            <span className=''>Room</span>
+            <input
+              type='number'
+              min={1}
+              className='input inline max-w-[5rem]'
+              placeholder={options.room?.toString()}
+            />
           </div>
-          <div className='p-2'>
-            {data?.map((item) => (
-              <SearchItem hotelItem={item} />
-            ))}
-          </div>
+          <button className='btn btn-primary'>Search</button>
+        </aside>
+        <div className='p-2'>
+          {data?.map((item) => (
+            <SearchItem hotelItem={item} />
+          ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

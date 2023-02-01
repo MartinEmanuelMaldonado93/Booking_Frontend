@@ -71,7 +71,7 @@ const HotelPage = () => {
     <div className='h-screen w-full grid'>
       <Navbar />
       {/* <Header type='list' /> */}
-      <div className='hotelContainer'>
+      <div className=''>
         {/* {open && (
               <div className='slider'>
                 <span className='close' onClick={() => setOpen(false)}>
@@ -93,7 +93,7 @@ const HotelPage = () => {
               </div>
             )} */}
         <div className=''>
-          <button className='bookNow'>Reserve or Book Now!</button>
+          <button className=''>Reserve or Book Now!</button>
           <h1 className='font-bold text-3xl'>{data?.name}</h1>
           <div className=''>
             <FaSearchLocation className='inline mx-2' />

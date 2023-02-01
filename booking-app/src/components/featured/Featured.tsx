@@ -12,22 +12,20 @@ function Featured() {
 
   return (
     <div className='m-4 px-4'>
-      <div className='flex flex-wrap justify-between my-4'>
+      <div className='flex flex-wrap justify-around md:justify-between gap-2 my-4'>
         {data?.map((amount, i) => (
           <div
             key={Math.random()}
-            className='max-w-xs overflow-hidden bg-base-100  shadow-lg'
+            className='overflow-hidden bg-base-100 shadow-lg'
           >
             <img
               src={citiesInfo[i].img}
               alt=''
-              className='object-cover h-56 rounded-lg'
+              className='max-w-[10rem] sm:max-w-[15rem] object-cover rounded-lg'
             />
-            <div className='featuredTitles py-5 text-center'>
+            <div className='absolute translate-x-4 -translate-y-[120%]  text-white text-xl sm:text-3xl font-bold '>
               <h1>{citiesInfo[i].city}</h1>
-              <h2 className='text-sm text-gray-700 dark:text-gray-200'>
-                {data[i]} properties
-              </h2>
+              <h2 className='dark:text-gray-200'>{data[i]} properties</h2>
             </div>
           </div>
         ))}

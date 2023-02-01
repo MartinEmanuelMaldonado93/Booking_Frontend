@@ -2,10 +2,14 @@ import format from "date-fns/format";
 import { useContext, useState } from "react";
 import { FaBed, FaCalendarDay, FaPersonBooth } from "react-icons/fa";
 import { DateRange } from "react-date-range";
-import RecreationOptions from "./RecreationOptions";
 import { itemDateRange, optionsHotel } from "@types";
 import type { Range } from "react-date-range/index";
-import { CalendarDays, Destination, OptionsHotel } from "@components";
+import {
+  CalendarDays,
+  Destination,
+  OptionsHotel,
+  RecreationOptions,
+} from "@components";
 import { SearchContext } from "@context";
 import { useNavigate } from "react-router-dom";
 

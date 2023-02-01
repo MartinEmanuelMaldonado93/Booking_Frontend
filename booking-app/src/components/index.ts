@@ -9,3 +9,5 @@ export { CalendarDays } from "./calendar/CalendarDays";
 export { OptionsHotel } from "./optionsHotel/OptionsHotel";
 export { Destination } from "./destination/Destination";
 export { SearchItem } from "./searchItem/SearchItem";
+export { RecreationOptions } from "./header/RecreationOptions";
+export { default as HeaderLayout } from "./layouts/headerLayout";

@@ -10,16 +10,16 @@ const FeaturedProperties = () => {
   if (loading) return <div>"Loading..."</div>;
 
   return (
-    <div className='m-2 p-2'>
-      <div className='text-2xl text-gray-700'>Homes guests love</div>
-      <div className='flex flex-wrap p-2 justify-evenly'>
+    <div className='px-4'>
+      <div className='text-2xl text-gray-900'>Homes guests love</div>
+      <div className='flex flex-wrap justify-evenly'>
         {data?.map((hotel) => (
-          <div className='' key={hotel.title}>
+          <div className='grid gap-2 place-items-center p-6' key={hotel.title}>
             <img
               // src={hotel.photos ? hotel.photos[0] : "https://picsum.photos/200/300"}
-              src={`https://picsum.photos/seed/${hotel.type}/200/300`}
+              src={`https://picsum.photos/seed/${hotel.type}/300/300`}
               alt=''
-              className='rounded-md min-w-[10rem] max-w-[12rem] h-full max-h-[8rem] object-cover shadow-md'
+              className='max-w-[8rem] sm:max-w-[12rem] h-full rounded-sm object-cover shadow-md'
             />
             <div className='font-bold'>{hotel.name}</div>
             <div className='capitalize'>{hotel.city}</div>
@@ -30,7 +30,7 @@ const FeaturedProperties = () => {
               <div className=''>
                 {hotel.rating}{" "}
                 {"☆".repeat(Math.ceil(Math.random() * hotel.rating) / 2)}
-                <span>Excellent</span>
+                <span className='p-2 text-white bg-blue-600'>Excellent</span>
               </div>
             )}
           </div>

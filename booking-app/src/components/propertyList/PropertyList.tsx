@@ -11,9 +11,9 @@ function PropertyList() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className='m-4 px-4'>
-      <div className='text-2xl text-gray-700'>Browse by property type</div>
-      <div className='flex flex-wrap justify-between my-2'>
+    <div className='px-4'>
+      <div className='text-2xl text-gray-900'>Browse by property type</div>
+      <div className='flex flex-wrap justify-evenly sm:justify-between'>
         {data &&
           DummyHotelPhotos.map((src: string, i: number) => (
             <div className='card duration-300 hover:shadow-xl' key={src}>
