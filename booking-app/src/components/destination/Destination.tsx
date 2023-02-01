@@ -1,4 +1,9 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, {
+  Dispatch,
+  HTMLAttributes,
+  SetStateAction,
+  useState,
+} from "react";
 import { FaBed } from "react-icons/fa";
 
 type props = {

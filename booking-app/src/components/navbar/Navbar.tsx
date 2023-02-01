@@ -5,13 +5,14 @@ const Navbar = () => {
   return (
     <div className='navbar justify-between flex-wrap w-full text-white '>
       <Link to='/' className='btn btn-ghost normal-case text-xl'>
-       <FaAirbnb className="mr-2"/>MartinBooking
+        <FaAirbnb className='mr-2' />
+        MartinBooking
       </Link>
       <div className='flex gap-2'>
-        <button className='btn py-3 px-4 min-h-0 h-auto text-black bg-cyan-50 border-none hover:bg-cyan-200 '>
+        <button className='btn py-3 px-4 min-h-0 h-auto text-black bg-cyan-50 border-none hover:bg-purple-300 '>
           Register
         </button>
-        <button className='btn py-3 px-4 min-h-0 h-auto text-black bg-cyan-50 border-none hover:bg-cyan-200 '>
+        <button className='btn py-3 px-4 min-h-0 h-auto text-black bg-cyan-50 border-none hover:bg-purple-300 '>
           Login
         </button>
       </div>

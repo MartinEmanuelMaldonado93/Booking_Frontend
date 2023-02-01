@@ -52,7 +52,7 @@ function Header({ type }: props) {
           Get rewarded for your travels – unlock instant savings of 10% or more
           with a free Lamabooking account
         </p>
-        <button className='btn py-3 px-2 min-h-0 h-auto rounded-sm text-black bg-cyan-50 border-none hover:bg-cyan-200'>
+        <button className='btn py-3 px-2 min-h-0 h-auto rounded-sm text-black bg-cyan-50 border-none hover:bg-pink-500 '>
           Sign in / Register
         </button>
       </div>
