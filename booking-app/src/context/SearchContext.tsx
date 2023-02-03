@@ -10,14 +10,17 @@ type SearchedDestination = {
   dates?: Range[];
   options: optionsHotel;
 };
+
 type SearchAction = {
   type: "NEW_SEARCH" | "RESET_SEARCH"; // literal type ideally besides enums.
   payload: SearchedDestination;
 };
+
 type DestinationContext = {
   state: SearchedDestination;
   dispatch: Dispatch<SearchAction>;
 };
+
 const INITIAL_STATE: SearchedDestination = {
   city: undefined,
   dates: [],
@@ -27,15 +30,17 @@ const INITIAL_STATE: SearchedDestination = {
     room: undefined,
   },
 };
+
 const INITIAL_CONTEXT: DestinationContext = {
   state: INITIAL_STATE,
   dispatch: () => null,
 };
+
 export const SearchContext = createContext<DestinationContext>(INITIAL_CONTEXT);
 
 export const SearchContextProvider = ({ children }: propsProvider) => {
   const [state, dispatch] = useReducer(dispatchSearch, INITIAL_STATE);
-  
+
   function dispatchSearch(state: SearchedDestination, action: SearchAction) {
     const { type, payload } = action;
     switch (type) {

@@ -6,8 +6,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // plugins: [tsconfigPaths(), react()],//1
-  // plugins: [react(), tsconfigPaths()],//2
+  base: "./",
   resolve: {
     // alias: {// 3
     //   // "@components": path.resolve("src/components/*"),
@@ -32,6 +31,14 @@ export default defineConfig({
       {
         find: "@context",
         replacement: path.resolve(__dirname, "src/context/SearchContext"),
+      },
+      {
+        find: "@reduxStore",
+        replacement: path.resolve(__dirname, "src/redux/*"),
+      },
+      {
+        find: "@services",
+        replacement: path.resolve(__dirname, "src/services/"),
       },
     ],
   },

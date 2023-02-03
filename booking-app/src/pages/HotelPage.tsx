@@ -11,7 +11,13 @@
 // } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Footer, Header, MailList, Navbar } from "@components";
+import {
+  Footer,
+  Header,
+  MailList,
+  Navbar,
+  RecreationOptions,
+} from "@components";
 import {
   FaAngleLeft,
   FaAngleRight,
@@ -24,10 +30,17 @@ import { getDifferenceOfDays, getIDHotelLocation } from "@utils";
 import { SearchContext } from "@context";
 
 const HotelPage = () => {
-  const idHotel = getIDHotelLocation();
+  const location = useLocation();
+  const idHotel = location.state._id as number;
   const { data, loading } = UseFetch<Hotel | undefined>(
     `http://localhost:8800/api/hotels/find/${idHotel}`
   );
+
+  useEffect(() => {
+    // return () => {
+    //   second;
+    // };
+  }, []);
 
   const [slideNumber, setSlideNumber] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -47,8 +60,6 @@ const HotelPage = () => {
 
     totalDays = getDifferenceOfDays(d1, d2);
   }
-  console.log("heee - heeee", totalDays);
-  console.log("hotel:", data);
   // const handleOpen = (i) => {
   //   setSlideNumber(i);
   //   setOpen(true);
@@ -65,13 +76,20 @@ const HotelPage = () => {
 
   //   setSlideNumber(newSlideNumber);
   // };
-  if (loading && !data) return <div>Loading...</div>;
+  const handleReserve = () => {
+    // redirects to Login
+  };
+  // if (loading && !data) return <div>Loading...</div>;
 
   return (
-    <div className='h-screen w-full grid'>
-      <Navbar />
-      {/* <Header type='list' /> */}
-      <div className=''>
+    <div className='h-screen flex flex-col gap-16 justify-between content-center items-center mx-auto'>
+      <div className='px-4 bg-blue-600 w-full flex justify-center'>
+        <div className='max-w-[70rem]'>
+          <Navbar />
+          <RecreationOptions />
+        </div>
+      </div>
+      <div className='max-w-[70rem]'>
         {/* {open && (
               <div className='slider'>
                 <span className='close' onClick={() => setOpen(false)}>
@@ -93,7 +111,10 @@ const HotelPage = () => {
               </div>
             )} */}
         <div className=''>
-          <button className=''>Reserve or Book Now!</button>
+          {/* Redirects to login !!*/}
+          <button onClick={handleReserve} className=''>
+            Reserve or Book Now!
+          </button>
           <h1 className='font-bold text-3xl'>{data?.name}</h1>
           <div className=''>
             <FaSearchLocation className='inline mx-2' />

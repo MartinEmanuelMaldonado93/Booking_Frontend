@@ -1,1 +1,2 @@
-export * from "./auth.service";
+// import * from "./auth.service";
+export { default as getUser } from "./auth.service";

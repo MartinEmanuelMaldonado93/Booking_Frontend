@@ -1,3 +1,5 @@
+import type { Range } from "react-date-range/index";
+
 export type Hotel = {
   _id?: number;
   name: string;
@@ -44,4 +46,10 @@ export type optionsHotel = {
   adult?: number;
   children?: number;
   room?: number;
+};
+
+export type navegationHotelParams = {
+  destination: string;
+  dates: Range[];
+  options: optionsHotel;
 };
