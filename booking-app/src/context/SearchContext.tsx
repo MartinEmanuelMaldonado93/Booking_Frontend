@@ -18,7 +18,7 @@ type SearchAction = {
 
 type DestinationContext = {
   state: SearchedDestination;
-  dispatch: Dispatch<SearchAction>;
+  dispatch?: Dispatch<SearchAction>;
 };
 
 const INITIAL_STATE: SearchedDestination = {
@@ -33,25 +33,24 @@ const INITIAL_STATE: SearchedDestination = {
 
 const INITIAL_CONTEXT: DestinationContext = {
   state: INITIAL_STATE,
-  dispatch: () => null,
 };
 
 export const SearchContext = createContext<DestinationContext>(INITIAL_CONTEXT);
 
 export const SearchContextProvider = ({ children }: propsProvider) => {
-  const [state, dispatch] = useReducer(dispatchSearch, INITIAL_STATE);
+  const [state, dispatch] = useReducer(setSearch, INITIAL_STATE);
 
-  function dispatchSearch(state: SearchedDestination, action: SearchAction) {
-    const { type, payload } = action;
-    switch (type) {
+  function setSearch(state: SearchedDestination, action: SearchAction) {
+    switch (action.type) {
       case "NEW_SEARCH":
-        return payload; // new data
+        return action.payload; // new data
       case "RESET_SEARCH":
-        return INITIAL_STATE;
-      default:
         return state;
+      default:
+        throw new Error("No action defined in context provider");
     }
   }
+
   return (
     <SearchContext.Provider value={{ state, dispatch }}>
       {children}

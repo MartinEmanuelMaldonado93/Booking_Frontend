@@ -28,29 +28,24 @@ import { UseFetch } from "@hooks";
 import { Hotel } from "@types";
 import { getDifferenceOfDays, getIDHotelLocation } from "@utils";
 import { SearchContext } from "@context";
+import { BASE_URL, PRIVATE, PUBLIC } from "../models";
 
-const HotelPage = () => {
+const HotelSelected = () => {
   const location = useLocation();
-  const idHotel = location.state._id as number;
-  const { data, loading } = UseFetch<Hotel | undefined>(
-    `http://localhost:8800/api/hotels/find/${idHotel}`
+  const ID = location.state._id as number;
+
+  const { data, loading } = UseFetch<Hotel>(
+    `${BASE_URL}/api/hotels/find/${ID}`
   );
 
-  useEffect(() => {
-    // return () => {
-    //   second;
-    // };
-  }, []);
-
-  const [slideNumber, setSlideNumber] = useState(0);
-  const [openModal, setOpenModal] = useState(false);
-  const [open, setOpen] = useState(false);
+  // const [slideNumber, setSlideNumber] = useState(0);
+  // const [openModal, setOpenModal] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   //   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  const { state, dispatch } = useContext(SearchContext);
-
+  const navigate = useNavigate(); // to Login
+  const { state } = useContext(SearchContext);
+  console.log(state);
   let d1,
     d2,
     totalDays = 0;
@@ -78,6 +73,9 @@ const HotelPage = () => {
   // };
   const handleReserve = () => {
     // redirects to Login
+    // dispatch({type:"NEW_SEARCH",payload:{city}})
+    // navigate(PUBLIC.LOGIN, { state: {} });
+    // console.log(state);
   };
   // if (loading && !data) return <div>Loading...</div>;
 
@@ -111,10 +109,7 @@ const HotelPage = () => {
               </div>
             )} */}
         <div className=''>
-          {/* Redirects to login !!*/}
-          <button onClick={handleReserve} className=''>
-            Reserve or Book Now!
-          </button>
+          <button className='btn btn-ghost'>Reserve or Book Now!</button>
           <h1 className='font-bold text-3xl'>{data?.name}</h1>
           <div className=''>
             <FaSearchLocation className='inline mx-2' />
@@ -162,7 +157,9 @@ const HotelPage = () => {
               </b>{" "}
               ({totalDays} nights)
             </h2>
-            <button className='btn btn-primary'>Reserve or Book Now!</button>
+            <button className='btn btn-primary' onClick={handleReserve}>
+              Reserve or Book Now!
+            </button>
           </div>
         </div>
         <MailList />
@@ -173,4 +170,4 @@ const HotelPage = () => {
   );
 };
 
-export default HotelPage;
+export default HotelSelected;

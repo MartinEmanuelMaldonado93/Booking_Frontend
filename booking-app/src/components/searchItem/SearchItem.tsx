@@ -1,6 +1,6 @@
 import { Hotel } from "@types";
 import { Link, useNavigate } from "react-router-dom";
-import { PublicRoute } from "../../models";
+import { PUBLIC } from "../../models";
 type props = {
   hotel: Hotel;
 };
@@ -8,11 +8,12 @@ function SearchItem({ hotel }: props) {
   const navigate = useNavigate();
 
   function handleSearch() {
-    //to HotelPage
-    navigate(PublicRoute.HOTELS_ID, {
+    //to HotelSelected
+    navigate(PUBLIC.HOTEL_BY_ID, {
       state: { _id: hotel._id },
     });
   }
+
   return (
     <div className='flex flex-wrap lg:flex-nowrap justify-center gap-6 border border-gray-300 rounded-md p-4'>
       <img
@@ -44,8 +45,6 @@ function SearchItem({ hotel }: props) {
             ${hotel.cheapestPrice}
           </div>
           <div className='text-gray-600'>Includes taxes and fees</div>
-          {/* <Link to={PublicRoute.HOTELS_ID}>
-          </Link> */}
           <button onClick={handleSearch} className='btn btn-primary'>
             See availability
           </button>

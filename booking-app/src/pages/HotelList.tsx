@@ -15,10 +15,10 @@ import { UseFetch } from "@hooks";
 import { Hotel, navegationHotelParams, optionsHotel } from "@types";
 import { getIDHotelLocation } from "@utils";
 import type { Range } from "react-date-range/index";
+import { BASE_URL } from "../models";
 
-const List = () => {
+const HotelList = () => {
   const location = useLocation();
-  const hotelId = getIDHotelLocation(location.pathname);
   const hotelParams = location.state as navegationHotelParams;
   const [destination, setDestination] = useState(
     hotelParams.destination ?? "madrid"
@@ -29,9 +29,9 @@ const List = () => {
   const [maxPrice, setMax] = useState<number>(999);
 
   const { data, loading, error, reFetchData } = UseFetch<Hotel[]>(
-    `http://localhost:8800/api/hotels?city=${destination}&min=${minPrice}&max=${maxPrice}`
+    `${BASE_URL}/api/hotels?city=${destination}&min=${minPrice}&max=${maxPrice}`
   );
-
+  
   function handleSearch() {
     reFetchData();
   }
@@ -146,4 +146,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default HotelList;

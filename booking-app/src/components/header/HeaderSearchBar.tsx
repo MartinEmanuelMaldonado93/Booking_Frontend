@@ -10,13 +10,13 @@ import {
   OptionsHotel,
   RecreationOptions,
 } from "@components";
-import { SearchContext } from "@context";
+import { SearchContext, SearchContextProvider } from "@context";
 import { useNavigate } from "react-router-dom";
 
 type props = {
   type?: string;
 };
-function Header({ type }: props) {
+function HeaderSearchBar({ type }: props) {
   const [dates, setDates] = useState<Range[]>([
     {
       startDate: new Date(),
@@ -30,15 +30,16 @@ function Header({ type }: props) {
     room: 0,
   });
   const [destination, setDestination] = useState("");
-  const { state, dispatch } = useContext(SearchContext);
   const navigate = useNavigate();
 
-  function handleSearch() {
-    dispatch({
+  const { dispatch } = useContext(SearchContext);
+
+  function handleNewSearch() {
+    dispatch!({
       type: "NEW_SEARCH",
       payload: { city: destination, dates, options },
     });
-    navigate("/hotels", { state: { destination, dates, options } }); // to List.tsx
+    navigate("/hotels", { state: { destination, dates, options } });
   }
 
   return (
@@ -66,7 +67,7 @@ function Header({ type }: props) {
         <div className='headerSearchItem'>
           <button
             className='btn border-none py-3 px-2 min-h-0 h-auto bg-blue-700 hover:bg-blue-800'
-            onClick={handleSearch}
+            onClick={handleNewSearch}
           >
             Search
           </button>
@@ -76,4 +77,4 @@ function Header({ type }: props) {
   );
 }
 
-export { Header };
+export { HeaderSearchBar as Header };

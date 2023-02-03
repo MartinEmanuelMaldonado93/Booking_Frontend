@@ -1,9 +1,11 @@
-export const PublicRoute = {
+export const BASE_URL = "http://localhost:8800";
+
+export const PUBLIC = {
   LOGIN: "/login",
   HOTELS: "/hotels",
-  HOTELS_ID: "/hotels/hotelpage",
+  HOTEL_BY_ID: "/hotels/hotelselected",
 };
 
-export const PrivateRoute = {
+export const PRIVATE = {
   DASHBOARD: "/dashboard",
 };

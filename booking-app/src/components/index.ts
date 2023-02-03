@@ -1,7 +1,7 @@
 export { Featured } from "./featured/Featured";
 export { FeaturedProperties } from "./featuredProperty/FeatureProperty";
 export { Footer } from "./footer/Footer";
-export { Header } from "./header/Header";
+export { Header } from "./header/HeaderSearchBar";
 export { MailList } from "./mailList/MailList";
 export { Navbar } from "./navbar/Navbar";
 export { PropertyList } from "./propertyList/PropertyList";
