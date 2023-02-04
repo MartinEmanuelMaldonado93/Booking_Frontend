@@ -20,7 +20,8 @@ type AuthContext = {
 };
 
 const INITIAL_STATE: AuthUserData = {
-  user: JSON.parse(localStorage.getItem("user") ?? "") || null,
+  // user: JSON.parse(localStorage.getItem("user") || "") || null,
+  user: null,
   loading: false,
   error: null,
 };
@@ -67,18 +68,14 @@ export const AuthContextProvider = ({ children }: props) => {
     }
   }
 
-  useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(state.user));
-  }, [state.user]);
+  // useEffect(() => {
+  //   // localStorage.setItem("user", JSON.stringify(state.user));
+  // }, [state.user]);
 
   return (
     <AuthContext.Provider
       value={{
-        state: {
-          user: null,
-          loading: state.loading,
-          error: state.error,
-        },
+        state,
         dispatch,
       }}
     >

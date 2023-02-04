@@ -1,22 +1,30 @@
 // import { useDispatch } from "react-redux";
 import { getUser } from "@services";
 import { createUser } from "@reduxState";
-import { ChangeEvent, MouseEventHandler, useState } from "react";
+import { ChangeEvent, MouseEventHandler, useContext, useState } from "react";
 import { User } from "@types";
-import { UserInfo } from "src/models";
+import { BASE_URL, UserInfo } from "../../models";
 import { UseFetch } from "@hooks";
 import { FaAirbnb } from "react-icons/fa";
+import { AuthContext } from "@context";
 
 function Login() {
   const [userLogin, setUser] = useState({
     userName: "",
     password: "",
   });
-  // const dispatch = useDispatch();
+  const { state, dispatch } = useContext(AuthContext);
 
-  const handleLogin = (
+  const handleLogin = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
+    event.preventDefault();
+
+    dispatch!({
+      type: "LOGIN_START",
+      payload: { error: null, loading: false, user: null },
+    }); //todo***
+
     const options: RequestInit = {
       method: "POST",
       headers: {
@@ -26,13 +34,27 @@ function Login() {
       body: `${JSON.stringify(userLogin)}`,
     };
 
-    fetch("http://localhost:8800/api/auth/login", options)
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
+    fetch(`${BASE_URL}/api/auth/login`, options)
+      .then((resp) => {
+        if (!resp.ok) {
+          dispatch!({
+            type: "LOGIN_FAILURE",
+            payload: {
+              user: null,
+              loading: false,
+              error: resp.status,
+            },
+          });
+          return Promise.reject(resp.statusText);
+        }
+        return resp.json();
+      })
+      .then((data) => console.log(data))
+      .catch(console.log);
   };
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    event.preventDefault();
     if (!event.target) return;
 
     const t = event.target;
@@ -62,6 +84,7 @@ function Login() {
       <button onClick={handleLogin} className='btn btn-primary'>
         Login
       </button>
+      {state.error ? <span>{state.error.message}</span> : null}
     </div>
   );
 }
