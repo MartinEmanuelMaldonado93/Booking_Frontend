@@ -23,7 +23,7 @@
       "@constants": ["src/constants/hotelPhotos"],
       "@utils": ["src/utils"],
       "@services": ["src/services"],
-      "@context": ["src/context/SearchContext"],
+      "@context": ["src/context"],
       "@reduxStore": ["src/redux/store"],
       "@reduxState": ["src/redux/states/user"],
     }

@@ -30,7 +30,7 @@ export default defineConfig({
       },
       {
         find: "@context",
-        replacement: path.resolve(__dirname, "src/context/SearchContext"),
+        replacement: path.resolve(__dirname, "src/context/"),
       },
       {
         find: "@reduxStore",

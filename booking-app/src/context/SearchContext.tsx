@@ -1,9 +1,6 @@
 import { optionsHotel } from "@types";
 import { Dispatch, ReactNode, createContext, useReducer } from "react";
 import type { Range } from "react-date-range/index";
-type propsProvider = {
-  children?: ReactNode;
-};
 
 type SearchedDestination = {
   city: undefined | string;
@@ -37,7 +34,10 @@ const INITIAL_CONTEXT: DestinationContext = {
 
 export const SearchContext = createContext<DestinationContext>(INITIAL_CONTEXT);
 
-export const SearchContextProvider = ({ children }: propsProvider) => {
+type props = {
+  children?: ReactNode;
+};
+export const SearchContextProvider = ({ children }: props) => {
   const [state, dispatch] = useReducer(setSearch, INITIAL_STATE);
 
   function setSearch(state: SearchedDestination, action: SearchAction) {
@@ -45,7 +45,7 @@ export const SearchContextProvider = ({ children }: propsProvider) => {
       case "NEW_SEARCH":
         return action.payload; // new data
       case "RESET_SEARCH":
-        return state;
+        return INITIAL_STATE;
       default:
         throw new Error("No action defined in context provider");
     }

@@ -1,14 +1,3 @@
-// import Navbar from "@components/navbar/Navbar";
-// import Header from "@components/header/Header";
-// import MailList from "@components/mailList/MailList";
-// import Footer from "@components/footer/Footer";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faCircleArrowLeft,
-//   faCircleArrowRight,
-//   faCircleXmark,
-//   faLocationDot,
-// } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
@@ -37,24 +26,21 @@ const HotelSelected = () => {
   const { data, loading } = UseFetch<Hotel>(
     `${BASE_URL}/api/hotels/find/${ID}`
   );
-
   // const [slideNumber, setSlideNumber] = useState(0);
   // const [openModal, setOpenModal] = useState(false);
   // const [open, setOpen] = useState(false);
-
   //   const { user } = useContext(AuthContext);
   const navigate = useNavigate(); // to Login
   const { state } = useContext(SearchContext);
-  console.log(state);
-  let d1,
-    d2,
-    totalDays = 0;
-  if (state.dates && state.dates.length > 0) {
-    d1 = state.dates[0].startDate!;
-    d2 = state.dates[0].endDate!;
+  // console.log(state);
 
-    totalDays = getDifferenceOfDays(d1, d2);
-  }
+  // let d1 = state.dates![0].startDate || new Date();
+  // let d2 = state.dates![0].endDate || new Date("2/13/2023");
+  let d1 = new Date();
+  let d2 = new Date("2/13/2023");
+
+  let totalDays = getDifferenceOfDays(d1, d2);
+  console.log(totalDays);
   // const handleOpen = (i) => {
   //   setSlideNumber(i);
   //   setOpen(true);
@@ -71,11 +57,12 @@ const HotelSelected = () => {
 
   //   setSlideNumber(newSlideNumber);
   // };
+
+  // redirects to Login
   const handleReserve = () => {
-    // redirects to Login
-    // dispatch({type:"NEW_SEARCH",payload:{city}})
-    // navigate(PUBLIC.LOGIN, { state: {} });
-    // console.log(state);
+    console.log(state);
+    // dispatch({type:"NEW_SEARCH",payload:{city:des}})
+    navigate(PUBLIC.LOGIN);
   };
   // if (loading && !data) return <div>Loading...</div>;
 
@@ -88,59 +75,40 @@ const HotelSelected = () => {
         </div>
       </div>
       <div className='max-w-[70rem]'>
-        {/* {open && (
-              <div className='slider'>
-                <span className='close' onClick={() => setOpen(false)}>
-                  <FaRegWindowClose />
-                </span>
-                <span className='arrow' onClick={() => handleMove("l")}>
-                  <FaAngleLeft />
-                </span>
-                <div className='sliderWrapper'>
+        {/* images carousel */}
+        <div className='flex justify-between m-8'>
+          <div className=''>
+            <h1 className='font-bold text-3xl'>{data?.name}</h1>
+            <div className='p-2'>
+              <span className='capitalize'>{data?.address}</span>
+              <FaSearchLocation className='inline mx-2' />
+            </div>
+            <span className='text-blue-600 text-lg'>
+              Excellent location – {data?.distance}m from center
+            </span>
+            <div className='text-green-600 text-lg'>
+              Book a stay over ${data?.cheapestPrice} at this property and get a
+              free airport taxi
+            </div>
+            <div className=''>
+              {data?.photos?.map((photo, i) => (
+                <div className='' key={i}>
                   <img
-                    src={data.photos[slideNumber]}
+                    // onClick={() => handleOpen(i)}
+                    src={photo}
                     alt=''
-                    className='sliderImg'
+                    className=''
                   />
                 </div>
-                <span className='arrow' onClick={() => handleMove("r")}>
-                  <FaAngleRight />
-                </span>
-              </div>
-            )} */}
-        <div className=''>
-          <button className='btn btn-ghost'>Reserve or Book Now!</button>
-          <h1 className='font-bold text-3xl'>{data?.name}</h1>
-          <div className=''>
-            <FaSearchLocation className='inline mx-2' />
-            <span>{data?.address}</span>
-          </div>
-          <span className='text-blue-600'>
-            Excellent location – {data?.distance}m from center
-          </span>
-          <div className='text-green-600'>
-            Book a stay over ${data?.cheapestPrice} at this property and get a
-            free airport taxi
-          </div>
-          <div className=''>
-            {data?.photos?.map((photo, i) => (
-              <div className='' key={i}>
-                <img
-                  // onClick={() => handleOpen(i)}
-                  src={photo}
-                  alt=''
-                  className=''
-                />
-              </div>
-            ))}
-          </div>
-          <div className=''>
-            <div className=''>
-              <h1 className=''>{data?.title}</h1>
-              <p className=''>{data?.desc}</p>
+              ))}
+            </div>
+            <div className='p-2'>
+              <h1 className='text-2xl'>{data?.title}</h1>
+              <p className='text-xl'>{data?.desc}</p>
             </div>
           </div>
-          <div className='grid gap-2 bg-blue-100 rounded-md border border-gray-300 p-2 max-w-[16rem]'>
+
+          <div className='flex flex-col gap-4 p-4 max-w-[16rem] bg-blue-100 rounded-md border border-gray-300'>
             <h1 className='font-bold text-gray-700'>
               Perfect for a {totalDays}-night stay!
             </h1>

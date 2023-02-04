@@ -16,6 +16,7 @@ import { Hotel, navegationHotelParams, optionsHotel } from "@types";
 import { getIDHotelLocation } from "@utils";
 import type { Range } from "react-date-range/index";
 import { BASE_URL } from "../models";
+import { v4 as uuidv4 } from "uuid";
 
 const HotelList = () => {
   const location = useLocation();
@@ -135,7 +136,7 @@ const HotelList = () => {
             <div className='w-full'>Loading....</div>
           ) : (
             data?.map((hotelItem) => (
-              <div key={Math.random().toString()}>
+              <div key={uuidv4()}>
                 <SearchItem hotel={hotelItem} />
               </div>
             ))
