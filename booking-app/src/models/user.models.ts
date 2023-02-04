@@ -1,7 +1,9 @@
 export type UserInfo = {
   userName: string;
   email: string;
-  password: string;// might be optional
-  isAdmin: boolean;
-  _id: number | undefined;
+  _id?: number;
+  isAdmin?: boolean;
+  __v?: number;
+  createdAt: string;
+  updatedAt: string;
 };

@@ -1,10 +1,8 @@
 import { Dispatch, createContext, useEffect, useReducer } from "react";
+import { UserInfo } from "src/models";
 
 type AuthUserData = {
-  user: {
-    userName: string;
-    password: string;
-  } | null;
+  user: UserInfo | null;
   loading: boolean;
   error: any;
 };

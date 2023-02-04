@@ -8,4 +8,5 @@ export const PUBLIC = {
 
 export const PRIVATE = {
   DASHBOARD: "/dashboard",
+  CHECKOUT: "/checkout",
 };

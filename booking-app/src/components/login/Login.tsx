@@ -9,7 +9,7 @@ import { FaAirbnb } from "react-icons/fa";
 import { AuthContext } from "@context";
 
 function Login() {
-  const [userLogin, setUser] = useState({
+  const [credentials, setCredentials] = useState({
     userName: "",
     password: "",
   });
@@ -20,10 +20,10 @@ function Login() {
   ) => {
     event.preventDefault();
 
-    dispatch!({
-      type: "LOGIN_START",
-      payload: { error: null, loading: false, user: null },
-    }); //todo***
+    // dispatch!({
+    //   type: "LOGIN_START",
+    //   payload: { error: null, loading: false, user: null },
+    // }); //todo***
 
     const options: RequestInit = {
       method: "POST",
@@ -31,9 +31,8 @@ function Login() {
         cookie: `${localStorage.getItem("access_token") ?? ""}`,
         "Content-Type": "application/json",
       },
-      body: `${JSON.stringify(userLogin)}`,
+      body: `${JSON.stringify(credentials)}`,
     };
-
     fetch(`${BASE_URL}/api/auth/login`, options)
       .then((resp) => {
         if (!resp.ok) {
@@ -47,9 +46,16 @@ function Login() {
           });
           return Promise.reject(resp.statusText);
         }
+
         return resp.json();
       })
-      .then((data) => console.log(data))
+      .then((user: UserInfo) => {
+        console.log(user);
+        dispatch!({
+          type: "LOGIN_SUCCESS",
+          payload: { user, error: false, loading: false },
+        });
+      })
       .catch(console.log);
   };
 
@@ -58,7 +64,7 @@ function Login() {
     if (!event.target) return;
 
     const t = event.target;
-    setUser((prev) => ({ ...prev, [t.id]: t.value }));
+    setCredentials((prev) => ({ ...prev, [t.id]: t.value }));
   }
 
   return (
