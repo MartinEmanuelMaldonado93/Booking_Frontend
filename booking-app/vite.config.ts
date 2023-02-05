@@ -13,16 +13,20 @@ export default defineConfig({
     // },
     alias: [
       {
+        find: "@models",
+        replacement: path.resolve(__dirname, "src/models"),
+      },
+      {
         find: "@components",
-        replacement: path.resolve(__dirname, "src/components/"),
+        replacement: path.resolve(__dirname, "src/components"),
       },
       {
         find: "@hooks",
-        replacement: path.resolve(__dirname, "src/hooks/"),
+        replacement: path.resolve(__dirname, "src/hooks"),
       },
       {
         find: "@constants",
-        replacement: path.resolve(__dirname, "src/constants/index"),
+        replacement: path.resolve(__dirname, "src/api"),
       },
       {
         find: "@utils",
@@ -30,15 +34,15 @@ export default defineConfig({
       },
       {
         find: "@context",
-        replacement: path.resolve(__dirname, "src/context/"),
+        replacement: path.resolve(__dirname, "src/context"),
       },
       {
         find: "@reduxStore",
-        replacement: path.resolve(__dirname, "src/redux/*"),
+        replacement: path.resolve(__dirname, "src/redux"),
       },
       {
         find: "@services",
-        replacement: path.resolve(__dirname, "src/services/"),
+        replacement: path.resolve(__dirname, "src/services"),
       },
     ],
   },

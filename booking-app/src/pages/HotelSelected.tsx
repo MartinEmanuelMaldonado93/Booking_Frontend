@@ -40,7 +40,7 @@ const HotelSelected = () => {
   let d2 = new Date("2/13/2023");
 
   let totalDays = getDifferenceOfDays(d1, d2);
-  console.log(totalDays);
+  // console.log(totalDays);
   // const handleOpen = (i) => {
   //   setSlideNumber(i);
   //   setOpen(true);
@@ -60,9 +60,9 @@ const HotelSelected = () => {
 
   // redirects to Login
   const handleReserve = () => {
-    console.log(state);
+    // console.log(state);
     // dispatch({type:"NEW_SEARCH",payload:{city:des}})
-    navigate(PUBLIC.LOGIN);
+    navigate(PRIVATE.CHECKOUT);
   };
   // if (loading && !data) return <div>Loading...</div>;
 

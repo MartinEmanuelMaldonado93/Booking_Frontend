@@ -8,7 +8,6 @@ import AuthGuard from "./guards/auth.guard";
 import "./index.css";
 import {
   AuthContextProvider,
-  SearchContext,
   SearchContextProvider,
 } from "@context";
 

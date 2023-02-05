@@ -10,8 +10,9 @@ import {
   OptionsHotel,
   RecreationOptions,
 } from "@components";
-import { SearchContext, SearchContextProvider } from "@context";
+import { AuthContext, SearchContext } from "@context";
 import { useNavigate } from "react-router-dom";
+import { PUBLIC } from "@models";
 
 type props = {
   type?: string;
@@ -30,16 +31,18 @@ function HeaderSearchBar({ type }: props) {
     room: 0,
   });
   const [destination, setDestination] = useState("");
+
   const navigate = useNavigate();
 
   const { dispatch } = useContext(SearchContext);
+  const { state } = useContext(AuthContext);
 
   function handleNewSearch() {
     dispatch!({
       type: "NEW_SEARCH",
       payload: { city: destination, dates, options },
     });
-    navigate("/hotels", { state: { destination, dates, options } });
+    navigate(PUBLIC.HOTELS, { state: { destination, dates, options } });
   }
 
   return (
@@ -53,11 +56,13 @@ function HeaderSearchBar({ type }: props) {
           Get rewarded for your travels – unlock instant savings of 10% or more
           with a free Lamabooking account
         </p>
-        <button className='btn py-3 px-2 min-h-0 h-auto rounded-sm text-black bg-cyan-50 border-none hover:bg-pink-500 '>
-          Sign in / Register
-        </button>
+        {!state.user ? (
+          <button className='btn py-3 px-2 min-h-0 h-auto rounded-sm text-black bg-cyan-50 border-none hover:bg-pink-500 '>
+            Sign in / Register
+          </button>
+        ) : null}
       </div>
-      <div className='flex flex-wrap p-2 py-1 justify-between items-center translate-y-2/4 rounded-md border-2 border-yellow-200 bg-white text-gray-700 hover:border-yellow-400'>
+      <div className='flex flex-wrap gap-2 p-2 py-1 justify-between items-center translate-y-2/4 rounded-md border-2 border-yellow-200 bg-white text-gray-700 hover:border-yellow-400'>
         <Destination
           destination={destination}
           setDestination={setDestination}

@@ -1,7 +1,5 @@
-import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 import { PUBLIC } from "../models";
-import { AppStore } from "src/redux/store";
 import { useContext } from "react";
 import { AuthContext } from "@context";
 

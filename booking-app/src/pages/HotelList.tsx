@@ -22,7 +22,7 @@ const HotelList = () => {
   const location = useLocation();
   const hotelParams = location.state as navegationHotelParams;
   const [destination, setDestination] = useState(
-    hotelParams.destination ?? "madrid"
+    hotelParams.destination || "madrid"
   );
   const [options, setOptions] = useState(hotelParams.options);
   const [dates, setDates] = useState(hotelParams.dates);
@@ -69,8 +69,7 @@ const HotelList = () => {
             </div>
             <input
               className='input max-w-[5rem]'
-              // pattern='/[0-9]*/'
-              // value={minPrice}
+              pattern='/[0-9]*/'
               onChange={({ target }) =>
                 !Number.isNaN(target.value)
                   ? setMin(Number(target.value))

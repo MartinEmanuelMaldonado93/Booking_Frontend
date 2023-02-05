@@ -16,6 +16,17 @@ export type Hotel = {
   featured: boolean;
 };
 
+export type HotelByType = {
+  type: string;
+  count: number;
+};
+
+export type optionsHotel = {
+  adult?: number;
+  children?: number;
+  room?: number;
+};
+
 export type Room = {
   title: string;
   price: number | string;
@@ -24,28 +35,10 @@ export type Room = {
   roomNumber: { numberRoom: number; unavailableDates: string[] }[];
 };
 
-export type User = {
-  userName: string;
-  email: string;
-  password: string;
-  isAdmin: boolean;
-};
-
-export type HotelByType = {
-  type: string;
-  count: number;
-};
-
 export type itemDateRange = {
   startDate: Date;
   endDate: Date | 0;
   key: string;
-};
-
-export type optionsHotel = {
-  adult?: number;
-  children?: number;
-  room?: number;
 };
 
 export type navegationHotelParams = {

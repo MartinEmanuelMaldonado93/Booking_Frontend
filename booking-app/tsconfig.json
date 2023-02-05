@@ -19,13 +19,14 @@
     "paths": {
       "@components": ["src/components"],
       "@types": ["src/types"],
+      "@models": ["src/models"],
       "@hooks": ["src/hooks"],
-      "@constants": ["src/constants/hotelPhotos"],
+      "@constants": ["src/api"],
       "@utils": ["src/utils"],
       "@services": ["src/services"],
       "@context": ["src/context"],
       "@reduxStore": ["src/redux/store"],
-      "@reduxState": ["src/redux/states/user"],
+      "@reduxState": ["src/redux/states/user"]
     }
   },
   "include": ["src"],

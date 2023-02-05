@@ -15,7 +15,7 @@ function CalendarDays({ dates, setDates }: props) {
   const ToDate = format(dates[0].endDate!, "MM/dd/yyyy");
 
   return (
-    <div className='flex flex-wrap items-center gap-2  dropdown dropdown-hover dropdown-bottom '>
+    <div className='flex flex-wrap items-center gap-2  dropdown dropdown-hover dropdown-bottom  hover:z-10'>
       <FaCalendarDay />
       <span tabIndex={0} className='flex gap-4 text-lg cursor-pointer'>
         {`${FromDate} to ${ToDate}`}
@@ -25,6 +25,7 @@ function CalendarDays({ dates, setDates }: props) {
         className='dropdown-content menu relative max-w-xs p-2 border rounded-md bg-base-100 border-gray shadow-md text-center'
       >
         <DateRange
+          className='hover:z-10'
           editableDateInputs={true}
           onChange={(item) => setDates([item.selection])}
           moveRangeOnFirstSelection={false}

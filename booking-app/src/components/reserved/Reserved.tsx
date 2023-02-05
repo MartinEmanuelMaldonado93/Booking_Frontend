@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 function Reserved() {
   const navigate = useNavigate();
   useEffect(() => {
-    // setTimeout(() => navigate("/"), 2000);
+    setTimeout(() => navigate("/"), 2000);
   }, []);
+
   return (
     <div className='flex flex-col h-screen'>
       <div className='bg-blue-400'>
