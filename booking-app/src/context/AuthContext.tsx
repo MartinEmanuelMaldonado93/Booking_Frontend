@@ -1,5 +1,8 @@
+import { getUserFromLocalStorage, setUserToLocalStorage } from "@utils";
 import { Dispatch, createContext, useEffect, useReducer } from "react";
 import { UserInfo } from "src/models";
+
+const KEY_STORAGE = "user_martinbooking";
 
 type AuthUserData = {
   user: UserInfo | null;
@@ -17,23 +20,24 @@ type AuthContext = {
   dispatch?: Dispatch<AuthUserAction>; // "?" important for ts check
 };
 
-const INITIAL_STATE: AuthUserData = {
-  // user: JSON.parse(localStorage.getItem("user") || "") || null,
-  user: null,
+const userInit = getUserFromLocalStorage(KEY_STORAGE);
+
+const initialState: AuthUserData = {
+  user: userInit,
   loading: false,
   error: null,
 };
 
-const INITIAL_CONTEXT: AuthContext = {
-  state: INITIAL_STATE,
+const initialContext: AuthContext = {
+  state: initialState,
 };
-export const AuthContext = createContext(INITIAL_CONTEXT);
+export const AuthContext = createContext(initialContext);
 
 type props = {
   children?: JSX.Element | JSX.Element[];
 };
 export const AuthContextProvider = ({ children }: props) => {
-  const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(AuthReducer, initialState);
 
   function AuthReducer(state: AuthUserData, action: AuthUserAction) {
     switch (action.type) {
@@ -66,9 +70,9 @@ export const AuthContextProvider = ({ children }: props) => {
     }
   }
 
-  // useEffect(() => {
-  //   // localStorage.setItem("user", JSON.stringify(state.user));
-  // }, [state.user]);
+  useEffect(() => {
+    setUserToLocalStorage(KEY_STORAGE, state.user);
+  }, [state.user]);
 
   return (
     <AuthContext.Provider

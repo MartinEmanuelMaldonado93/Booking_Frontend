@@ -1,10 +1,8 @@
 import type { Range } from "react-date-range/index";
 
+const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
 /** Return difference or 0 if any of the parameters don't have */
 export default function getDifferenceOfDays(date1: Date, date2: Date) {
-  const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
-  // const dateTwo = date2.startDate?.getTime() || 0;
-  // const dateOne = date2.startDate?.getTime() || 0;
   const dateTwo = date2.getTime();
   const dateOne = date1.getTime();
 

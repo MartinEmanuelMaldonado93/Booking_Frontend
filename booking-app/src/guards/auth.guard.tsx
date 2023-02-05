@@ -9,7 +9,6 @@ import { AuthContext } from "@context";
 function AuthGuard() {
   const { state } = useContext(AuthContext);
   const { user } = state;
-  console.log(user);
   return user ? <Outlet /> : <Navigate replace to={PUBLIC.LOGIN} />;
 }
 export default AuthGuard;

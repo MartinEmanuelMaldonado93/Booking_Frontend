@@ -1,12 +1,12 @@
-// import { useDispatch } from "react-redux";
 import { getUser } from "@services";
 import { createUser } from "@reduxState";
 import { ChangeEvent, MouseEventHandler, useContext, useState } from "react";
 import { User } from "@types";
-import { BASE_URL, UserInfo } from "../../models";
+import { BASE_URL, PRIVATE, UserInfo } from "../../models";
 import { UseFetch } from "@hooks";
 import { FaAirbnb } from "react-icons/fa";
 import { AuthContext } from "@context";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -14,16 +14,17 @@ function Login() {
     password: "",
   });
   const { state, dispatch } = useContext(AuthContext);
-
-  const handleLogin = async (
+  const navigate = useNavigate();
+  
+  async function handleLogin(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  ) {
     event.preventDefault();
 
-    // dispatch!({
-    //   type: "LOGIN_START",
-    //   payload: { error: null, loading: false, user: null },
-    // }); //todo***
+    dispatch!({
+      type: "LOGIN_START",
+      payload: { error: null, loading: false, user: null },
+    }); //todo***
 
     const options: RequestInit = {
       method: "POST",
@@ -50,21 +51,21 @@ function Login() {
         return resp.json();
       })
       .then((user: UserInfo) => {
-        console.log(user);
         dispatch!({
           type: "LOGIN_SUCCESS",
           payload: { user, error: false, loading: false },
         });
+        navigate(PRIVATE.CHECKOUT);
       })
       .catch(console.log);
-  };
+  }
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     event.preventDefault();
     if (!event.target) return;
 
-    const t = event.target;
-    setCredentials((prev) => ({ ...prev, [t.id]: t.value }));
+    const { target } = event;
+    setCredentials((prev) => ({ ...prev, [target.id]: target.value }));
   }
 
   return (
