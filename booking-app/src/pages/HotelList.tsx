@@ -7,7 +7,6 @@ import {
   OptionsHotel,
   SearchItem,
   RecreationOptions,
-  HeaderLayout,
 } from "@components";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
@@ -32,7 +31,7 @@ const HotelList = () => {
   const { data, loading, error, reFetchData } = UseFetch<Hotel[]>(
     `${BASE_URL}/api/hotels?city=${destination}&min=${minPrice}&max=${maxPrice}`
   );
-  
+
   function handleSearch() {
     reFetchData();
   }

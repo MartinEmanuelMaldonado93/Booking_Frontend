@@ -17,7 +17,7 @@ function OptionsHotel({ options, setOptions }: props) {
       [name]: actualCount,
     }));
   };
-  const { adult , children, room } = options;
+  const { adult, children, room } = options;
 
   return (
     <div className='flex  gap-2 items-center dropdown dropdown-hover dropdown-bottom '>
@@ -56,7 +56,7 @@ function OptionsHotel({ options, setOptions }: props) {
           <span className='text-lg'>Children</span>
           <div className='optionCounter'>
             <button
-              disabled={children <= 0}
+              disabled={(children ?? 0) <= 0}
               className='btn btn-primary btn-sm'
               onClick={() => handleOption("children", "d")}
             >
@@ -75,7 +75,7 @@ function OptionsHotel({ options, setOptions }: props) {
           <span className='text-lg'>Room</span>
           <div className='optionCounter'>
             <button
-              disabled={room <= 1}
+              disabled={(room ?? 0) <= 1}
               className='btn btn-primary btn-sm'
               onClick={() => handleOption("room", "d")}
             >

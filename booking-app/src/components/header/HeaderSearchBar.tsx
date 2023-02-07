@@ -2,7 +2,7 @@ import format from "date-fns/format";
 import { useContext, useState } from "react";
 import { FaBed, FaCalendarDay, FaPersonBooth } from "react-icons/fa";
 import { DateRange } from "react-date-range";
-import { itemDateRange, optionsHotel } from "@types";
+import { itemDateRange, navegationHotelParams, optionsHotel } from "@types";
 import type { Range } from "react-date-range/index";
 import {
   CalendarDays,
@@ -42,7 +42,9 @@ function HeaderSearchBar({ type }: props) {
       type: "NEW_SEARCH",
       payload: { city: destination, dates, options },
     });
-    navigate(PUBLIC.HOTELS, { state: { destination, dates, options } });
+    navigate(PUBLIC.HOTELS_LIST, {
+      state: { destination, dates, options } as navegationHotelParams,
+    });
   }
 
   return (

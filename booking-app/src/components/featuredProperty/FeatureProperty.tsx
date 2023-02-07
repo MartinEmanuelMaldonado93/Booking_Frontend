@@ -1,10 +1,11 @@
 import { UseFetch } from "@hooks";
-import { Hotel } from "src/types";
+import { BASE_URL } from "@models";
+import { Hotel } from "@types";
 
 /** Fetch specifically featured `Hotels` */
 const FeaturedProperties = () => {
   const { data, loading, error } = UseFetch<Hotel[]>(
-    "http://localhost:8800/api/hotels?featured=true&limit=4"
+    `${BASE_URL}/api/hotels?featured=true&limit=4`
   );
 
   if (loading) return <div>"Loading..."</div>;

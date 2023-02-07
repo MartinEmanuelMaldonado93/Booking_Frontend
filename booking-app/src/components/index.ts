@@ -10,7 +10,6 @@ export { OptionsHotel } from "./optionsHotel/OptionsHotel";
 export { Destination } from "./destination/Destination";
 export { SearchItem } from "./searchItem/SearchItem";
 export { RecreationOptions } from "./header/RecreationOptions";
-export { default as HeaderLayout } from "./layouts/HeaderLayout";
 export { default as Login } from "./login/Login";
 export { default as NotFound } from "./errorBoundary/NotFound";
 export { default as Reserved } from "./reserved/Reserved";

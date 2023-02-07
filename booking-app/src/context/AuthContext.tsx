@@ -1,6 +1,6 @@
 import { getUserFromLocalStorage, setUserToLocalStorage } from "@utils";
 import { Dispatch, createContext, useEffect, useReducer } from "react";
-import { UserInfo } from "src/models";
+import { UserInfo } from "@types";
 
 const KEY_STORAGE = "user_martinbooking";
 

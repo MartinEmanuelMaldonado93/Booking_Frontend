@@ -2,9 +2,9 @@ import { optionsHotel } from "@types";
 import { Dispatch, ReactNode, createContext, useReducer } from "react";
 import type { Range } from "react-date-range/index";
 
-type SearchedDestination = {
-  city: undefined | string;
-  dates?: Range[];
+export type SearchedDestination = {
+  city?: string;
+  dates: Range[]|[];
   options: optionsHotel;
 };
 

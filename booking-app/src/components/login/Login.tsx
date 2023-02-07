@@ -1,8 +1,7 @@
 import { getUser } from "@services";
 import { createUser } from "@reduxState";
 import { ChangeEvent, MouseEventHandler, useContext, useState } from "react";
-import { User } from "@types";
-import { BASE_URL, PRIVATE, UserInfo } from "../../models";
+import { BASE_URL, PRIVATE, UserInfo } from "@models";
 import { UseFetch } from "@hooks";
 import { FaAirbnb } from "react-icons/fa";
 import { AuthContext } from "@context";

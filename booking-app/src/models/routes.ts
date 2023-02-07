@@ -2,8 +2,9 @@ export const BASE_URL = "http://localhost:8800";
 
 export const PUBLIC = {
   LOGIN: "/login",
-  HOTELS: "/hotels",
-  HOTEL_BY_ID: "/hotels/hotelselected",
+  HOME: "/",
+  HOTELS_LIST: "/hotels",
+  HOTEL_SELECTED: "/hotels/hotelselected",
 };
 
 export const PRIVATE = {

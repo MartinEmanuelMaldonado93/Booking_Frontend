@@ -6,10 +6,7 @@ import { PRIVATE, PUBLIC as PUBLIC } from "./models";
 import { Login, NotFound, Reserved } from "@components";
 import AuthGuard from "./guards/auth.guard";
 import "./index.css";
-import {
-  AuthContextProvider,
-  SearchContextProvider,
-} from "@context";
+import { AuthContextProvider, SearchContextProvider } from "@context";
 
 function App() {
   return (
@@ -18,8 +15,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path={PUBLIC.HOTELS} element={<HotelList />} />
-            <Route path={PUBLIC.HOTEL_BY_ID} element={<HotelSelected />} />
+            <Route path={PUBLIC.HOTELS_LIST} element={<HotelList />} />
+            <Route path={PUBLIC.HOTEL_SELECTED} element={<HotelSelected />} />
             <Route path={PUBLIC.LOGIN} element={<Login />} />
             <Route element={<AuthGuard />}>
               <Route path={PRIVATE.CHECKOUT} element={<Reserved />} />

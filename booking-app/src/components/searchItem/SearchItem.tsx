@@ -1,6 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import { Hotel } from "@types";
-import { Link, useNavigate } from "react-router-dom";
-import { PUBLIC } from "../../models";
+import { PUBLIC } from "@models";
+
 type props = {
   hotel: Hotel;
 };
@@ -8,8 +9,7 @@ function SearchItem({ hotel }: props) {
   const navigate = useNavigate();
 
   function handleSearch() {
-    //to HotelSelected
-    navigate(PUBLIC.HOTEL_BY_ID, {
+    navigate(PUBLIC.HOTEL_SELECTED, {
       state: { _id: hotel._id },
     });
   }

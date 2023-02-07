@@ -1,11 +1,12 @@
 import { UseFetch } from "@hooks";
-import { citiesInfo } from "../../api/featuredHotels";
+import { citiesInfo } from "@constants";
+import { BASE_URL } from "@models";
 
-const citiesAmountQuery = citiesInfo.map((c) => c.city.toLowerCase()).join(",");
+const citiesQuery = citiesInfo.map((c) => c.city.toLowerCase()).join(",");
 /** Fetch specifically featured `cities` */
 function Featured() {
   const { data, loading, error } = UseFetch<number[]>(
-    `http://localhost:8800/api/hotels/countByCity?cities=${citiesAmountQuery}`
+    `${BASE_URL}/api/hotels/countByCity?cities=${citiesQuery}`
   );
 
   if (loading) return <div className='animate-pulse text-4xl'>Loading...</div>;
