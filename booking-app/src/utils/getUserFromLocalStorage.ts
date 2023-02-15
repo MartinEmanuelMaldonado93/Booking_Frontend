@@ -1,4 +1,4 @@
-import { UserInfo } from "src/models";
+import { UserInfo } from "@types";
 
 function getUserFromLocalStorage(KEY_STORAGE: string) {
   const userJSON = localStorage.getItem(KEY_STORAGE);

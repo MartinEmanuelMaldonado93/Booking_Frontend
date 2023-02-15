@@ -1,11 +1,14 @@
 import { getUser } from "@services";
 import { createUser } from "@reduxState";
 import { ChangeEvent, MouseEventHandler, useContext, useState } from "react";
-import { BASE_URL, PRIVATE, UserInfo } from "@models";
+import { BASE_URL, PRIVATE } from "@models";
 import { UseFetch } from "@hooks";
 import { FaAirbnb } from "react-icons/fa";
 import { AuthContext } from "@context";
 import { useNavigate } from "react-router-dom";
+import { authHeader } from "@utils";
+import { UserInfo } from "@types";
+import axios from "axios";
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -14,7 +17,7 @@ function Login() {
   });
   const { state, dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
-  
+
   async function handleLogin(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) {
@@ -23,40 +26,36 @@ function Login() {
     dispatch!({
       type: "LOGIN_START",
       payload: { error: null, loading: false, user: null },
-    }); //todo***
+    });
 
-    const options: RequestInit = {
-      method: "POST",
-      headers: {
-        cookie: `${localStorage.getItem("access_token") ?? ""}`,
-        "Content-Type": "application/json",
-      },
-      body: `${JSON.stringify(credentials)}`,
-    };
-    fetch(`${BASE_URL}/api/auth/login`, options)
-      .then((resp) => {
-        if (!resp.ok) {
-          dispatch!({
-            type: "LOGIN_FAILURE",
-            payload: {
-              user: null,
-              loading: false,
-              error: resp.status,
-            },
-          });
-          return Promise.reject(resp.statusText);
-        }
+    // const options: RequestInit = {
+    //   method: "POST",
+    //   // ...authHeader(),
+    //   body: `${JSON.stringify(credentials)}`,
+    // };
 
-        return resp.json();
-      })
-      .then((user: UserInfo) => {
-        dispatch!({
-          type: "LOGIN_SUCCESS",
-          payload: { user, error: false, loading: false },
-        });
-        navigate(PRIVATE.CHECKOUT);
-      })
-      .catch(console.log);
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/api/auth/login`,
+        credentials
+      );
+      const user = await response.data;
+      dispatch!({
+        type: "LOGIN_SUCCESS",
+        payload: { user, error: false, loading: false },
+      });
+      navigate(PRIVATE.CHECKOUT);
+    } catch (error) {
+      dispatch!({
+        type: "LOGIN_FAILURE",
+        payload: {
+          user: null,
+          loading: false,
+          error: 505,
+        },
+      });
+      console.log(error);
+    }
   }
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {

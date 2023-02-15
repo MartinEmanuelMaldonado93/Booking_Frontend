@@ -1,8 +1,5 @@
-import format from "date-fns/format";
 import { useContext, useState } from "react";
-import { FaBed, FaCalendarDay, FaPersonBooth } from "react-icons/fa";
-import { DateRange } from "react-date-range";
-import { itemDateRange, navegationHotelParams, optionsHotel } from "@types";
+import { navegationHotelParams, optionsHotel } from "@types";
 import type { Range } from "react-date-range/index";
 import {
   CalendarDays,

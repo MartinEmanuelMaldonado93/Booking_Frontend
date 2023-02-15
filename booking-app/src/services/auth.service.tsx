@@ -1,4 +1,4 @@
-import { UserInfo } from "src/models";
+import { UserInfo } from "@types";
 
 const baseLocalUrl = "http://localhost:8800";
 const userUrl = baseLocalUrl.concat("/user");

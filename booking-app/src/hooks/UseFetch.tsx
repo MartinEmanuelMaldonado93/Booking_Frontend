@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios, { RawAxiosRequestConfig } from "axios";
+import { authHeader } from "@utils";
 /** Receive exact route url */
 function UseFetch<T>(url: string, options?: RawAxiosRequestConfig) {
   const [data, setData] = useState<T>();
@@ -18,7 +19,8 @@ function UseFetch<T>(url: string, options?: RawAxiosRequestConfig) {
             .then((response) => setData(response.data))
             .catch((error) => console.log(error));
         } else {
-          const resp = await axios.get(url);
+          const resp = await axios.get(url, authHeader());
+          console.log(authHeader());
           setData(resp.data);
         }
       } catch (error) {

@@ -1,10 +1,9 @@
 import { getUserFromLocalStorage, setUserToLocalStorage } from "@utils";
 import { Dispatch, createContext, useEffect, useReducer } from "react";
 import { UserInfo } from "@types";
+import { KEY_STORAGE } from "@utils";
 
-const KEY_STORAGE = "user_martinbooking";
-
-type AuthUserData = {
+type AuthUserStatus = {
   user: UserInfo | null;
   loading: boolean;
   error: any;
@@ -12,17 +11,17 @@ type AuthUserData = {
 
 type AuthUserAction = {
   type: "LOGIN_START" | "LOGOUT" | "LOGIN_SUCCESS" | "LOGIN_FAILURE";
-  payload: AuthUserData;
+  payload: AuthUserStatus;
 };
 
 type AuthContext = {
-  state: AuthUserData;
+  state: AuthUserStatus;
   dispatch?: Dispatch<AuthUserAction>; // "?" important for ts check
 };
 
 const userInit = getUserFromLocalStorage(KEY_STORAGE);
 
-const initialState: AuthUserData = {
+const initialState: AuthUserStatus = {
   user: userInit,
   loading: false,
   error: null,
@@ -39,7 +38,7 @@ type props = {
 export const AuthContextProvider = ({ children }: props) => {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
 
-  function AuthReducer(state: AuthUserData, action: AuthUserAction) {
+  function AuthReducer(state: AuthUserStatus, action: AuthUserAction) {
     switch (action.type) {
       case "LOGIN_START":
         return {
