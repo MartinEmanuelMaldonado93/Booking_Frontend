@@ -9,18 +9,14 @@ function UseFetch<T>(url: string, options?: RawAxiosRequestConfig) {
 
   useEffect(() => {
     fetchData();
-    // const fetchData = async () => {
     async function fetchData() {
       setLoading(true);
       try {
         if (options) {
-          axios
-            .request(options)
-            .then((response) => setData(response.data))
-            .catch((error) => console.log(error));
+          const resp = await axios.request(options);
+          setData(resp.data);
         } else {
           const resp = await axios.get(url, authHeader());
-          console.log(authHeader());
           setData(resp.data);
         }
       } catch (error) {

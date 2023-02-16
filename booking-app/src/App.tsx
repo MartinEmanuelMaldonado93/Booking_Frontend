@@ -19,7 +19,7 @@ function App() {
             <Route path={PUBLIC.HOTEL_SELECTED} element={<HotelSelected />} />
             <Route path={PUBLIC.LOGIN} element={<Login />} />
             <Route element={<AuthGuard />}>
-              <Route path={PRIVATE.CHECKOUT} element={<Reserved />} />
+              <Route path={PRIVATE.PURCHASE} element={<Reserved />} />
             </Route>
             <Route path='*' element={<NotFound />} />
           </Routes>

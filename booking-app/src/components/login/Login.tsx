@@ -1,7 +1,7 @@
 import { getUser } from "@services";
 import { createUser } from "@reduxState";
 import { ChangeEvent, MouseEventHandler, useContext, useState } from "react";
-import { BASE_URL, PRIVATE } from "@models";
+import { BASE_URL, PRIVATE, PUBLIC } from "@models";
 import { UseFetch } from "@hooks";
 import { FaAirbnb } from "react-icons/fa";
 import { AuthContext } from "@context";
@@ -25,7 +25,7 @@ function Login() {
 
     dispatch!({
       type: "LOGIN_START",
-      payload: { error: null, loading: false, user: null },
+      payload: {},
     });
 
     // const options: RequestInit = {
@@ -40,21 +40,19 @@ function Login() {
         credentials
       );
       const user = await response.data;
+
       dispatch!({
         type: "LOGIN_SUCCESS",
-        payload: { user, error: false, loading: false },
+        payload: { user },
       });
-      navigate(PRIVATE.CHECKOUT);
+      navigate(PUBLIC.HOME);
     } catch (error) {
       dispatch!({
         type: "LOGIN_FAILURE",
         payload: {
-          user: null,
-          loading: false,
           error: 505,
         },
       });
-      console.log(error);
     }
   }
 

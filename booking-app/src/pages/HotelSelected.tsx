@@ -21,7 +21,7 @@ const HotelSelected = () => {
 
   let totalDays: number | undefined = getDifferenceOfDays(state);
 
-  const handleReserve = () => navigate(PRIVATE.CHECKOUT);
+  const handleReserve = () => navigate(PRIVATE.PURCHASE);
 
   if (!data) return <div>There is not hotel with this ID :{idLocation}</div>;
 

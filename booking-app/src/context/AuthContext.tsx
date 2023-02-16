@@ -4,9 +4,9 @@ import { UserInfo } from "@types";
 import { KEY_STORAGE } from "@utils";
 
 type AuthUserStatus = {
-  user: UserInfo | null;
-  loading: boolean;
-  error: any;
+  user?: UserInfo | null;
+  loading?: boolean;
+  error?: any;
 };
 
 type AuthUserAction = {
@@ -70,7 +70,7 @@ export const AuthContextProvider = ({ children }: props) => {
   }
 
   useEffect(() => {
-    setUserToLocalStorage(KEY_STORAGE, state.user);
+    if (state.user) setUserToLocalStorage(KEY_STORAGE, state.user);
   }, [state.user]);
 
   return (
