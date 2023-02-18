@@ -1,6 +1,8 @@
 import { UserInfo } from "@types";
 
-const baseLocalUrl = "http://localhost:8800";
+// const baseLocalUrl = "http://localhost:8800";
+const baseLocalUrl =
+  "https://expressjs-mongoose-production-75ad.up.railway.app";
 const userUrl = baseLocalUrl.concat("/user");
 /**
  * fetch called to api to
