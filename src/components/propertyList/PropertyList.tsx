@@ -10,7 +10,7 @@ function PropertyList() {
   );
 
   if (loading) return <div>Loading...</div>;
-
+  console.log(data);
   return (
     <div className='px-4'>
       <div className='text-2xl text-gray-900'>Browse by property type</div>

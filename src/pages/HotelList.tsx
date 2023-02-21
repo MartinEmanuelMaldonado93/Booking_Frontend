@@ -1,19 +1,14 @@
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Navbar,
-  Header,
   CalendarDays,
   OptionsHotel,
   SearchItem,
   RecreationOptions,
 } from "@components";
-import { format } from "date-fns";
-import { DateRange } from "react-date-range";
 import { UseFetch } from "@hooks";
-import { Hotel, navegationHotelParams, optionsHotel } from "@types";
-import { getIDHotelLocation } from "@utils";
-import type { Range } from "react-date-range/index";
+import { Hotel, navegationHotelParams } from "@types";
 import { BASE_URL } from "../models";
 import { v4 as uuidv4 } from "uuid";
 
@@ -31,7 +26,7 @@ const HotelList = () => {
   const { data, loading, error, reFetchData } = UseFetch<Hotel[]>(
     `${BASE_URL}/api/hotels?city=${destination}&min=${minPrice}&max=${maxPrice}`
   );
-
+  console.log(data);// empty
   function handleSearch() {
     reFetchData();
   }
@@ -45,7 +40,7 @@ const HotelList = () => {
         </div>
       </div>
       <div className='flex justify-center flex-wrap lg:flex-nowrap p-2 max-w-[70rem]  m-auto'>
-        <aside className='grid sm:gap-2 p-2 rounded-md max-w-xs shadow-sm bg-purple-300'>
+        <aside className='grid sm:gap-2 p-2 rounded-md max-w-xs shadow-sm bg-yellow-500'>
           <h2 className='text-xl font-bold'>Search</h2>
           <div className='font-bold'>Destination</div>
           <input
@@ -128,7 +123,7 @@ const HotelList = () => {
 
         <div className='p-2'>
           <div className='p-2 rounded-md bg-gray-100 text-gray-700 capitalize font-bold text-2xl'>
-            {data ? data[0].city : null}
+            {/* {data ? data[0].city : null} */}
           </div>
           {loading ? (
             <div className='w-full'>Loading....</div>

@@ -8,9 +8,8 @@ function Featured() {
   const { data, loading, error } = UseFetch<number[]>(
     `${BASE_URL}/api/hotels/countByCity?cities=${citiesQuery}`
   );
-
   if (loading) return <div className='animate-pulse text-4xl'>Loading...</div>;
-
+  console.log(data);
   return (
     <div className='m-4 px-4'>
       <div className='flex flex-wrap justify-around md:justify-between gap-2 my-4 pointer-events-none z-0'>

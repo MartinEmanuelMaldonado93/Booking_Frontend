@@ -10,7 +10,7 @@ import {
 
 function Home() {
   return (
-    <div className='h-screen flex flex-col gap-16 justify-between content-center items-center mx-auto'>
+    <div className='h-screen flex flex-col gap-16 justify-between content-center items-center mx-auto bg-white'>
       <div className='px-4 bg-blue-600 w-full flex justify-center'>
         <div className='max-w-[70rem]'>
           <Navbar />
