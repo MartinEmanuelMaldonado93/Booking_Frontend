@@ -9,7 +9,7 @@ function MailList() {
       </div>
       <div className='w-full text-center flex flex-wrap gap-3 justify-center'>
         <input
-          className='input input-bordered w-full max-w-xs'
+          className='input input-bordered w-full max-w-xs bg-white'
           type='text'
           placeholder='Your Email'
         />

@@ -19,7 +19,7 @@ function Destination({ destination, setDestination }: props) {
         type='text'
         placeholder='Where are you going?'
         required
-        className='input py-1 '
+        className='input py-1 bg-white'
         onChange={(e) => setDestination(e.target.value)} // todo: implement throttle
       />
     </div>

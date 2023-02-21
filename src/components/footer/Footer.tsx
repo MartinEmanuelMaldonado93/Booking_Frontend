@@ -7,7 +7,7 @@ function Footer() {
     linkedin: "https://www.linkedin.com/in/martin-emanuel-maldonado93/",
   };
   return (
-    <footer className='w-full bg-white dark:bg-gray-900'>
+    <footer className='w-full bg-white'>
       <div className='container px-1 py-2 mx-auto'>
         <div className='text-center'>
           <p className='max-w-md mx-auto mt-2 text-gray-500 dark:text-gray-400'>
