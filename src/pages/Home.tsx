@@ -17,7 +17,7 @@ function Home() {
           <Header />
         </div>
       </div>
-      <div className='flex flex-col gap-6 max-w-[70rem]'>
+      <div className='flex flex-col gap-6 max-w-[70rem] bg-white'>
         <Featured />
         <PropertyList />
         <FeaturedProperties />
