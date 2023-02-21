@@ -65,7 +65,7 @@ function Login() {
   }
 
   return (
-    <div className='max-w-xs m-auto h-screen form-control justify-center gap-6 '>
+    <div className='max-w-xs m-auto h-screen form-control justify-center gap-6 bg-white'>
       <div className='text-center p-4 font-bold shadow-md rounded-md'>
         <FaAirbnb className='mr-2 inline' />
         MartinBooking
@@ -75,14 +75,14 @@ function Login() {
         id='userName'
         placeholder='Enter your user name'
         type='email'
-        className='input input-bordered w-full max-w-xs'
+        className='input input-bordered bg-white w-full max-w-xs'
       />
       <input
         onChange={handleChange}
         id='password'
         placeholder='Enter your password'
         type='password'
-        className='input input-bordered w-full max-w-xs'
+        className='input input-bordered bg-white w-full max-w-xs'
       />
       <button onClick={handleLogin} className='btn btn-primary'>
         Login
