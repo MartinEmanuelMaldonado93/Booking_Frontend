@@ -56,7 +56,7 @@ function HeaderSearchBar({ type }: props) {
           with a free Lamabooking account
         </p>
         {!state.user ? (
-          <button className='btn py-3 px-2 min-h-0 h-auto rounded-sm text-black bg-cyan-50 border-none hover:bg-pink-500 '>
+          <button className='btn py-3 px-2 min-h-0 h-auto  text-black bg-cyan-50 border-none hover:bg-pink-500 '>
             Sign in / Register
           </button>
         ) : null}

@@ -12,9 +12,9 @@ function PropertyList() {
   if (loading) return <div>Loading...</div>;
   console.log(data);
   return (
-    <div className='px-4'>
+    <div className='px-4 overflow-x-scroll'>
       <div className='text-2xl text-gray-900'>Browse by property type</div>
-      <div className='flex flex-wrap justify-evenly sm:justify-between'>
+      <div className='flex translate-x-[70%] sm:translate-x-0 sm:flex-wrap justify-evenly sm:justify-between'>
         {data &&
           hotelPhotos.map((src: string, i: number) => (
             <div className='card duration-300 hover:shadow-xl' key={src}>

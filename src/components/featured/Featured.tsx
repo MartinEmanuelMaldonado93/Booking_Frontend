@@ -11,19 +11,19 @@ function Featured() {
   if (loading) return <div className='animate-pulse text-4xl'>Loading...</div>;
   console.log(data);
   return (
-    <div className='m-4 px-4'>
-      <div className='flex flex-wrap justify-around md:justify-between gap-2 my-4 pointer-events-none z-0'>
+    <div className='m-4 px-4 overflow-x-scroll'>
+      <div className='flex translate-x-[25%] sm:translate-x-0 sm:flex-wrap justify-around md:justify-between gap-2 my-4 pointer-events-none z-0'>
         {data?.map((amount, i) => (
           <div
             key={Math.random()}
-            className='overflow-hidden bg-base-100 shadow-lg'
+            className='bg-base-100 shadow-lg'
           >
             <img
               src={citiesInfo[i].img}
               alt=''
               className='z-0 max-w-[10rem] sm:max-w-[15rem] object-cover rounded-lg'
             />
-            <div className='absolute pointer-events-none z-0 translate-x-4 -translate-y-[120%]  text-white text-xl sm:text-3xl font-bold '>
+            <div className='pointer-events-none translate-x-4 -translate-y-[120%]  text-white text-xl sm:text-3xl font-bold '>
               <h1>{citiesInfo[i].city}</h1>
               <h2 className='dark:text-gray-200 z-0'>{data[i]} properties</h2>
             </div>

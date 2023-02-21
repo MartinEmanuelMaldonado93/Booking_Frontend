@@ -11,7 +11,7 @@ const Navbar = () => {
   const { user } = state;
 
   return (
-    <div className='navbar justify-between flex-wrap w-full text-white '>
+    <div className='navbar justify-center sm:justify-between  flex-wrap w-full text-white '>
       <Link to='/' className='btn btn-ghost normal-case text-xl'>
         <FaAirbnb className='mr-2' />
         MartinBooking
