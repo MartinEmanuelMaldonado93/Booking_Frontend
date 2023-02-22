@@ -1,13 +1,8 @@
-import { getUser } from "@services";
-import { createUser } from "@reduxState";
-import { ChangeEvent, MouseEventHandler, useContext, useState } from "react";
-import { BASE_URL, PRIVATE, PUBLIC } from "@models";
-import { UseFetch } from "@hooks";
+import { ChangeEvent, useContext, useState } from "react";
+import { BASE_URL, PUBLIC } from "@models";
 import { FaAirbnb } from "react-icons/fa";
 import { AuthContext } from "@context";
 import { useNavigate } from "react-router-dom";
-import { authHeader } from "@utils";
-import { UserInfo } from "@types";
 import axios from "axios";
 
 function Login() {
@@ -66,7 +61,10 @@ function Login() {
 
   return (
     <div className='max-w-xs m-auto h-screen form-control justify-center gap-6 bg-white'>
-      <div className='text-center p-4 font-bold shadow-md rounded-md'>
+      <div
+        onClick={() => navigate(PUBLIC.HOME)}
+        className='text-center p-4 font-bold shadow-md rounded-md'
+      >
         <FaAirbnb className='mr-2 inline' />
         MartinBooking
       </div>

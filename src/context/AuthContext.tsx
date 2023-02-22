@@ -2,6 +2,7 @@ import { getUserFromLocalStorage, setUserToLocalStorage } from "@utils";
 import { Dispatch, createContext, useEffect, useReducer } from "react";
 import { UserInfo } from "@types";
 import { KEY_STORAGE } from "@utils";
+import { useLocalStorage } from "@hooks";
 
 type AuthUserStatus = {
   user?: UserInfo | null;
@@ -19,10 +20,10 @@ type AuthContext = {
   dispatch?: Dispatch<AuthUserAction>; // "?" important for ts check
 };
 
-const userInit = getUserFromLocalStorage(KEY_STORAGE);
+// const userInit = getUserFromLocalStorage(KEY_STORAGE);
 
 const initialState: AuthUserStatus = {
-  user: userInit,
+  user: null,
   loading: false,
   error: null,
 };
@@ -36,6 +37,12 @@ type props = {
   children?: JSX.Element | JSX.Element[];
 };
 export const AuthContextProvider = ({ children }: props) => {
+  const [userLocalStorage, setUserLocalStorage] = useLocalStorage<UserInfo>(
+    KEY_STORAGE,
+    {} as UserInfo
+  );
+  initialState.user = userLocalStorage;
+
   const [state, dispatch] = useReducer(AuthReducer, initialState);
 
   function AuthReducer(state: AuthUserStatus, action: AuthUserAction) {
@@ -70,7 +77,7 @@ export const AuthContextProvider = ({ children }: props) => {
   }
 
   useEffect(() => {
-    if (state.user) setUserToLocalStorage(KEY_STORAGE, state.user);
+    if (state.user) setUserLocalStorage(state.user);
   }, [state.user]);
 
   return (
