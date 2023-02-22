@@ -1,6 +1,6 @@
 # Booking app
 
-This project was made with [Vite](https://vite.dev) and deployed on [Netlify](https://netlify.com/)
+This project was made with [Vite](https://vitejs.dev) and deployed on [Netlify](https://netlify.com/)
 
 ## ✨ Features
 - React 18
