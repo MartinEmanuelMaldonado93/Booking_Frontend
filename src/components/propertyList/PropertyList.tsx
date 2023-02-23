@@ -5,7 +5,7 @@ import { BASE_URL } from "@models";
 
 /** Show properties by type like hotels, apartment, etc.. */
 function PropertyList() {
-  const { data, loading, error } = UseFetch<HotelByType[]>(
+  const { data, loading } = UseFetch<HotelByType[]>(
     `${BASE_URL}/api/hotels/countByType`
   );
 

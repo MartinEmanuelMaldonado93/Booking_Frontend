@@ -20,7 +20,7 @@ type AuthContext = {
   dispatch?: Dispatch<AuthUserAction>; // "?" important for ts check
 };
 
-const userInit = getUserFromLocalStorage<UserInfo>(KEY_STORAGE);
+const userInit: UserInfo | null = getUserFromLocalStorage<UserInfo>(KEY_STORAGE);
 
 const initialState: AuthUserStatus = {
   user: userInit,
@@ -71,7 +71,7 @@ export const AuthContextProvider = ({ children }: props) => {
   }
 
   useEffect(() => {
-    setUserToLocalStorage(KEY_STORAGE, state.user);
+    if (state.user) setUserToLocalStorage(KEY_STORAGE, state.user);
   }, [state.user]);
 
   return (

@@ -1,12 +1,11 @@
+import { UserInfo } from "@types";
 import { KEY_STORAGE } from "@utils";
 import getUserFromLocalStorage from "./getUserFromLocalStorage";
 
-export function authHeader() {
-  const user = getUserFromLocalStorage(KEY_STORAGE);
-  if (!user)
-    return;
-  if (!user.token)
-    return;
+export function getAuthHeader() {
+  const user = getUserFromLocalStorage<UserInfo>(KEY_STORAGE);
+  if (!user) return null;
+  if (!user.token) return null;
 
   return {
     headers: {
