@@ -1,8 +1,9 @@
-import { UserInfo } from "@types";
+function getUserFromLocalStorage<T>(KEY_STORAGE: string): null | T {
+  //if it is in SSR enviroment
+  if (typeof window === "undefined") return null;
 
-function getUserFromLocalStorage(KEY_STORAGE: string) {
-  const userJSON = localStorage.getItem(KEY_STORAGE);
-  const userFromStorage = userJSON ? (JSON.parse(userJSON) as UserInfo) : null;
-  return userFromStorage;
+  const itemJson: string | null = window.localStorage.getItem(KEY_STORAGE);
+  const itemObject = itemJson ? (JSON.parse(itemJson) as T) : null;
+  return itemObject;
 }
 export default getUserFromLocalStorage;

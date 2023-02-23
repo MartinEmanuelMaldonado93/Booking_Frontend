@@ -12,7 +12,7 @@ function PropertyList() {
   if (loading) return <div>Loading...</div>;
   console.log(data);
   return (
-    <div className='px-4 overflow-x-scroll'>
+    <div className='px-4 overflow-x-scroll sm:overflow-x-auto'>
       <div className='text-2xl text-gray-900'>Browse by property type</div>
       <div className='flex translate-x-[70%] sm:translate-x-0 sm:flex-wrap justify-evenly sm:justify-between'>
         {data &&

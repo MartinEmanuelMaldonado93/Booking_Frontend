@@ -9,7 +9,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const handleLogin = () => navigate(PUBLIC.LOGIN);
   const { user } = state;
-
+  // console.log(state);
   return (
     <div className='navbar justify-center sm:justify-between  flex-wrap w-full text-white '>
       <Link to='/' className='btn btn-ghost normal-case text-xl'>

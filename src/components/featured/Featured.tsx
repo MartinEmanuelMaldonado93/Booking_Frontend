@@ -11,7 +11,7 @@ function Featured() {
   if (loading) return <div className='animate-pulse text-4xl'>Loading...</div>;
   console.log(data);
   return (
-    <div className='m-4 px-4 overflow-x-scroll'>
+    <div className='m-4 px-4 overflow-x-scroll sm:overflow-x-auto'>
       <div className='flex translate-x-[25%] sm:translate-x-0 sm:flex-wrap justify-around md:justify-between gap-2 my-4 pointer-events-none z-0'>
         {data?.map((amount, i) => (
           <div

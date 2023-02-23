@@ -1,7 +1,8 @@
-import { UserInfo } from "@types";
+function setUserToLocalStorage<T>(KEY_STORAGE: string, item: T) {
+  if (typeof window === "undefined") return null;
 
-function setUserToLocalStorage(KEY_STORAGE: string, user: UserInfo | null) {
-  localStorage.setItem(KEY_STORAGE, JSON.stringify(user));
+  window.localStorage.setItem(KEY_STORAGE, JSON.stringify(item));
+  return item;
 }
 
 export default setUserToLocalStorage;
