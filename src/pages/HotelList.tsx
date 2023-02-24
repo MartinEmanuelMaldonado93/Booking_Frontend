@@ -7,10 +7,11 @@ import {
   SearchItem,
   RecreationOptions,
 } from "@components";
-import { UseFetch } from "@hooks";
+import { UseFetch, useFetchBooking } from "@hooks";
 import { Hotel, navegationHotelParams } from "@types";
 import { BASE_URL } from "../models";
 import { v4 as uuidv4 } from "uuid";
+// import useFetchBooking from "src/hooks/useFetchBooking";
 
 const HotelList = () => {
   const location = useLocation();
@@ -22,11 +23,17 @@ const HotelList = () => {
   const [dates, setDates] = useState(hotelParams.dates);
   const [minPrice, setMin] = useState<number>(50);
   const [maxPrice, setMax] = useState<number>(999);
+  const opt = {
+    method: "GET",
+    url: `${BASE_URL}hotels/locations`,
+    params: { name: destination, locale: "en-us" },
+    headers: {
+      "X-RapidAPI-Key": import.meta.env.API_KEY,
+      "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
+    },
+  };
+  const { data, loading, error, reFetchData } = useFetchBooking<any>(opt);
 
-  const { data, loading, error, reFetchData } = UseFetch<Hotel[]>(
-    `${BASE_URL}/api/hotels?city=${destination}&min=${minPrice}&max=${maxPrice}`
-  );
-  console.log(data);// empty
   function handleSearch() {
     reFetchData();
   }
