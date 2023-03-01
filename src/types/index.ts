@@ -55,7 +55,7 @@ export type UserInfo = {
   token?: string;
 };
 
-export interface locationInfo {
+export interface LocationInfo {
   type: string;
   hotels: number;
   cc1: string;

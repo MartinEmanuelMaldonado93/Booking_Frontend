@@ -1,4 +1,4 @@
-export interface HotelFinded {
+export interface HotelAPI {
   bwallet: Bwallet;
   address_trans: string;
   main_photo_id: number;

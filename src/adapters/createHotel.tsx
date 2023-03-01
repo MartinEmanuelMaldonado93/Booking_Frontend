@@ -1,19 +1,19 @@
-import { Hotel, HotelFinded } from "@types";
-
-export default function createHotel(oneHotel: HotelFinded): Hotel {
+import { Hotel, HotelAPI } from "@types";
+/** Return `hotel`type object created by adapting data from an API */
+export default function createHotel(hotel: HotelAPI): Hotel {
   return {
     _id: 123,
     address: "",
     cheapestPrice: 123,
-    city: oneHotel.city,
+    city: hotel.city,
     desc: "",
-    distance: oneHotel.distance,
+    distance: hotel.distance,
     featured: true,
-    name: oneHotel.hotel_name,
-    photos: [`${oneHotel.main_photo_url}`],
+    name: hotel.hotel_name,
+    photos: [hotel.main_photo_url],
     rooms: ["1"],
-    title: oneHotel.hotel_name_trans,
-    type: oneHotel.type,
-    rating: oneHotel.review_score,
+    title: hotel.hotel_name_trans,
+    type: hotel.type,
+    rating: hotel.review_score,
   };
 }

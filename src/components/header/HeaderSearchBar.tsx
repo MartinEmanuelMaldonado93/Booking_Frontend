@@ -7,10 +7,11 @@ import {
   OptionsHotel,
   RecreationOptions,
 } from "@components";
-import { locationInfo, optionsHotel } from "@types";
+import { LocationInfo, optionsHotel } from "@types";
 import { AuthContext, SearchContext } from "@context";
-import { useFetchBooking } from "@hooks";
+import { ReturnUseFetchBooking, useFetchBooking } from "@hooks";
 import { BASE_URL, PUBLIC } from "@models";
+import { RawAxiosRequestConfig } from "axios";
 
 function HeaderSearchBar() {
   const [dates, setDates] = useState<Range[]>([
@@ -31,8 +32,7 @@ function HeaderSearchBar() {
   const { state } = useContext(AuthContext);
   const { dispatch } = useContext(SearchContext);
 
-  //Search Location - autocomplete
-  const params = {
+  const params: RawAxiosRequestConfig = {
     method: "GET",
     url: `${BASE_URL}/hotels/locations`,
     params: { name: destination, locale: "en-us" },
@@ -41,17 +41,19 @@ function HeaderSearchBar() {
       "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
     },
   };
-  const { data, error, reFetchData } = useFetchBooking<locationInfo[]>(params);
+  const { data, error, reFetchData } = useFetchBooking<LocationInfo[]>({
+    options: destination !== "" ? params : null,
+  });
 
   useEffect(() => {
-    if (!data || data.length < 1) return;
+    if (!data) return;
 
-    console.log(data);
     dispatch!({
       type: "NEW_SEARCH",
       payload: {
         city: destination,
         destination_id: +data[0].dest_id,
+        type: data[0].dest_type,
         dates,
         options,
       },
@@ -61,13 +63,6 @@ function HeaderSearchBar() {
 
   async function handleNewSearch() {
     reFetchData();
-    // dispatch!({
-    //   type: "NEW_SEARCH",
-    //   payload: { city: destination, destination_id, dates, options },
-    // });
-    // if (data) navigate(PUBLIC.HOTELS_LIST);
-    // navigate(PUBLIC.HOTELS_LIST);
-    // console.log(error);
   }
 
   return (

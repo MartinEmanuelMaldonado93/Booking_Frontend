@@ -5,6 +5,7 @@ import type { Range } from "react-date-range/index";
 export type SearchedDestination = {
   city?: string;
   destination_id?: number;
+  type?: string;
   dates: Range[] | [];
   options: optionsHotel;
 };
