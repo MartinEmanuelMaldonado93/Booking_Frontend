@@ -17,9 +17,9 @@ function Destination({ destination, setDestination }: props) {
       <FaBed />
       <input
         type='text'
-        placeholder='Where are you going?'
-        required
+        placeholder={"Where are you going?"}
         className='input py-1 bg-white'
+        required
         onChange={(e) => setDestination(e.target.value)} // todo: implement throttle
       />
     </div>

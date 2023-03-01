@@ -9,7 +9,7 @@ export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   return {
     define: {
-      API_KEY: process.env.API_KEY,
+      VITE_API_KEY: process.env.VITE_API_KEY,
     },
     server: {
       host: true,
@@ -24,6 +24,10 @@ export default defineConfig(({ command, mode }) => {
         {
           find: "@models",
           replacement: path.resolve(__dirname, "src/models"),
+        },
+        {
+          find: "@adapters",
+          replacement: path.resolve(__dirname, "src/adapters"),
         },
         {
           find: "@components",

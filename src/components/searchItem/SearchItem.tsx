@@ -7,7 +7,6 @@ type props = {
 };
 function SearchItem({ hotel }: props) {
   const navigate = useNavigate();
-
   function handleSearch() {
     navigate(PUBLIC.HOTEL_SELECTED, {
       state: { _id: hotel._id },
@@ -17,8 +16,7 @@ function SearchItem({ hotel }: props) {
   return (
     <div className='flex flex-wrap lg:flex-nowrap justify-center gap-6 border border-gray-300 rounded-md p-4'>
       <img
-        // src={hotel.photos?.pop() ?? ""}
-        src={`https://picsum.photos/seed/hotels/300/300`}
+        src={hotel.photos![0]}
         alt='hotel photography'
         className='rounded-sm shadow-md max-w-[14rem] h-full aspect-square m-2'
       />
@@ -36,7 +34,7 @@ function SearchItem({ hotel }: props) {
       <div className=''>
         {hotel.rating && (
           <div className='siRating'>
-            <span>Excellent</span>
+            <span>Excellent{" "}</span>
             <button>{hotel.rating}</button>
           </div>
         )}

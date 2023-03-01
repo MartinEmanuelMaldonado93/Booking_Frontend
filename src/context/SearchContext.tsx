@@ -1,10 +1,11 @@
 import { optionsHotel } from "@types";
-import { Dispatch, ReactNode, createContext, useReducer } from "react";
+import { Dispatch, createContext, useReducer } from "react";
 import type { Range } from "react-date-range/index";
 
 export type SearchedDestination = {
   city?: string;
-  dates: Range[]|[];
+  destination_id?: number;
+  dates: Range[] | [];
   options: optionsHotel;
 };
 

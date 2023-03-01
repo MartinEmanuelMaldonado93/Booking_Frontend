@@ -13,3 +13,4 @@ export { RecreationOptions } from "./header/RecreationOptions";
 export { default as Login } from "./login/Login";
 export { default as NotFound } from "./errorBoundary/NotFound";
 export { default as Reserved } from "./reserved/Reserved";
+export { default as SearchAside } from "./searchAside/SearchAside";

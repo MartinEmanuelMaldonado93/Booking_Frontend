@@ -18,9 +18,9 @@ function Home() {
         </div>
       </div>
       <div className='flex flex-col gap-6 max-w-[70rem] w-full bg-white'>
-        <Featured />
-        <PropertyList />
-        <FeaturedProperties />
+        {/* <Featured /> */}
+        {/* <PropertyList /> */}
+        {/* <FeaturedProperties /> */}
         <MailList />
         <Footer />
       </div>

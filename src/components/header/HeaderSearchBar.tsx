@@ -1,20 +1,18 @@
-import { useContext, useState } from "react";
-import { navegationHotelParams, optionsHotel } from "@types";
+import { useContext, useEffect, useState } from "react";
 import type { Range } from "react-date-range/index";
+import { useNavigate } from "react-router-dom";
 import {
   CalendarDays,
   Destination,
   OptionsHotel,
   RecreationOptions,
 } from "@components";
+import { locationInfo, optionsHotel } from "@types";
 import { AuthContext, SearchContext } from "@context";
-import { useNavigate } from "react-router-dom";
-import { PUBLIC } from "@models";
+import { useFetchBooking } from "@hooks";
+import { BASE_URL, PUBLIC } from "@models";
 
-type props = {
-  type?: string;
-};
-function HeaderSearchBar({ type }: props) {
+function HeaderSearchBar() {
   const [dates, setDates] = useState<Range[]>([
     {
       startDate: new Date(),
@@ -23,25 +21,53 @@ function HeaderSearchBar({ type }: props) {
     },
   ]);
   const [options, setOptions] = useState<optionsHotel>({
-    adult: 0,
-    children: 0,
-    room: 0,
+    adult: 1,
+    children: 1,
+    room: 1,
   });
-  const [destination, setDestination] = useState("");
+  const [destination, setDestination] = useState<string>("");
 
   const navigate = useNavigate();
-
-  const { dispatch } = useContext(SearchContext);
   const { state } = useContext(AuthContext);
+  const { dispatch } = useContext(SearchContext);
 
-  function handleNewSearch() {
+  //Search Location - autocomplete
+  const params = {
+    method: "GET",
+    url: `${BASE_URL}/hotels/locations`,
+    params: { name: destination, locale: "en-us" },
+    headers: {
+      "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
+      "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
+    },
+  };
+  const { data, error, reFetchData } = useFetchBooking<locationInfo[]>(params);
+
+  useEffect(() => {
+    if (!data || data.length < 1) return;
+
+    console.log(data);
     dispatch!({
       type: "NEW_SEARCH",
-      payload: { city: destination, dates, options },
+      payload: {
+        city: destination,
+        destination_id: +data[0].dest_id,
+        dates,
+        options,
+      },
     });
-    navigate(PUBLIC.HOTELS_LIST, {
-      state: { destination, dates, options } as navegationHotelParams,
-    });
+    navigate(PUBLIC.HOTELS_LIST);
+  }, [data]);
+
+  async function handleNewSearch() {
+    reFetchData();
+    // dispatch!({
+    //   type: "NEW_SEARCH",
+    //   payload: { city: destination, destination_id, dates, options },
+    // });
+    // if (data) navigate(PUBLIC.HOTELS_LIST);
+    // navigate(PUBLIC.HOTELS_LIST);
+    // console.log(error);
   }
 
   return (
