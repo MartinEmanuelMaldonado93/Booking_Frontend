@@ -9,9 +9,11 @@ import {
 } from "@components";
 import { LocationInfo, optionsHotel } from "@types";
 import { AuthContext, SearchContext } from "@context";
-import { ReturnUseFetchBooking, useFetchBooking } from "@hooks";
-import { BASE_URL, PUBLIC } from "@models";
-import { RawAxiosRequestConfig } from "axios";
+import { PUBLIC } from "@models";
+import useSWR from "swr";
+import axios from "axios";
+import { useSWRAxios } from "src/lib/swr/useSWRAxios";
+import { useHotelsSWR } from "@constants";
 
 function HeaderSearchBar() {
   const [dates, setDates] = useState<Range[]>([
@@ -31,19 +33,8 @@ function HeaderSearchBar() {
   const navigate = useNavigate();
   const { state } = useContext(AuthContext);
   const { dispatch } = useContext(SearchContext);
-
-  const params: RawAxiosRequestConfig = {
-    method: "GET",
-    url: `${BASE_URL}/hotels/locations`,
-    params: { name: destination, locale: "en-us" },
-    headers: {
-      "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
-      "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
-    },
-  };
-  const { data, error, reFetchData } = useFetchBooking<LocationInfo[]>({
-    options: destination !== "" ? params : null,
-  });
+  /// data : LocationInfo[]
+  const { data, error } = useHotelsSWR();
 
   useEffect(() => {
     if (!data) return;
@@ -62,7 +53,7 @@ function HeaderSearchBar() {
   }, [data]);
 
   async function handleNewSearch() {
-    reFetchData();
+    // reFetchData();
   }
 
   return (
@@ -101,5 +92,3 @@ function HeaderSearchBar() {
     </div>
   );
 }
-
-export { HeaderSearchBar as Header };

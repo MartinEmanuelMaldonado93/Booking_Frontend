@@ -22,6 +22,10 @@ export default defineConfig(({ command, mode }) => {
       // },
       alias: [
         {
+          find: "@lib",
+          replacement: path.resolve(__dirname, "src/lib"),
+        },
+        {
           find: "@models",
           replacement: path.resolve(__dirname, "src/models"),
         },

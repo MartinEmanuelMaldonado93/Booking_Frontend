@@ -1,4 +1,5 @@
-export const BASE_URL = "https://booking-com.p.rapidapi.com/v1";
+export const BASE_URL =
+  "https://apidojo-booking-v1.p.rapidapi.com";
 
 export const PUBLIC = {
   HOME: "/",
