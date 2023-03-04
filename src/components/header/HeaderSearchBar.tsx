@@ -10,10 +10,7 @@ import {
 import { LocationInfo, optionsHotel } from "@types";
 import { AuthContext, SearchContext } from "@context";
 import { PUBLIC } from "@models";
-import useSWR from "swr";
-import axios from "axios";
-import { useSWRAxios } from "src/lib/swr/useSWRAxios";
-import { useHotelsSWR } from "@constants";
+import { useLocationsSWR } from "@constants";
 
 function HeaderSearchBar() {
   const [dates, setDates] = useState<Range[]>([
@@ -34,7 +31,8 @@ function HeaderSearchBar() {
   const { state } = useContext(AuthContext);
   const { dispatch } = useContext(SearchContext);
   /// data : LocationInfo[]
-  const { data, error } = useHotelsSWR();
+
+  const { data, error, isLoading } = useLocationsSWR("Argentina");
 
   useEffect(() => {
     if (!data) return;

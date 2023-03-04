@@ -1,2 +1,2 @@
-export * from './booking/fetchers';
-export * from './booking/swrHooks';
+export * from './fetchers';
+export * from './swrHooks';

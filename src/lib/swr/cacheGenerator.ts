@@ -4,4 +4,5 @@ const booking = {
 
 export const SWRCacheKey = {
   Hotels: () => `${booking.MAIN}`,
+  Locations: () => `Locations`,
 };

@@ -1,12 +1,15 @@
 import {
   Navbar,
-  Header,
   Featured,
   PropertyList,
   FeaturedProperties,
   Footer,
   MailList,
 } from "@components";
+import { useHotelsSWR, useLocationsSWR } from "@constants";
+import { HotelParams } from "@types";
+import axios from "axios";
+import { useEffect } from "react";
 
 function Home() {
   return (
@@ -14,7 +17,7 @@ function Home() {
       <div className='px-4 bg-blue-600 w-full flex justify-center'>
         <div className='max-w-[70rem]'>
           <Navbar />
-          <Header />
+          {/* <Header /> */}
         </div>
       </div>
       <div className='flex flex-col gap-6 max-w-[70rem] w-full bg-white'>
