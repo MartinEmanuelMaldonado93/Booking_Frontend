@@ -4,7 +4,7 @@ export { default as NotFound } from './errorBoundary/NotFound';
 export * from './featured/Featured';
 export * from './featuredProperty/FeatureProperty';
 export * from './footer/Footer';
-export * from './header/HeaderSearchBar';
+export { default as HeaderSearchBar } from './header/HeaderSearchBar';
 export * from './header/RecreationOptions';
 export { default as Login } from './login/Login';
 export * from './mailList/MailList';

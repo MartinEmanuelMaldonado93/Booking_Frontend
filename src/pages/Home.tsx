@@ -5,6 +5,7 @@ import {
   FeaturedProperties,
   Footer,
   MailList,
+  HeaderSearchBar,
 } from "@components";
 import { useHotelsSWR, useLocationsSWR } from "@constants";
 import { HotelParams } from "@types";
@@ -17,7 +18,7 @@ function Home() {
       <div className='px-4 bg-blue-600 w-full flex justify-center'>
         <div className='max-w-[70rem]'>
           <Navbar />
-          {/* <Header /> */}
+          <HeaderSearchBar />
         </div>
       </div>
       <div className='flex flex-col gap-6 max-w-[70rem] w-full bg-white'>

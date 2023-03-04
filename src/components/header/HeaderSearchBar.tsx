@@ -12,7 +12,7 @@ import { AuthContext, SearchContext } from "@context";
 import { PUBLIC } from "@models";
 import { useLocationsSWR } from "@constants";
 
-function HeaderSearchBar() {
+export default function HeaderSearchBar() {
   const [dates, setDates] = useState<Range[]>([
     {
       startDate: new Date(),
@@ -27,12 +27,14 @@ function HeaderSearchBar() {
   });
   const [destination, setDestination] = useState<string>("");
 
+  const [refetch, setRefetch] = useState(false);
   const navigate = useNavigate();
   const { state } = useContext(AuthContext);
   const { dispatch } = useContext(SearchContext);
-  /// data : LocationInfo[]
 
-  const { data, error, isLoading } = useLocationsSWR("Argentina");
+  const { data, error, isLoading } = useLocationsSWR(
+    refetch ? destination : null
+  );
 
   useEffect(() => {
     if (!data) return;
@@ -47,11 +49,12 @@ function HeaderSearchBar() {
         options,
       },
     });
-    navigate(PUBLIC.HOTELS_LIST);
+
+    // navigate(PUBLIC.HOTELS_LIST);
   }, [data]);
 
   async function handleNewSearch() {
-    // reFetchData();
+    setRefetch((p) => !p);
   }
 
   return (
