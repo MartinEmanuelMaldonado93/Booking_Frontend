@@ -1,5 +1,6 @@
 export * from './authHeader';
 export * from './constants';
+export * from './formatDate';
 export { default as getAxiosOptions } from './getAxiosOptions';
 export * from './getCityAutosuggestion';
 export { default as getDifferenceOfDays } from './getDifferenceOfDays';

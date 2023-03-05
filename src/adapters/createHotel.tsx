@@ -1,6 +1,8 @@
-import { Hotel, HotelAPI } from "@types";
+import { Hotel } from "@types";
+import { SingleHotel } from "src/types/BookingSingleHotel";
+
 /** Return `hotel`type object created by adapting data from an API */
-export default function createHotel(hotel: HotelAPI): Hotel {
+export default function createHotel(hotel: SingleHotel): Hotel {
   return {
     _id: 123,
     address: "",

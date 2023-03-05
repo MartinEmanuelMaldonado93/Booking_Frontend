@@ -1,4 +1,3 @@
-import { useContext, useState } from "react";
 import {
   Navbar,
   SearchItem,
@@ -6,56 +5,41 @@ import {
   CalendarDays,
   OptionsHotel,
 } from "@components";
-import { HotelAPI, optionsHotel } from "@types";
-import { createHotel } from "@adapters";
-import { useFetchBooking } from "@hooks";
-import { BASE_URL } from "@models";
-import { SearchContext } from "@context";
-import { v4 as uuidv4 } from "uuid";
+import { useContext, useEffect, useState } from "react";
 import type { Range } from "react-date-range/index";
-import { RawAxiosRequestConfig } from "axios";
+import { HotelsResponse, optionsHotel } from "@types";
+import { createHotel } from "@adapters";
+import { SearchContext } from "@context";
+import { useHotelsSWR } from "@constants";
+import { formatDate, uuid } from "@utils";
 
 const HotelList = () => {
   const { state, dispatch } = useContext(SearchContext);
   const [destination, setDestination] = useState(state.city || "Madrid");
   const [options, setOptions] = useState<optionsHotel>(state.options);
-  const [dates, setDates] = useState<Range[]>(state.dates);
+  const [dates, setDates] = useState<Range[]>(
+    state.dates || {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    }
+  );
   const [minPrice, setMin] = useState<number>(50);
   const [maxPrice, setMax] = useState<number>(999);
-
-  const params: RawAxiosRequestConfig = {
-    method: "GET",
-    url: `${BASE_URL}/hotels/search`,
-    params: {
-      room_number: options.room,
-      checkout_date: "2023-08-19",
-      dest_type: "city",
-      dest_id: state.destination_id,
-      adults_number: options.adult,
-      locale: "en-us",
-      checkin_date: "2023-08-18",
-      order_by: "popularity",
-      filter_by_currency: "USD",
-      units: "metric",
-      page_number: "0",
-      children_number: options.children,
-      include_adjacency: "true",
-      categories_filter_ids: "class::2,class::4,free_cancellation::1",
-      children_ages: "5,0",
-    },
-    headers: {
-      "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
-      "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
-    },
-  };
-  const { data, loading, error, reFetchData } = useFetchBooking<any>({
-    options: params,
+  // formatDate(state.dates[0].startDate), formatDate(state.dates[0].endDate);
+  const { data, isLoading, error } = useHotelsSWR<HotelsResponse>(destination, {
+    offset: 10 + "",
+    arrival_date: "2023-4-13",
+    departure_date: "2023-4-23",
+    guest_qty: state.options.adult + "",
+    dest_ids: state.destination_id + "",
+    room_qty: state.options.room + "",
+    search_type: state.type + "",
   });
 
   function handleSearch() {
-    reFetchData();
+    // reFetchData();
   }
-
   return (
     <>
       <div className='px-4 bg-blue-600 w-full flex justify-center'>
@@ -148,13 +132,13 @@ const HotelList = () => {
         </aside>
         <div className='p-2'>
           <div className='p-2 rounded-md bg-gray-100 text-gray-700 capitalize font-bold text-2xl'>
-            {data ? data.result[0].city : null}
+            {data ? (data.result ? data.result[0].city : null) : null}
           </div>
-          {loading ? <div>Loading...</div> : null}
+          {isLoading ? <div>Loading...</div> : null}
           {data
-            ? data.result.map((hotelInfo: HotelAPI) => (
-                <div key={uuidv4()}>
-                  <SearchItem hotel={createHotel(hotelInfo)} />
+            ? data.result?.map((singleHotel) => (
+                <div key={uuid()}>
+                  <SearchItem hotel={createHotel(singleHotel)} />
                 </div>
               ))
             : null}

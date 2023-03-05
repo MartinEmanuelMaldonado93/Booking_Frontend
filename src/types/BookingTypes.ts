@@ -1,3 +1,5 @@
+import { SingleHotel } from "./BookingSingleHotel";
+
 // locations
 export interface BookingLocation {
   latitude: number;
@@ -63,12 +65,12 @@ Value of dest_id or city_ufi field from locations/auto-complete API (Don't pass 
 }
 
 // Response hotels req
-export interface HotelResponse {
+export interface HotelsResponse {
   b_max_los_data: BMaxLosData2;
   search_radius: number;
   search_metadata: string;
   search_id: string;
-  result: any[];
+  result: SingleHotel[];
   unfiltered_count: number;
   map_bounding_box: MapBoundingBox;
   total_count_with_filters: number;

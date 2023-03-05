@@ -1,0 +1,3541 @@
+{
+  "map_bounding_box": {
+    "ne_long": 108.310174942017,
+    "sw_lat": 15.9656469828662,
+    "sw_long": 108.142268657684,
+    "ne_lat": 16.1220372789624
+  },
+  "b_max_los_data": {
+    "has_extended_los": 1,
+    "extended_los": 90,
+    "is_fullon": 0,
+    "experiment": "long_stays_android_extend_los_2",
+    "max_allowed_los": 90,
+    "default_los": 45
+  },
+  "ranking_version": 5,
+  "has_low_availability": "",
+  "primary_count": 687,
+  "page_loading_threshold": 10,
+  "recommended_filters": [
+    {
+      "name": "Free cancellation",
+      "generic_id": "free_cancellation::1"
+    },
+    {
+      "name": "Very Good: 8+",
+      "generic_id": "reviewscorebuckets::80"
+    },
+    {
+      "name": "Hotels",
+      "generic_id": "property_type::204"
+    },
+    {
+      "generic_id": "mealplan::breakfast_included",
+      "name": "Breakfast Included"
+    },
+    {
+      "generic_id": "property_type::201",
+      "name": "Apartments"
+    }
+  ],
+  "base_filters": [
+    {
+      "type": "multiple_union",
+      "iconfont": "pricetag",
+      "layout": {
+        "collapsed_count": 5,
+        "is_collapsed": 0,
+        "is_collapsable": 0
+      },
+      "categories": [
+        {
+          "count": 411,
+          "from": 0,
+          "to": 50,
+          "name": "US$0 - US$500 ",
+          "style_for_count": 0,
+          "display_format": "%LOWER% - %UPPER%",
+          "id": "price_category::50",
+          "selected": 0
+        },
+        {
+          "count": 247,
+          "display_format": "%LOWER% - %UPPER%",
+          "style_for_count": 0,
+          "to": 100,
+          "name": "US$500 - US$1,000 ",
+          "from": 50,
+          "id": "price_category::100",
+          "selected": 0
+        },
+        {
+          "id": "price_category::150",
+          "selected": 0,
+          "count": 99,
+          "display_format": "%LOWER% - %UPPER%",
+          "style_for_count": 0,
+          "name": "US$1,000 - US$1,500 ",
+          "to": 150,
+          "from": 100
+        },
+        {
+          "selected": 0,
+          "id": "price_category::200",
+          "display_format": "%LOWER% - %UPPER%",
+          "style_for_count": 0,
+          "to": 200,
+          "name": "US$1,500 - US$2,000 ",
+          "from": 150,
+          "count": 55
+        },
+        {
+          "selected": 0,
+          "id": "price_category::250",
+          "name": "US$2,000 + ",
+          "to": 0,
+          "style_for_count": 0,
+          "display_format": "%LOWER% + ",
+          "from": 200,
+          "count": 153
+        }
+      ],
+      "title": "Your budget (for 10 nights)",
+      "irene_resp_id": "pri",
+      "any_text": "No price range selected",
+      "id": "price_category",
+      "is_group": 1
+    },
+    {
+      "is_group": 1,
+      "id": "popular",
+      "any_text": "No rating selected",
+      "irene_resp_id": "popular",
+      "title": "Popular Filters",
+      "categories": [
+        {
+          "id": "mealplan::breakfast_included",
+          "count": 206,
+          "popular_rank": 4,
+          "popular": 1,
+          "name": "Breakfast Included",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "id": "property_type::206",
+          "count": 20,
+          "popular_rank": 6,
+          "popular": 1,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Resorts"
+        },
+        {
+          "name": "Family rooms",
+          "style_for_count": 0,
+          "experiment_tracking_data": {
+            "track_on_select": [
+              {
+                "type": 1,
+                "experiment_tag": "families_app_family_rooms_blackout",
+                "value": 1
+              }
+            ]
+          },
+          "popular_rank": 7,
+          "count": 556,
+          "selected": 0,
+          "popular": 1,
+          "id": "facility::28"
+        },
+        {
+          "selected": 0,
+          "name": "Villas",
+          "style_for_count": 0,
+          "popular": 1,
+          "popular_rank": 8,
+          "count": 96,
+          "id": "property_type::213"
+        },
+        {
+          "count": 384,
+          "id": "reviewscorebuckets::80",
+          "popular_rank": 12,
+          "popular": 1,
+          "selected": 0,
+          "name": "Very Good: 8+",
+          "style_for_count": 0
+        },
+        {
+          "popular_rank": 13,
+          "id": "reviewscorebuckets::90",
+          "count": 115,
+          "selected": 0,
+          "name": "Wonderful: 9+",
+          "style_for_count": 0,
+          "popular": 1
+        },
+        {
+          "popular_rank": 14,
+          "id": "property_type::204",
+          "count": 380,
+          "name": "Hotels",
+          "selected": 0,
+          "style_for_count": 0,
+          "popular": 1
+        }
+      ],
+      "layout": {
+        "is_collapsable": 0,
+        "is_collapsed": 0,
+        "collapsed_count": 5
+      },
+      "iconfont": "aconfirmation",
+      "type": "multiple_intersection"
+    },
+    {
+      "id": "free_cancellation",
+      "any_text": null,
+      "irene_resp_id": "fc",
+      "is_group": 1,
+      "type": "single_option",
+      "categories": [
+        {
+          "id": "free_cancellation::1",
+          "count": 629,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Free cancellation"
+        }
+      ],
+      "title": "Free cancellation ",
+      "layout": {
+        "is_collapsable": 0,
+        "is_collapsed": 0,
+        "collapsed_count": 5
+      },
+      "iconfont": "aconfirmation"
+    },
+    {
+      "id": "class",
+      "irene_resp_id": "class",
+      "any_text": "No stars selected",
+      "is_group": 1,
+      "type": "multiple_union",
+      "experiment_tracking_data": {
+        "track_on_view": [
+          {
+            "experiment_tag": "srx_property_rating_copy_change_apps",
+            "value": 1,
+            "type": 0
+          },
+          {
+            "type": 0,
+            "experiment_tag": "srx_property_rating_copy_change_apps",
+            "value": 2
+          }
+        ]
+      },
+      "title": "Star Rating",
+      "categories": [
+        {
+          "count": 195,
+          "id": "class::0",
+          "selected": 0,
+          "name": "Unrated",
+          "style_for_count": 0
+        },
+        {
+          "id": "class::1",
+          "count": 16,
+          "style_for_count": 0,
+          "name": "1 star",
+          "selected": 0
+        },
+        {
+          "selected": 0,
+          "name": "2 stars",
+          "style_for_count": 0,
+          "id": "class::2",
+          "count": 64
+        },
+        {
+          "count": 175,
+          "id": "class::3",
+          "name": "3 stars",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "4 stars",
+          "count": 194,
+          "id": "class::4"
+        },
+        {
+          "count": 43,
+          "id": "class::5",
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "5 stars"
+        }
+      ],
+      "iconfont": "acstar",
+      "layout": {
+        "is_collapsable": 0,
+        "is_collapsed": 0,
+        "collapsed_count": 5
+      }
+    },
+    {
+      "type": "multiple_union",
+      "layout": {
+        "is_collapsable": 1,
+        "is_collapsed": 1,
+        "collapsed_count": 5
+      },
+      "iconfont": "homecrop",
+      "experiment_tracking_data": {
+        "track_on_view": [
+          {
+            "value": 1,
+            "experiment_tag": "srx_apps_remove_aparthotels_from_hotels",
+            "type": 0
+          },
+          {
+            "type": 0,
+            "experiment_tag": "srx_apps_remove_aparthotels_from_hotels",
+            "value": 3
+          },
+          {
+            "type": 0,
+            "value": 4,
+            "experiment_tag": "srx_apps_remove_aparthotels_from_hotels"
+          },
+          {
+            "type": 0,
+            "value": 6,
+            "experiment_tag": "srx_apps_remove_aparthotels_from_hotels"
+          },
+          {
+            "experiment_tag": "srx_apps_remove_aparthotels_from_hotels",
+            "value": 8,
+            "type": 0
+          }
+        ]
+      },
+      "categories": [
+        {
+          "selected": 0,
+          "name": "Hotels",
+          "style_for_count": 0,
+          "popular": 1,
+          "popular_rank": 14,
+          "id": "property_type::204",
+          "count": 380
+        },
+        {
+          "count": 343,
+          "id": "family_friendly_property::1",
+          "style_for_count": 0,
+          "name": "Family-Friendly Properties",
+          "selected": 0
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Apartments",
+          "id": "property_type::201",
+          "count": 178
+        },
+        {
+          "popular_rank": 8,
+          "id": "property_type::213",
+          "count": 96,
+          "selected": 0,
+          "name": "Villas",
+          "style_for_count": 0,
+          "popular": 1
+        },
+        {
+          "popular": 1,
+          "style_for_count": 0,
+          "name": "Resorts",
+          "selected": 0,
+          "count": 20,
+          "id": "property_type::206",
+          "popular_rank": 6
+        },
+        {
+          "id": "property_type::222",
+          "count": 20,
+          "style_for_count": 0,
+          "name": "Homestays",
+          "selected": 0
+        },
+        {
+          "count": 8,
+          "id": "property_type::216",
+          "style_for_count": 0,
+          "name": "Guesthouses",
+          "selected": 0
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Hostels",
+          "id": "property_type::203",
+          "count": 7
+        },
+        {
+          "style_for_count": 0,
+          "name": "Vacation Homes",
+          "selected": 0,
+          "id": "property_type::220",
+          "count": 7
+        },
+        {
+          "count": 4,
+          "id": "property_type::208",
+          "selected": 0,
+          "name": "Bed and Breakfasts",
+          "style_for_count": 0
+        },
+        {
+          "id": "property_type::226",
+          "count": 2,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Love Hotels"
+        },
+        {
+          "selected": 0,
+          "name": "Motels",
+          "style_for_count": 0,
+          "id": "property_type::205",
+          "count": 1
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Campgrounds",
+          "id": "property_type::214",
+          "count": 1
+        }
+      ],
+      "title": "Property Type",
+      "any_text": "No property type selected",
+      "irene_resp_id": "ht_id",
+      "id": "property_type",
+      "is_group": 1
+    },
+    {
+      "type": "multiple_intersection",
+      "layout": {
+        "is_collapsed": 1,
+        "is_collapsable": 1,
+        "collapsed_count": 5
+      },
+      "iconfont": "frontdesk",
+      "experiment_tracking_data": {
+        "track_on_view": [
+          {
+            "value": 1,
+            "experiment_tag": "families_app_family_rooms_blackout",
+            "type": 0
+          }
+        ]
+      },
+      "categories": [
+        {
+          "count": 521,
+          "id": "facility::8",
+          "selected": 0,
+          "name": "24-hour front desk",
+          "style_for_count": 0
+        },
+        {
+          "count": 461,
+          "id": "facility::17",
+          "name": "Airport shuttle",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "id": "facility::139",
+          "count": 33,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Airport shuttle (free)"
+        },
+        {
+          "count": 200,
+          "id": "facility::72",
+          "name": "BBQ facilities",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "id": "facility::182",
+          "count": 59,
+          "name": "Electric vehicle charging station",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Facilities for disabled guests",
+          "id": "facility::25",
+          "count": 163
+        },
+        {
+          "experiment_tracking_data": {
+            "track_on_select": [
+              {
+                "value": 1,
+                "experiment_tag": "families_app_family_rooms_blackout",
+                "type": 1
+              }
+            ]
+          },
+          "name": "Family rooms",
+          "style_for_count": 0,
+          "count": 556,
+          "popular_rank": 7,
+          "popular": 1,
+          "selected": 0,
+          "id": "facility::28"
+        },
+        {
+          "id": "facility::11",
+          "count": 181,
+          "selected": 0,
+          "name": "Fitness center",
+          "style_for_count": 0
+        },
+        {
+          "selected": 0,
+          "name": "Free parking",
+          "style_for_count": 0,
+          "count": 575,
+          "id": "facility::46"
+        },
+        {
+          "count": 601,
+          "id": "facility::107",
+          "name": "Free WiFi",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "count": 546,
+          "id": "facility::16",
+          "selected": 0,
+          "name": "Non-smoking rooms",
+          "style_for_count": 0
+        },
+        {
+          "selected": 0,
+          "name": "Parking",
+          "style_for_count": 0,
+          "count": 615,
+          "id": "facility::2"
+        },
+        {
+          "count": 180,
+          "id": "facility::4",
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Pet friendly"
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Restaurant",
+          "count": 326,
+          "id": "facility::3"
+        },
+        {
+          "count": 506,
+          "id": "facility::5",
+          "selected": 0,
+          "name": "Room service",
+          "style_for_count": 0
+        },
+        {
+          "selected": 0,
+          "name": "Spa",
+          "style_for_count": 0,
+          "id": "facility::54",
+          "count": 226
+        },
+        {
+          "selected": 0,
+          "name": "Swimming pool",
+          "style_for_count": 0,
+          "count": 317,
+          "id": "facility::433"
+        }
+      ],
+      "title": "Facilities",
+      "any_text": "No facilities selected",
+      "irene_resp_id": "hotelfacility",
+      "id": "facility",
+      "is_group": 1
+    },
+    {
+      "is_group": 1,
+      "any_text": "No Preference",
+      "irene_resp_id": "distance",
+      "id": "distance",
+      "layout": {
+        "collapsed_count": 5,
+        "is_collapsable": 0,
+        "is_collapsed": 0
+      },
+      "iconfont": null,
+      "categories": [
+        {
+          "count": 49,
+          "id": "distance::1000",
+          "name": "Less than 1 km",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Less than 3 km",
+          "id": "distance::3000",
+          "count": 297
+        },
+        {
+          "count": 565,
+          "id": "distance::5000",
+          "selected": 0,
+          "name": "Less than 5 km",
+          "style_for_count": 0
+        }
+      ],
+      "title": "Distance from city center",
+      "type": "multiple_single_selection"
+    },
+    {
+      "id": "BeachAccessFacilityFilter",
+      "irene_resp_id": "BeachAccessFacilityFilter",
+      "any_text": null,
+      "is_group": 1,
+      "type": "multiple_union",
+      "title": "Beach Access",
+      "categories": [
+        {
+          "selected": 0,
+          "name": "Private beach",
+          "style_for_count": 0,
+          "id": "BeachAccessFacilityFilter::0",
+          "count": 159
+        },
+        {
+          "count": 342,
+          "id": "BeachAccessFacilityFilter::1",
+          "name": "Beachfront",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "style_for_count": 0,
+          "name": "Less than 1/2 mile",
+          "selected": 0,
+          "id": "BeachAccessFacilityFilter::2",
+          "count": 543
+        },
+        {
+          "id": "BeachAccessFacilityFilter::3",
+          "count": 605,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Less than 1 mile"
+        },
+        {
+          "id": "BeachAccessFacilityFilter::4",
+          "count": 676,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Less than 2 miles"
+        }
+      ],
+      "iconfont": null,
+      "layout": {
+        "collapsed_count": 5,
+        "is_collapsable": 0,
+        "is_collapsed": 0
+      }
+    },
+    {
+      "irene_resp_id": "mealplan",
+      "any_text": "Any meal options",
+      "id": "mealplan",
+      "is_group": 1,
+      "type": "multiple_union",
+      "iconfont": "restaurants",
+      "layout": {
+        "is_collapsed": 1,
+        "is_collapsable": 1,
+        "collapsed_count": 5
+      },
+      "categories": [
+        {
+          "popular_rank": 4,
+          "id": "mealplan::breakfast_included",
+          "count": 206,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Breakfast Included",
+          "popular": 1
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Breakfast & dinner included",
+          "count": 3,
+          "id": "mealplan::breakfast_and_dinner"
+        },
+        {
+          "name": "All-inclusive",
+          "selected": 0,
+          "style_for_count": 0,
+          "id": "mealplan::all_inclusive",
+          "count": 2
+        },
+        {
+          "id": "mealplan::breakfast_and_lunch",
+          "count": 1,
+          "selected": 0,
+          "name": "Breakfast & lunch included",
+          "style_for_count": 0
+        },
+        {
+          "id": "mealplan::full_board",
+          "count": 1,
+          "name": "All meals included",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Kitchen amenities",
+          "count": 395,
+          "id": "mealplan::999"
+        }
+      ],
+      "title": "Meals"
+    },
+    {
+      "id": "chaincode",
+      "irene_resp_id": "chaincode",
+      "any_text": "No chain selected",
+      "is_group": 1,
+      "type": "multiple_union",
+      "categories": [
+        {
+          "selected": 0,
+          "name": "Accor",
+          "style_for_count": 0,
+          "count": 1,
+          "id": "chaincode::2285"
+        },
+        {
+          "style_for_count": 0,
+          "name": "Grand Mercure",
+          "selected": 0,
+          "count": 1,
+          "id": "chaincode::3135"
+        },
+        {
+          "id": "chaincode::1078",
+          "count": 1,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Hilton Hotels & Resorts"
+        },
+        {
+          "selected": 0,
+          "name": "Hyatt Regency",
+          "style_for_count": 0,
+          "id": "chaincode::3631",
+          "count": 1
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "InterContinental Hotels & Resorts",
+          "count": 1,
+          "id": "chaincode::1070"
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Meliá Hotels & Resorts",
+          "count": 1,
+          "id": "chaincode::1082"
+        },
+        {
+          "selected": 0,
+          "name": "Novotel",
+          "style_for_count": 0,
+          "id": "chaincode::1050",
+          "count": 1
+        },
+        {
+          "count": 8,
+          "id": "chaincode::6015",
+          "name": "OYO Rooms",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "count": 1,
+          "id": "chaincode::1854",
+          "style_for_count": 0,
+          "name": "Pullman Hotels and Resorts",
+          "selected": 0
+        },
+        {
+          "name": "Radisson",
+          "selected": 0,
+          "style_for_count": 0,
+          "id": "chaincode::8647",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "id": "chaincode::7891",
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Vinpearl Hotels and Resorts"
+        }
+      ],
+      "title": "Chain",
+      "iconfont": "hotel",
+      "layout": {
+        "is_collapsed": 1,
+        "is_collapsable": 1,
+        "collapsed_count": 5
+      }
+    },
+    {
+      "is_group": 1,
+      "irene_resp_id": "review_score",
+      "any_text": "No score selected",
+      "id": "reviewscorebuckets",
+      "iconfont": "reviews",
+      "layout": {
+        "is_collapsable": 1,
+        "is_collapsed": 1,
+        "collapsed_count": 5
+      },
+      "title": "Review Score",
+      "categories": [
+        {
+          "id": "reviewscorebuckets::50",
+          "count": 458,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Fair: 5+"
+        },
+        {
+          "id": "reviewscorebuckets::60",
+          "count": 454,
+          "name": "Pleasant: 6+",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "style_for_count": 0,
+          "name": "Good: 7+",
+          "selected": 0,
+          "id": "reviewscorebuckets::70",
+          "count": 440
+        },
+        {
+          "id": "reviewscorebuckets::80",
+          "count": 384,
+          "popular_rank": 12,
+          "popular": 1,
+          "style_for_count": 0,
+          "name": "Very Good: 8+",
+          "selected": 0
+        },
+        {
+          "popular_rank": 13,
+          "count": 115,
+          "id": "reviewscorebuckets::90",
+          "name": "Wonderful: 9+",
+          "selected": 0,
+          "style_for_count": 0,
+          "popular": 1
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "No rating",
+          "count": 119,
+          "id": "reviewscorebuckets::999"
+        }
+      ],
+      "type": "multiple_single_selection"
+    },
+    {
+      "type": "multiple_intersection",
+      "layout": {
+        "is_collapsable": 1,
+        "is_collapsed": 1,
+        "collapsed_count": 5
+      },
+      "iconfont": "bath",
+      "categories": [
+        {
+          "id": "room_facility::38",
+          "count": 633,
+          "style_for_count": 0,
+          "name": "Private bathroom",
+          "selected": 0
+        },
+        {
+          "name": "Kitchen/Kitchenette",
+          "selected": 0,
+          "style_for_count": 0,
+          "id": "room_facility::999",
+          "count": 395
+        },
+        {
+          "selected": 0,
+          "name": "Air conditioning",
+          "style_for_count": 0,
+          "id": "room_facility::11",
+          "count": 679
+        },
+        {
+          "name": "Washing machine",
+          "selected": 0,
+          "style_for_count": 0,
+          "id": "room_facility::34",
+          "count": 273
+        },
+        {
+          "selected": 0,
+          "name": "Ocean view",
+          "style_for_count": 0,
+          "count": 266,
+          "id": "room_facility::108"
+        },
+        {
+          "style_for_count": 0,
+          "name": "Flat-screen TV",
+          "selected": 0,
+          "count": 651,
+          "id": "room_facility::75"
+        },
+        {
+          "id": "room_facility::17",
+          "count": 427,
+          "selected": 0,
+          "name": "Balcony",
+          "style_for_count": 0
+        },
+        {
+          "count": 286,
+          "id": "room_facility::123",
+          "selected": 0,
+          "name": "Terrace",
+          "style_for_count": 0
+        },
+        {
+          "count": 130,
+          "id": "room_facility::93",
+          "style_for_count": 0,
+          "name": "Private pool",
+          "selected": 0
+        },
+        {
+          "id": "room_facility::998",
+          "count": 567,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Coffee/Tea maker"
+        },
+        {
+          "id": "room_facility::81",
+          "count": 622,
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "View"
+        },
+        {
+          "name": "Bathtub",
+          "selected": 0,
+          "style_for_count": 0,
+          "id": "room_facility::5",
+          "count": 282
+        },
+        {
+          "selected": 0,
+          "name": "Spa tub",
+          "style_for_count": 0,
+          "count": 74,
+          "id": "room_facility::20"
+        },
+        {
+          "count": 166,
+          "id": "room_facility::37",
+          "name": "Patio",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "selected": 0,
+          "name": "Soundproof",
+          "style_for_count": 0,
+          "count": 393,
+          "id": "room_facility::79"
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Electric kettle",
+          "id": "room_facility::86",
+          "count": 564
+        },
+        {
+          "count": 69,
+          "id": "room_facility::120",
+          "style_for_count": 0,
+          "name": "Coffee machine",
+          "selected": 0
+        }
+      ],
+      "title": "Room Facilities",
+      "any_text": "No room facilities selected",
+      "irene_resp_id": "roomfacility",
+      "id": "room_facility",
+      "is_group": 1
+    },
+    {
+      "is_group": 1,
+      "irene_resp_id": "tdb",
+      "any_text": "Select bed type",
+      "id": "twin_double_bed",
+      "iconfont": null,
+      "layout": {
+        "collapsed_count": 5,
+        "is_collapsable": 0,
+        "is_collapsed": 0
+      },
+      "experiment_tracking_data": {
+        "track_on_view": [
+          {
+            "value": 1,
+            "experiment_tag": "android_fax_cribs_filter",
+            "type": 0
+          }
+        ]
+      },
+      "title": "Bed Preference",
+      "categories": [
+        {
+          "id": "twin_double_bed::2",
+          "count": 0,
+          "name": "2 single beds",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "name": "Double bed",
+          "selected": 0,
+          "style_for_count": 0,
+          "count": 0,
+          "id": "twin_double_bed::3"
+        },
+        {
+          "selected": 0,
+          "name": "Cribs",
+          "style_for_count": 0,
+          "count": 17,
+          "id": "twin_double_bed::4"
+        }
+      ],
+      "type": "multiple_union"
+    },
+    {
+      "is_group": 1,
+      "id": "district",
+      "any_text": "No district selected",
+      "irene_resp_id": "di",
+      "categories": [
+        {
+          "name": "My Khe Beach",
+          "selected": 0,
+          "style_for_count": 0,
+          "count": 363,
+          "id": "district::5342"
+        },
+        {
+          "id": "district::5454",
+          "count": 78,
+          "selected": 0,
+          "name": "Da Nang City Center",
+          "style_for_count": 0
+        },
+        {
+          "name": "Bac My An Beach",
+          "selected": 0,
+          "style_for_count": 0,
+          "count": 75,
+          "id": "district::5343"
+        },
+        {
+          "name": "Non Nuoc Beach",
+          "selected": 0,
+          "style_for_count": 0,
+          "id": "district::5344",
+          "count": 72
+        },
+        {
+          "count": 70,
+          "id": "district::5453",
+          "style_for_count": 0,
+          "name": "Han River",
+          "selected": 0
+        },
+        {
+          "selected": 0,
+          "name": "Da Nang Bay",
+          "style_for_count": 0,
+          "count": 21,
+          "id": "district::5452"
+        },
+        {
+          "count": 12,
+          "id": "district::5345",
+          "selected": 0,
+          "name": "Marble Mountain",
+          "style_for_count": 0
+        },
+        {
+          "name": "Tho Quang Beach",
+          "selected": 0,
+          "style_for_count": 0,
+          "id": "district::5340",
+          "count": 5
+        },
+        {
+          "count": 4,
+          "id": "district::5339",
+          "name": "Son Tra Peninsula",
+          "selected": 0,
+          "style_for_count": 0
+        }
+      ],
+      "title": "District",
+      "layout": {
+        "collapsed_count": 5,
+        "is_collapsable": 1,
+        "is_collapsed": 1
+      },
+      "iconfont": "marker",
+      "type": "multiple_union"
+    },
+    {
+      "is_group": 1,
+      "id": "popular_nearby_landmarks",
+      "irene_resp_id": "popular_nearby_landmarks",
+      "any_text": "No landmarks selected",
+      "title": "Landmarks",
+      "categories": [
+        {
+          "count": 53,
+          "id": "popular_nearby_landmarks::264200",
+          "name": "Dragon Bridge",
+          "selected": 0,
+          "style_for_count": 0
+        },
+        {
+          "style_for_count": 0,
+          "selected": 0,
+          "name": "Marble Mountains",
+          "count": 7,
+          "id": "popular_nearby_landmarks::248776"
+        }
+      ],
+      "iconfont": "landmark",
+      "layout": {
+        "is_collapsable": 0,
+        "is_collapsed": 0,
+        "collapsed_count": 5
+      },
+      "type": "multiple_union"
+    }
+  ],
+  "extended_count": 0,
+  "count": 687,
+  "unfiltered_primary_count": 1142,
+  "sort": [
+    {
+      "id": "distance",
+      "name": "Distance From Downtown"
+    },
+    {
+      "name": "Popularity",
+      "id": "popularity"
+    },
+    {
+      "id": "class_descending",
+      "name": "Stars (5 to 0)"
+    },
+    {
+      "id": "class_ascending",
+      "name": "Stars (0 to 5)"
+    },
+    {
+      "name": "Guest Review Score",
+      "id": "bayesian_review_score"
+    },
+    {
+      "id": "price",
+      "name": "Price (low to high)"
+    }
+  ],
+  "sorting": {
+    "options": [
+      {
+        "name": "Distance From Downtown",
+        "identifier": "distance",
+        "loading_message": ""
+      },
+      {
+        "identifier": "popularity",
+        "name": "Popularity",
+        "loading_message": ""
+      },
+      {
+        "identifier": "class_descending",
+        "name": "Stars (5 to 0)",
+        "loading_message": ""
+      },
+      {
+        "name": "Stars (0 to 5)",
+        "identifier": "class_ascending",
+        "loading_message": ""
+      },
+      {
+        "identifier": "bayesian_review_score",
+        "name": "Guest Review Score",
+        "loading_message": ""
+      },
+      {
+        "identifier": "price",
+        "name": "Price (low to high)",
+        "loading_message": ""
+      }
+    ],
+    "selected_identifier": "popularity"
+  },
+  "result": [
+    {
+      "currency_code": "VND",
+      "is_geo_rate": "",
+      "type": "property_card",
+      "native_ads_tracking": "",
+      "review_nr": 782,
+      "preferred": 1,
+      "updated_checkout": null,
+      "city_name_en": "Ngu Hanh Son ",
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "all_inclusive_price": 3510605,
+        "gross_price": "3052700.00",
+        "sum_excluded_raw": "457905.00",
+        "currency": "VND",
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "has_incalculable_charges": 0
+      },
+      "is_smart_deal": 0,
+      "default_wishlist_name": "Danang",
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "localized_area": null,
+          "unit_type_id": 8
+        }
+      },
+      "hotel_id": 5316238,
+      "class": 4,
+      "zip": "",
+      "wishlist_count": 0,
+      "hotel_include_breakfast": 0,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 204,
+      "is_mobile_deal": 1,
+      "address": "41-42 Do Bi Street",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/376080001.jpg?k=007d89df3d551a57b6625198165d8ce4180c3aac27b091d01bbdcfe788035f12&o=",
+      "is_genius_deal": 0,
+      "native_ad_id": "",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "city_in_trans": "in Danang",
+      "native_ads_cpc": 0,
+      "longitude": 108.245778,
+      "hotel_name": "Cherry Hotel & Apartment Da Nang - Phoenix 2 Hotel",
+      "in_best_district": 0,
+      "district": "My Khe Beach",
+      "cc1": "vn",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "url": "https://www.booking.com/hotel/vn/da-nang-sunlit-sea-amp-apartment.html",
+      "hotel_name_trans": "Cherry Hotel & Apartment Da Nang - Phoenix 2 Hotel",
+      "latitude": 16.054396,
+      "cant_book": 0,
+      "review_score": 7.9,
+      "ufi": -3712125,
+      "is_city_center": 0,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "until": "",
+        "from": "14:00"
+      },
+      "selected_review_topic": null,
+      "extended": 0,
+      "accommodation_type_name": "Hotels",
+      "currencycode": "VND",
+      "updated_checkin": null,
+      "has_swimming_pool": 1,
+      "id": "property_card_5316238",
+      "default_language": "xu",
+      "distance_to_cc": "3.25",
+      "block_ids": [
+        "531623802_363342776_2_0_0"
+      ],
+      "checkout": {
+        "from": "",
+        "until": "12:00"
+      },
+      "country_trans": "Vietnam",
+      "districts": "5342",
+      "distance": "3.24",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 377300,
+      "countrycode": "vn",
+      "children_not_allowed": 0,
+      "hotel_facilities": "203,184,458,304,127,461,7,143,486,25,174,193,425,473,494,444,5,484,4,158,436,496,446,221,242,451,52,420,183,502,468,134,173,194,129,257,186,433,213,493,465,2,404,75,450,220,506,167,421,212,492,46,15,91,503,159,457,90,467,142,192,16,472,3,104,258,22,460,459,8,504,244,455,462,449,49,44,499,200,445,179,108,424,495,78,17,111,140,487,305,418,470,185,145,124,47,423,447,19,101,497,199,205,118,73,81,485,210,209,490,53,48,426,452,222,187,54,489,488,119,301,181,453,223,198,464,405,64,240,422,456,163,491,28,107,69,51,419,201,466,23,454,505,188,463,141,109,110,96,407,471,498",
+      "class_is_estimated": 0,
+      "deals": {
+        "deals_available": {},
+        "deal_events_killswitch": 0,
+        "deal_attributes": {}
+      },
+      "is_no_prepayment_block": 1,
+      "min_total_price": 3052700,
+      "district_id": 5342,
+      "soldout": 0,
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 376080001,
+      "address_trans": "41-42 Do Bi Street",
+      "is_free_cancellable": 1,
+      "badges": [
+        {
+          "text": "Mobile-only price",
+          "id": "Mobile Rate",
+          "badge_variant": "constructive"
+        }
+      ],
+      "has_free_parking": 1,
+      "city": "Ngu Hanh Son ",
+      "urgency_room_msg": "Superior Twin Room",
+      "review_score_word": "Good",
+      "review_recommendation": ""
+    },
+    {
+      "country_trans": "Vietnam",
+      "checkout": {
+        "from": "01:00",
+        "until": "12:00"
+      },
+      "distance": "3.48",
+      "districts": "5342",
+      "mobile_discount_percentage": 315000,
+      "city_trans": "Danang",
+      "countrycode": "vn",
+      "hotel_facilities": "186,443,129,161,213,493,433,468,134,496,436,420,183,446,221,451,484,158,494,425,5,444,127,143,461,25,476,458,304,146,504,455,22,8,459,460,258,472,90,121,467,142,16,302,159,457,160,503,91,167,442,421,450,506,46,103,492,2,465,404,172,82,53,48,209,210,61,490,440,489,452,81,485,19,423,497,101,145,47,124,418,305,185,470,140,487,179,445,78,17,435,108,424,49,462,449,499,200,219,439,44,448,463,110,96,109,454,201,419,23,481,422,456,441,163,64,107,69,51,491,28,198,301,453,223,488",
+      "children_not_allowed": 0,
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "checkin": {
+        "until": "00:00",
+        "from": "14:00"
+      },
+      "genius_discount_percentage": 0,
+      "extended": 0,
+      "selected_review_topic": null,
+      "accommodation_type_name": "Hotels",
+      "currencycode": "VND",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "default_language": "vi",
+      "id": "property_card_2439030",
+      "distance_to_cc": "3.50",
+      "block_ids": [
+        "243903001_248683524_2_0_0"
+      ],
+      "main_photo_id": 249794327,
+      "hotel_has_vb_boost": 0,
+      "is_free_cancellable": 1,
+      "address_trans": "5-7 An Thuong 32, My An Ward, Ngu Hanh Son District",
+      "has_free_parking": 1,
+      "badges": [
+        {
+          "badge_variant": "constructive",
+          "id": "Mobile Rate",
+          "text": "Mobile-only price"
+        }
+      ],
+      "city": "Danang",
+      "review_score_word": "Wonderful",
+      "urgency_room_msg": "Superior Double Room - No Window",
+      "review_recommendation": "",
+      "class_is_estimated": 0,
+      "deals": {
+        "deal_events_killswitch": 0,
+        "deals_available": {},
+        "deal_attributes": {}
+      },
+      "is_no_prepayment_block": 1,
+      "min_total_price": 2835000,
+      "district_id": 5342,
+      "soldout": 0,
+      "price_breakdown": {
+        "all_inclusive_price": 2963280.54,
+        "gross_price": "2835000.00",
+        "sum_excluded_raw": 128280.54,
+        "currency": "VND",
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "has_incalculable_charges": 0
+      },
+      "preferred_plus": 1,
+      "city_name_en": "Danang",
+      "updated_checkout": null,
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 9,
+          "localized_area": null
+        }
+      },
+      "hotel_id": 2439030,
+      "hotel_include_breakfast": 0,
+      "wishlist_count": 0,
+      "class": 3,
+      "zip": "",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 204,
+      "is_mobile_deal": 1,
+      "address": "5-7 An Thuong 32, My An Ward, Ngu Hanh Son District",
+      "currency_code": "VND",
+      "is_geo_rate": "",
+      "type": "property_card",
+      "review_nr": 1279,
+      "native_ads_tracking": "",
+      "preferred": 1,
+      "cc1": "vn",
+      "cc_required": 1,
+      "price_is_final": 0,
+      "url": "https://www.booking.com/hotel/vn/raon-danang-beach-danang.html",
+      "hotel_name_trans": "Raon Danang Beach",
+      "latitude": 16.0511315264956,
+      "review_score": 9.1,
+      "cant_book": 0,
+      "is_genius_deal": 0,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/249794327.jpg?k=676f3194a67cc267584f1ff50f5f1c2fdd2995772c50f9e129e8fa3743c00fd5&o=",
+      "native_ad_id": "",
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "longitude": 108.246340546757,
+      "hotel_name": "Raon Danang Beach",
+      "in_best_district": 0,
+      "district": "My Khe Beach"
+    },
+    {
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 389604482,
+      "address_trans": "Lot B20- B21 Pham Van Dong Str,  An Hai Bac Ward, Son Tra District",
+      "is_free_cancellable": 1,
+      "badges": [
+        {
+          "text": "Mobile-only price",
+          "id": "Mobile Rate",
+          "badge_variant": "constructive"
+        }
+      ],
+      "city": "Danang",
+      "urgency_room_msg": "Superior Twin Room",
+      "review_score_word": "Very Good",
+      "review_recommendation": "",
+      "class_is_estimated": 0,
+      "is_no_prepayment_block": 1,
+      "deals": {
+        "deals_available": {},
+        "deal_events_killswitch": 0,
+        "deal_attributes": {}
+      },
+      "min_total_price": 4918320,
+      "district_id": 5342,
+      "soldout": 0,
+      "country_trans": "Vietnam",
+      "checkout": {
+        "from": "01:00",
+        "until": "12:00"
+      },
+      "districts": "5342",
+      "distance": "1.93",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 546479.999999999,
+      "countrycode": "vn",
+      "children_not_allowed": 0,
+      "hotel_facilities": "205,118,81,485,490,210,209,48,222,426,452,489,408,124,47,447,253,423,199,497,140,487,305,418,470,449,462,43,49,44,219,200,499,445,179,424,108,17,495,78,463,407,96,110,109,471,498,117,201,23,466,454,505,198,464,64,163,456,422,63,28,491,51,409,107,488,119,301,11,223,453,468,194,129,433,493,72,484,158,176,436,496,451,446,221,183,502,420,461,143,7,486,425,168,494,473,444,5,203,146,304,458,406,22,460,8,459,6,504,76,455,467,169,192,16,472,258,3,104,302,15,91,503,457,159,465,75,220,506,450,421,492",
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "from": "14:00",
+        "until": "00:00"
+      },
+      "selected_review_topic": null,
+      "extended": 0,
+      "accommodation_type_name": "Hotels",
+      "currencycode": "VND",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "distance_to_cc": "1.95",
+      "id": "property_card_2343234",
+      "default_language": "vi",
+      "block_ids": [
+        "234323401_361676208_0_2_0"
+      ],
+      "cc1": "vn",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "url": "https://www.booking.com/hotel/vn/merry-land-da-nang.html",
+      "hotel_name_trans": "Merry Land Hotel Da Nang",
+      "latitude": 16.0702326435235,
+      "cant_book": 0,
+      "review_score": 8.5,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/389604482.jpg?k=1f103cbd7f51a052e22fd17460e44140d3d7e7e9249a1564cc394d9c6f8758c8&o=",
+      "is_genius_deal": 0,
+      "native_ad_id": "",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "city_in_trans": "in Danang",
+      "native_ads_cpc": 0,
+      "longitude": 108.237112113274,
+      "in_best_district": 0,
+      "hotel_name": "Merry Land Hotel Da Nang",
+      "district": "My Khe Beach",
+      "city_name_en": "Danang",
+      "updated_checkout": null,
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "sum_excluded_raw": "0.00",
+        "currency": "VND",
+        "all_inclusive_price": 4918320,
+        "gross_price": "4918320.00",
+        "has_incalculable_charges": 0,
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0
+      },
+      "is_smart_deal": 0,
+      "default_wishlist_name": "Danang",
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "localized_area": null,
+          "unit_type_id": 8
+        }
+      },
+      "hotel_id": 2343234,
+      "class": 4,
+      "zip": "",
+      "wishlist_count": 0,
+      "hotel_include_breakfast": 0,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 204,
+      "is_mobile_deal": 1,
+      "address": "Lot B20- B21 Pham Van Dong Str,  An Hai Bac Ward, Son Tra District",
+      "currency_code": "VND",
+      "is_geo_rate": "",
+      "type": "property_card",
+      "native_ads_tracking": "",
+      "review_nr": 1063,
+      "preferred": 1
+    },
+    {
+      "longitude": 108.246117025782,
+      "hotel_name": "Alani Hotel & Spa",
+      "in_best_district": 0,
+      "district": "My Khe Beach",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/398485506.jpg?k=6994340090aa9714d343e05893a989dcf5d044c4537845a0d56207f5a25109ca&o=",
+      "is_genius_deal": 0,
+      "native_ad_id": "",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "city_in_trans": "in Danang",
+      "native_ads_cpc": 0,
+      "latitude": 16.0542313583754,
+      "cant_book": 0,
+      "review_score": 8.5,
+      "cc1": "vn",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "url": "https://www.booking.com/hotel/vn/aria.html",
+      "hotel_name_trans": "Alani Hotel & Spa",
+      "native_ads_tracking": "",
+      "review_nr": 290,
+      "preferred": 1,
+      "currency_code": "VND",
+      "is_geo_rate": 1,
+      "type": "property_card",
+      "hotel_id": 2136070,
+      "zip": "",
+      "class": 4,
+      "wishlist_count": 0,
+      "hotel_include_breakfast": 1,
+      "accommodation_type": 204,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "is_mobile_deal": 0,
+      "address": "134-136-138 Tran Bach Dang",
+      "updated_checkout": null,
+      "city_name_en": "Danang",
+      "price_breakdown": {
+        "all_inclusive_price": 5744995,
+        "gross_price": "5744995.00",
+        "sum_excluded_raw": "0.00",
+        "currency": "VND",
+        "has_tax_exceptions": 0,
+        "has_fine_print_charges": 0,
+        "has_incalculable_charges": 0
+      },
+      "preferred_plus": 1,
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "localized_area": null,
+          "unit_type_id": 9
+        }
+      },
+      "district_id": 5342,
+      "soldout": 0,
+      "class_is_estimated": 0,
+      "deals": {
+        "deal_attributes": {},
+        "deals_available": {
+          "has_flash_deal": 1
+        },
+        "deal_events_killswitch": 0
+      },
+      "is_no_prepayment_block": 1,
+      "min_total_price": 5744995,
+      "city": "Danang",
+      "urgency_room_msg": "Economy Double Room",
+      "review_score_word": "Very Good",
+      "review_recommendation": "",
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 398485506,
+      "address_trans": "134-136-138 Tran Bach Dang",
+      "is_free_cancellable": 1,
+      "badges": [],
+      "has_free_parking": 1,
+      "currencycode": "VND",
+      "accommodation_type_name": "Hotels",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "id": "property_card_2136070",
+      "default_language": "en",
+      "distance_to_cc": "3.30",
+      "block_ids": [
+        "213607028_359110148_2_41_0"
+      ],
+      "ufi": -3712125,
+      "is_city_center": 0,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "from": "14:00",
+        "until": ""
+      },
+      "selected_review_topic": null,
+      "extended": 0,
+      "countrycode": "vn",
+      "children_not_allowed": 0,
+      "hotel_facilities": "409,69,51,107,28,491,252,163,226,422,240,64,405,247,11,237,301,119,448,471,407,96,110,109,10,70,245,505,454,23,249,466,239,117,50,400,248,9,470,418,305,238,140,78,495,17,108,435,445,80,219,499,44,439,49,449,43,489,440,54,222,241,426,20,48,53,231,490,61,210,209,79,81,73,118,205,199,497,101,19,447,253,180,423,47,124,408,177,243,159,227,503,160,91,302,15,46,236,492,246,421,442,251,506,220,450,55,75,82,2,465,404,455,76,244,6,8,459,22,104,3,16,192,467,142,90,5,444,425,133,486,461,7,143,127,304,228,146,203,493,433,12,443,129,194,134,468,502,250,183,420,242,446,496,436,232,176",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "from": "01:00",
+        "until": "12:00"
+      },
+      "districts": "5342",
+      "distance": "3.28",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 0
+    },
+    {
+      "district_id": 5342,
+      "soldout": 0,
+      "deals": {
+        "deal_events_killswitch": 0,
+        "deals_available": {},
+        "deal_attributes": {}
+      },
+      "is_no_prepayment_block": 0,
+      "min_total_price": 7641540,
+      "class_is_estimated": 0,
+      "urgency_room_msg": "Deluxe Twin Room with Partial Sea View",
+      "review_score_word": "Very Good",
+      "review_recommendation": "",
+      "city": "Da Nang",
+      "address_trans": "196 Tran Bach Dang Street, My An Ward, Ngu Hanh Son District",
+      "is_free_cancellable": 1,
+      "badges": [
+        {
+          "badge_variant": "constructive",
+          "id": "Mobile Rate",
+          "text": "Mobile-only price"
+        }
+      ],
+      "has_free_parking": 1,
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 398898999,
+      "id": "property_card_4252651",
+      "distance_to_cc": "3.40",
+      "default_language": "vi",
+      "block_ids": [
+        "425265118_368290410_3_1_0"
+      ],
+      "currencycode": "VND",
+      "accommodation_type_name": "Hotels",
+      "updated_checkin": null,
+      "has_swimming_pool": 1,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "from": "14:00",
+        "until": ""
+      },
+      "selected_review_topic": null,
+      "extended": 0,
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "countrycode": "vn",
+      "children_not_allowed": 0,
+      "hotel_facilities": "503,91,15,302,75,82,2,404,46,212,492,442,421,450,220,506,8,459,482,22,455,76,504,16,192,90,142,3,104,258,472,25,127,461,5,444,494,425,146,304,184,194,468,134,213,493,433,443,129,257,158,420,52,183,502,446,496,436,405,107,69,51,491,28,422,441,163,64,223,181,301,119,110,96,109,407,498,448,466,23,419,505,140,470,9,418,305,499,439,44,49,495,78,17,435,424,108,477,445,81,440,489,452,426,222,48,210,209,490,47,124,497,101,423,253",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 944460,
+      "country_trans": "Vietnam",
+      "checkout": {
+        "until": "12:00",
+        "from": ""
+      },
+      "districts": "5342",
+      "distance": "3.39",
+      "district": "My Khe Beach",
+      "longitude": 108.24651687368,
+      "in_best_district": 0,
+      "hotel_name": "Menora Premium Da Nang - Sea Corner Boutique",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/398898999.jpg?k=f7dce920c3b8e751af218b8605e5d6575a8560b6c396e0db29ef5ac53009d460&o=",
+      "is_genius_deal": 0,
+      "native_ad_id": "",
+      "latitude": 16.0529565485992,
+      "cant_book": 0,
+      "review_score": 8.1,
+      "url": "https://www.booking.com/hotel/vn/sea-corner-boutique-da-nang.html",
+      "hotel_name_trans": "Menora Premium Da Nang - Sea Corner Boutique",
+      "cc1": "vn",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "preferred": 1,
+      "native_ads_tracking": "",
+      "review_nr": 1391,
+      "is_geo_rate": "",
+      "type": "property_card",
+      "currency_code": "VND",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "is_mobile_deal": 1,
+      "accommodation_type": 204,
+      "address": "196 Tran Bach Dang Street, My An Ward, Ngu Hanh Son District",
+      "hotel_id": 4252651,
+      "zip": "",
+      "class": 3,
+      "hotel_include_breakfast": 1,
+      "wishlist_count": 0,
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 13,
+          "localized_area": null
+        }
+      },
+      "updated_checkout": null,
+      "city_name_en": "Da Nang",
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "all_inclusive_price": 8825978.7,
+        "gross_price": "7641540.00",
+        "currency": "VND",
+        "sum_excluded_raw": "1184438.70",
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "has_incalculable_charges": 0
+      }
+    },
+    {
+      "cc1": "vn",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "url": "https://www.booking.com/hotel/vn/santa-luxury.html",
+      "hotel_name_trans": "Santa Luxury Hotel",
+      "latitude": 16.0520360401449,
+      "cant_book": 0,
+      "review_score": 8.9,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/263332472.jpg?k=96c9c8dbbd00f06e8363fe94b53203589fffed11ef60514e2792901a106904bf&o=",
+      "is_genius_deal": 0,
+      "native_ad_id": "",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "longitude": 108.247353336029,
+      "in_best_district": 0,
+      "hotel_name": "Santa Luxury Hotel",
+      "district": "My Khe Beach",
+      "updated_checkout": null,
+      "city_name_en": "Ngũ Hành Sơn",
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "has_incalculable_charges": 0,
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "sum_excluded_raw": "0.00",
+        "currency": "VND",
+        "gross_price": "12751159.00",
+        "all_inclusive_price": 12751159
+      },
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 9,
+          "localized_area": null
+        }
+      },
+      "hotel_id": 6105183,
+      "class": 4,
+      "zip": "",
+      "hotel_include_breakfast": 1,
+      "wishlist_count": 0,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "is_mobile_deal": 1,
+      "accommodation_type": 204,
+      "address": "9 Đỗ Bá",
+      "currency_code": "VND",
+      "is_geo_rate": "",
+      "type": "property_card",
+      "native_ads_tracking": "",
+      "review_nr": 85,
+      "preferred": 1,
+      "hotel_has_vb_boost": 1,
+      "main_photo_id": 263332472,
+      "address_trans": "9 Đỗ Bá",
+      "is_free_cancellable": 1,
+      "badges": [
+        {
+          "text": "Mobile-only price",
+          "id": "Mobile Rate",
+          "badge_variant": "constructive"
+        }
+      ],
+      "has_free_parking": 1,
+      "city": "Ngũ Hành Sơn",
+      "urgency_room_msg": "Double Room with Sea View",
+      "review_score_word": "Excellent",
+      "review_recommendation": "",
+      "class_is_estimated": 0,
+      "deals": {
+        "deal_attributes": {},
+        "deal_events_killswitch": 0,
+        "deals_available": {}
+      },
+      "is_no_prepayment_block": 0,
+      "min_total_price": 12751159,
+      "district_id": 5342,
+      "soldout": 0,
+      "checkout": {
+        "from": "00:00",
+        "until": "12:00"
+      },
+      "country_trans": "Vietnam",
+      "districts": "5342",
+      "distance": "3.51",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 1416795,
+      "countrycode": "vn",
+      "children_not_allowed": 0,
+      "hotel_facilities": "245,117,419,23,249,109,110,96,119,301,11,181,247,240,64,163,422,28,51,107,198,253,447,423,101,199,177,124,47,210,209,53,48,222,20,426,54,205,118,81,424,108,17,78,449,462,49,44,305,418,248,57,185,140,258,104,3,142,192,16,6,244,76,455,22,459,8,220,55,450,421,246,251,46,2,75,15,302,160,91,457,243,451,242,221,250,420,52,158,176,257,161,433,134,144,184,458,203,425,214,5,461,143,7,127,25,133,174",
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "from": "14:00",
+        "until": "00:00"
+      },
+      "selected_review_topic": null,
+      "extended": 0,
+      "currencycode": "VND",
+      "accommodation_type_name": "Hotels",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "default_language": "xu",
+      "id": "property_card_6105183",
+      "distance_to_cc": "3.55",
+      "block_ids": [
+        "610518301_269389984_2_1_0"
+      ]
+    },
+    {
+      "is_free_cancellable": 1,
+      "address_trans": "5 Nguyen Cao Luyen",
+      "has_free_parking": 1,
+      "badges": [],
+      "main_photo_id": 317366362,
+      "hotel_has_vb_boost": 0,
+      "review_score_word": "Exceptional",
+      "urgency_room_msg": "Standard Twin Room with Sofa",
+      "review_recommendation": "",
+      "city": "Son Tra",
+      "is_no_prepayment_block": 0,
+      "deals": {
+        "deal_events_killswitch": 0,
+        "deals_available": {},
+        "deal_attributes": {}
+      },
+      "min_total_price": 13604760,
+      "class_is_estimated": 0,
+      "district_id": 5342,
+      "soldout": 0,
+      "mobile_discount_percentage": 0,
+      "city_trans": "Danang",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "from": "01:00",
+        "until": "12:00"
+      },
+      "distance": "2.40",
+      "districts": "5342",
+      "countrycode": "vn",
+      "hotel_facilities": "470,248,418,305,140,78,17,435,424,179,445,499,200,219,439,44,49,21,462,449,54,440,489,426,222,48,210,209,81,485,118,497,199,14,423,447,180,47,124,177,107,28,491,456,422,405,198,453,247,301,119,448,109,110,96,463,245,505,454,466,249,23,117,5,444,494,425,193,133,127,7,461,458,304,203,493,433,443,161,129,194,468,420,52,250,502,221,451,496,436,176,158,159,243,457,91,503,160,15,46,492,442,251,246,450,55,506,75,404,2,455,76,244,504,8,460,22,406,104,3,258,16,467",
+      "children_not_allowed": 0,
+      "checkin": {
+        "until": "00:00",
+        "from": "14:00"
+      },
+      "genius_discount_percentage": 0,
+      "extended": 0,
+      "selected_review_topic": null,
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "id": "property_card_5506520",
+      "distance_to_cc": "2.45",
+      "default_language": "vi",
+      "block_ids": [
+        "550652005_287999836_2_1_0"
+      ],
+      "accommodation_type_name": "Hotels",
+      "currencycode": "VND",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "url": "https://www.booking.com/hotel/vn/minh-boutique.html",
+      "hotel_name_trans": "Minh Boutique",
+      "cc1": "vn",
+      "cc_required": 1,
+      "price_is_final": 1,
+      "latitude": 16.06958,
+      "review_score": 9.5,
+      "cant_book": 0,
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "is_genius_deal": 0,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/317366362.jpg?k=0ee43e109387aefa89ec02bb1914d64651cdaf1221804595b3cb41db51b5a0b1&o=",
+      "native_ad_id": "",
+      "district": "My Khe Beach",
+      "longitude": 108.241634,
+      "hotel_name": "Minh Boutique",
+      "in_best_district": 0,
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 8,
+          "localized_area": null
+        }
+      },
+      "price_breakdown": {
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "has_incalculable_charges": 0,
+        "gross_price": "13604760.00",
+        "all_inclusive_price": 13604760,
+        "sum_excluded_raw": "0.00",
+        "currency": "VND"
+      },
+      "preferred_plus": 1,
+      "updated_checkout": null,
+      "city_name_en": "Son Tra",
+      "is_mobile_deal": 0,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 204,
+      "address": "5 Nguyen Cao Luyen",
+      "hotel_id": 5506520,
+      "hotel_include_breakfast": 0,
+      "wishlist_count": 0,
+      "class": 0,
+      "zip": "",
+      "is_geo_rate": 1,
+      "type": "property_card",
+      "currency_code": "VND",
+      "preferred": 1,
+      "review_nr": 763,
+      "native_ads_tracking": ""
+    },
+    {
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "is_genius_deal": 0,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/238703345.jpg?k=c9652709eb8e1bb8d63e9b9422d075877ba806fa15ac2ab849dd6583302a74ae&o=",
+      "native_ad_id": "",
+      "district": "My Khe Beach",
+      "longitude": 108.246516943794,
+      "hotel_name": "Jolia Hotel Danang Beach",
+      "in_best_district": 0,
+      "url": "https://www.booking.com/hotel/vn/jolia-amp-apartment.html",
+      "hotel_name_trans": "Jolia Hotel Danang Beach",
+      "cc1": "vn",
+      "cc_required": 1,
+      "price_is_final": 1,
+      "latitude": 16.0522855079591,
+      "review_score": 8.5,
+      "cant_book": 0,
+      "is_geo_rate": "",
+      "type": "property_card",
+      "currency_code": "VND",
+      "preferred": 1,
+      "review_nr": 371,
+      "native_ads_tracking": "",
+      "is_smart_deal": 0,
+      "default_wishlist_name": "Danang",
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 13,
+          "localized_area": null
+        }
+      },
+      "price_breakdown": {
+        "has_incalculable_charges": 0,
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "currency": "VND",
+        "sum_excluded_raw": "0.00",
+        "all_inclusive_price": 6052887,
+        "gross_price": "6052887.00"
+      },
+      "preferred_plus": 1,
+      "city_name_en": "Da Nang",
+      "updated_checkout": null,
+      "accommodation_type": 204,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "is_mobile_deal": 1,
+      "address": "Lot 18 - 19 An Thuong 29 Str, My An Ward, Ngu Hanh Son Dist, Đà Nẵng, Việt Nam",
+      "hotel_id": 4091221,
+      "hotel_include_breakfast": 1,
+      "wishlist_count": 0,
+      "class": 4,
+      "zip": "",
+      "deals": {
+        "deals_available": {},
+        "deal_events_killswitch": 0,
+        "deal_attributes": {}
+      },
+      "is_no_prepayment_block": 1,
+      "min_total_price": 6052887,
+      "class_is_estimated": 0,
+      "district_id": 5342,
+      "soldout": 0,
+      "is_free_cancellable": 1,
+      "address_trans": "Lot 18 - 19 An Thuong 29 Str, My An Ward, Ngu Hanh Son Dist, Đà Nẵng, Việt Nam",
+      "has_free_parking": 1,
+      "badges": [
+        {
+          "badge_variant": "constructive",
+          "id": "Mobile Rate",
+          "text": "Mobile-only price"
+        }
+      ],
+      "main_photo_id": 238703345,
+      "hotel_has_vb_boost": 0,
+      "review_score_word": "Very Good",
+      "urgency_room_msg": "Family Junior Suite",
+      "review_recommendation": "",
+      "city": "Da Nang",
+      "checkin": {
+        "from": "14:00",
+        "until": "00:00"
+      },
+      "genius_discount_percentage": 0,
+      "extended": 0,
+      "selected_review_topic": null,
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "default_language": "vi",
+      "id": "property_card_4091221",
+      "distance_to_cc": "3.45",
+      "block_ids": [
+        "409122120_369412715_2_1_0"
+      ],
+      "accommodation_type_name": "Hotels",
+      "currencycode": "VND",
+      "updated_checkin": null,
+      "has_swimming_pool": 1,
+      "mobile_discount_percentage": 672543.000000001,
+      "city_trans": "Danang",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "until": "12:00",
+        "from": ""
+      },
+      "distance": "3.42",
+      "districts": "5342",
+      "countrycode": "vn",
+      "hotel_facilities": "134,468,493,433,443,129,176,158,484,502,420,451,221,446,496,436,133,486,461,143,127,5,444,494,425,146,203,304,458,8,459,482,22,455,76,16,192,467,142,258,3,104,457,159,91,503,160,15,302,75,465,2,404,46,492,421,442,220,506,450,81,485,118,205,501,440,222,452,426,48,53,490,61,210,209,47,408,124,177,101,475,253,447,423,140,487,470,418,305,499,44,439,49,449,43,462,78,17,424,108,435,477,179,445,109,110,96,463,141,448,23,466,117,419,50,70,505,405,464,51,69,107,491,28,441,500,422,456,64,478,488,453,11,301,119",
+      "children_not_allowed": 0
+    },
+    {
+      "min_total_price": 4725000,
+      "is_no_prepayment_block": 1,
+      "deals": {
+        "deal_events_killswitch": 0,
+        "deals_available": {},
+        "deal_attributes": {}
+      },
+      "class_is_estimated": 0,
+      "soldout": 0,
+      "district_id": 5342,
+      "badges": [
+        {
+          "text": "Mobile-only price",
+          "id": "Mobile Rate",
+          "badge_variant": "constructive"
+        }
+      ],
+      "is_free_cancellable": 1,
+      "address_trans": "46 Vo Nguyen Giap Lo 7 - 8",
+      "main_photo_id": 190776637,
+      "hotel_has_vb_boost": 0,
+      "review_recommendation": "",
+      "review_score_word": "Good",
+      "urgency_room_msg": "Deluxe King Room",
+      "city": "Sơn Trà",
+      "extended": 0,
+      "selected_review_topic": null,
+      "checkin": {
+        "until": "00:00",
+        "from": "14:00"
+      },
+      "genius_discount_percentage": 0,
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "block_ids": [
+        "391519833_366141603_0_1_0"
+      ],
+      "id": "property_card_3915198",
+      "distance_to_cc": "3.70",
+      "default_language": "vi",
+      "updated_checkin": null,
+      "has_swimming_pool": 1,
+      "currencycode": "VND",
+      "accommodation_type_name": "Hotels",
+      "mobile_discount_percentage": 525000,
+      "city_trans": "Danang",
+      "distance": "3.66",
+      "districts": "5342",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "until": "12:00",
+        "from": "01:00"
+      },
+      "hotel_facilities": "418,305,185,189,487,140,179,445,78,495,17,435,108,49,43,449,499,439,44,53,48,209,210,490,187,440,489,426,222,118,205,81,73,423,199,14,101,177,47,456,422,64,107,28,491,405,301,119,223,488,448,463,96,110,109,505,494,425,5,444,486,127,143,461,193,133,25,304,196,203,146,443,129,213,493,194,468,496,436,420,446,451,484,176,158,15,302,159,457,91,503,114,442,421,450,220,506,492,455,22,459,8,104,3,258,142,467,16",
+      "children_not_allowed": 0,
+      "countrycode": "vn",
+      "city_in_trans": "in Danang",
+      "native_ads_cpc": 0,
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "native_ad_id": "",
+      "is_genius_deal": 0,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/190776637.jpg?k=427971e01074ce06ab7229b2f2d79d783ad351b63a495d2d98dc93f66af1dbe7&o=",
+      "district": "My Khe Beach",
+      "in_best_district": 0,
+      "hotel_name": "De Lamour Hotel",
+      "longitude": 108.248325,
+      "hotel_name_trans": "De Lamour Hotel",
+      "url": "https://www.booking.com/hotel/vn/de-l-39-amour.html",
+      "cc_required": 1,
+      "price_is_final": 1,
+      "cc1": "vn",
+      "review_score": 7.9,
+      "cant_book": 0,
+      "latitude": 16.085609,
+      "type": "property_card",
+      "is_geo_rate": "",
+      "currency_code": "VND",
+      "preferred": 1,
+      "review_nr": 412,
+      "native_ads_tracking": "",
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 9,
+          "localized_area": null
+        }
+      },
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "all_inclusive_price": 4725000,
+        "gross_price": "4725000.00",
+        "sum_excluded_raw": "0.00",
+        "currency": "VND",
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "has_incalculable_charges": 0
+      },
+      "city_name_en": "Sơn Trà",
+      "updated_checkout": null,
+      "address": "46 Vo Nguyen Giap Lo 7 - 8",
+      "is_mobile_deal": 1,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 204,
+      "hotel_include_breakfast": 1,
+      "wishlist_count": 0,
+      "class": 3,
+      "zip": "",
+      "hotel_id": 3915198
+    },
+    {
+      "hotel_id": 3258723,
+      "zip": "",
+      "class": 3,
+      "hotel_include_breakfast": 0,
+      "wishlist_count": 0,
+      "is_mobile_deal": 1,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 204,
+      "address": "97A Hoàng Bích Sơn",
+      "updated_checkout": null,
+      "city_name_en": "Đà Nẵng",
+      "price_breakdown": {
+        "has_incalculable_charges": 0,
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "sum_excluded_raw": "467101.80",
+        "currency": "VND",
+        "gross_price": "3013560.00",
+        "all_inclusive_price": 3480661.8
+      },
+      "preferred_plus": 1,
+      "is_smart_deal": 0,
+      "default_wishlist_name": "Danang",
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "localized_area": null,
+          "unit_type_id": 8
+        }
+      },
+      "native_ads_tracking": "",
+      "review_nr": 1149,
+      "preferred": 1,
+      "currency_code": "VND",
+      "is_geo_rate": "",
+      "type": "property_card",
+      "latitude": 16.0730315589562,
+      "cant_book": 0,
+      "review_score": 9,
+      "cc1": "vn",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "url": "https://www.booking.com/hotel/vn/raon-apartment-and.html",
+      "hotel_name_trans": "Raon Apartment and Hotel",
+      "longitude": 108.241214483856,
+      "in_best_district": 0,
+      "hotel_name": "Raon Apartment and Hotel",
+      "district": "My Khe Beach",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/210973040.jpg?k=34f81e60c103c79e784e1e588036e95b22995fb146bf99d6fed1b249e6e024eb&o=",
+      "is_genius_deal": 0,
+      "native_ad_id": "",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "countrycode": "vn",
+      "children_not_allowed": 0,
+      "hotel_facilities": "75,82,404,465,2,492,46,506,450,421,442,503,182,91,160,457,159,302,16,467,90,472,460,8,459,22,455,504,146,136,304,458,476,184,25,461,127,444,5,425,494,158,484,451,221,183,436,496,134,468,493,213,129,443,186,488,453,28,491,69,107,64,441,163,422,481,23,466,419,70,454,110,96,109,463,438,448,44,439,219,499,449,462,49,424,108,435,78,17,445,179,487,140,470,185,305,418,135,408,124,47,145,437,497,423,19,485,81,222,452,426,489,440,61,490,210,209,53,48",
+      "checkout": {
+        "from": "",
+        "until": "12:00"
+      },
+      "country_trans": "Vietnam",
+      "districts": "5342",
+      "distance": "2.41",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 410940,
+      "accommodation_type_name": "Hotels",
+      "currencycode": "VND",
+      "updated_checkin": null,
+      "id": "property_card_3258723",
+      "default_language": "vi",
+      "distance_to_cc": "2.45",
+      "block_ids": [
+        "325872303_364313344_2_0_0"
+      ],
+      "ufi": -3712125,
+      "is_city_center": 0,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "from": "14:00",
+        "until": ""
+      },
+      "selected_review_topic": null,
+      "extended": 0,
+      "city": "Đà Nẵng",
+      "urgency_room_msg": "Superior Twin Room",
+      "review_score_word": "Wonderful",
+      "review_recommendation": "",
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 210973040,
+      "address_trans": "97A Hoàng Bích Sơn",
+      "is_free_cancellable": 1,
+      "badges": [
+        {
+          "badge_variant": "constructive",
+          "id": "Mobile Rate",
+          "text": "Mobile-only price"
+        }
+      ],
+      "has_free_parking": 1,
+      "district_id": 5342,
+      "soldout": 0,
+      "class_is_estimated": 0,
+      "is_no_prepayment_block": 1,
+      "deals": {
+        "deal_attributes": {},
+        "deals_available": {},
+        "deal_events_killswitch": 0
+      },
+      "min_total_price": 3013560
+    },
+    {
+      "accommodation_type": 219,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "is_mobile_deal": 1,
+      "address": "18-24 Phan Ton Street, My An Ward, Ngu Hanh Son District",
+      "hotel_id": 5419488,
+      "zip": "",
+      "class": 0,
+      "wishlist_count": 0,
+      "hotel_include_breakfast": 0,
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "localized_area": "35",
+          "unit_type_id": 12
+        }
+      },
+      "city_name_en": "Da Nang",
+      "updated_checkout": null,
+      "price_breakdown": {
+        "has_tax_exceptions": 0,
+        "has_fine_print_charges": 0,
+        "has_incalculable_charges": 0,
+        "gross_price": "4048000.00",
+        "all_inclusive_price": 4048000,
+        "sum_excluded_raw": "0.00",
+        "currency": "VND"
+      },
+      "preferred_plus": 1,
+      "preferred": 1,
+      "native_ads_tracking": "",
+      "booking_home": {
+        "is_single_unit_property": "",
+        "is_booking_home": 1,
+        "group": "apartment_like",
+        "segment": 1,
+        "quality_class": 4
+      },
+      "review_nr": 524,
+      "is_geo_rate": "",
+      "type": "property_card",
+      "currency_code": "VND",
+      "latitude": 16.052883479327,
+      "cant_book": 0,
+      "review_score": 8.8,
+      "url": "https://www.booking.com/hotel/vn/monalisa-apartment.html",
+      "hotel_name_trans": "Monalisa Apartment",
+      "cc1": "vn",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "district": "My Khe Beach",
+      "longitude": 108.24650181842,
+      "in_best_district": 0,
+      "hotel_name": "Monalisa Apartment",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "city_in_trans": "in Danang",
+      "native_ads_cpc": 0,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/260357065.jpg?k=20c85b1eceda77c4bc09de6d4412076aa3d30e8444ecbb57b8c28956be5fcf15&o=",
+      "is_genius_deal": 0,
+      "native_ad_id": "",
+      "countrycode": "vn",
+      "children_not_allowed": 0,
+      "hotel_facilities": "104,505,419,467,142,192,16,466,23,504,455,10,460,110,109,96,8,459,450,119,506,220,421,301,181,492,46,465,2,64,15,456,28,160,91,107,457,51,198,436,451,52,497,420,502,145,124,158,47,161,210,209,490,48,53,426,241,433,489,493,468,118,194,81,445,179,458,108,495,78,17,462,449,499,425,305,168,494,418,444,461",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 552000,
+      "country_trans": "Vietnam",
+      "checkout": {
+        "from": "",
+        "until": "12:00"
+      },
+      "districts": "5342",
+      "distance": "3.39",
+      "default_language": "vi",
+      "id": "property_card_5419488",
+      "distance_to_cc": "3.40",
+      "block_ids": [
+        "541948801_261604366_2_0_0"
+      ],
+      "accommodation_type_name": "Condo Hotels",
+      "currencycode": "VND",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "until": "",
+        "from": "14:00"
+      },
+      "selected_review_topic": null,
+      "extended": 0,
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "urgency_room_msg": "Superior Studio",
+      "review_score_word": "Excellent",
+      "review_recommendation": "",
+      "city": "Da Nang",
+      "address_trans": "18-24 Phan Ton Street, My An Ward, Ngu Hanh Son District",
+      "is_free_cancellable": 1,
+      "badges": [
+        {
+          "id": "Mobile Rate",
+          "text": "Mobile-only price",
+          "badge_variant": "constructive"
+        }
+      ],
+      "has_free_parking": 1,
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 260357065,
+      "district_id": 5342,
+      "soldout": 0,
+      "deals": {
+        "deals_available": {},
+        "deal_events_killswitch": 0,
+        "deal_attributes": {}
+      },
+      "is_no_prepayment_block": 1,
+      "min_total_price": 4048000,
+      "class_is_estimated": 0
+    },
+    {
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "native_ad_id": "",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/198217678.jpg?k=e92382dcda56a93e0f0b36353cfacfc5ac6c50d0633e0e2d1d842ef14fa2c1f5&o=",
+      "is_genius_deal": 0,
+      "district": "My Khe Beach",
+      "in_best_district": 0,
+      "hotel_name": "Sunny Ocean Hotel & Spa",
+      "longitude": 108.246113,
+      "hotel_name_trans": "Sunny Ocean Hotel & Spa",
+      "url": "https://www.booking.com/hotel/vn/sunny-ocean.html",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "cc1": "vn",
+      "cant_book": 0,
+      "review_score": 8.5,
+      "latitude": 16.054567,
+      "type": "property_card",
+      "is_geo_rate": "",
+      "currency_code": "VND",
+      "preferred": 1,
+      "native_ads_tracking": "",
+      "review_nr": 221,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "localized_area": null,
+          "unit_type_id": 13
+        }
+      },
+      "is_smart_deal": 0,
+      "default_wishlist_name": "Danang",
+      "city_name_en": "Da Nang",
+      "updated_checkout": null,
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "has_incalculable_charges": 0,
+        "gross_price": "10129770.00",
+        "all_inclusive_price": 10129770,
+        "currency": "VND",
+        "sum_excluded_raw": "0.00"
+      },
+      "address": "90 Tran Bach Dang, Ngu Hanh Son",
+      "is_mobile_deal": 1,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 204,
+      "zip": "550000",
+      "class": 4,
+      "wishlist_count": 0,
+      "hotel_include_breakfast": 0,
+      "hotel_id": 4263092,
+      "min_total_price": 10129770,
+      "deals": {
+        "deals_available": {},
+        "deal_events_killswitch": 0,
+        "deal_attributes": {}
+      },
+      "is_no_prepayment_block": 1,
+      "class_is_estimated": 0,
+      "soldout": 0,
+      "district_id": 5342,
+      "badges": [
+        {
+          "text": "Mobile-only price",
+          "id": "Mobile Rate",
+          "badge_variant": "constructive"
+        }
+      ],
+      "has_free_parking": 1,
+      "address_trans": "90 Tran Bach Dang, Ngu Hanh Son",
+      "is_free_cancellable": 1,
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 198217678,
+      "review_recommendation": "",
+      "urgency_room_msg": "Deluxe Family Room",
+      "review_score_word": "Very Good",
+      "city": "Da Nang",
+      "selected_review_topic": null,
+      "extended": 0,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "until": "00:00",
+        "from": "14:00"
+      },
+      "ufi": -3712125,
+      "is_city_center": 0,
+      "block_ids": [
+        "426309222_365323564_3_1_0"
+      ],
+      "default_language": "en",
+      "id": "property_card_4263092",
+      "distance_to_cc": "3.30",
+      "updated_checkin": null,
+      "has_swimming_pool": 1,
+      "currencycode": "VND",
+      "accommodation_type_name": "Hotels",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 1125530,
+      "districts": "5342",
+      "distance": "3.26",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "until": "00:00",
+        "from": "11:30"
+      },
+      "children_not_allowed": 0,
+      "hotel_facilities": "465,2,404,82,75,55,450,220,506,251,442,246,421,492,46,15,91,503,160,159,243,90,169,467,142,192,16,3,104,258,22,8,459,6,76,244,455,203,184,304,127,461,143,7,133,193,425,494,444,5,484,158,176,436,496,446,242,451,420,183,502,250,468,134,194,443,129,257,12,433,493,27,488,119,301,181,11,247,223,198,405,64,240,422,163,491,28,107,409,410,69,51,419,117,201,466,249,23,454,505,70,245,10,110,109,96,471,448,438,43,449,49,439,44,499,219,200,80,445,435,495,78,17,140,305,418,248,177,408,47,423,253,447,19,437,101,497,199,205,118,73,485,81,210,209,61,490,48,452,426,20,241,222,440,54,489",
+      "countrycode": "vn"
+    },
+    {
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "currencycode": "VND",
+      "accommodation_type_name": "Apartments",
+      "block_ids": [
+        "283597506_357965446_3_0_0"
+      ],
+      "distance_to_cc": "3.50",
+      "id": "property_card_2835975",
+      "default_language": "vi",
+      "ufi": -3712125,
+      "is_city_center": 0,
+      "selected_review_topic": null,
+      "extended": 0,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "from": "14:00",
+        "until": "00:00"
+      },
+      "children_not_allowed": 0,
+      "hotel_facilities": "145,47,124,19,423,497,101,81,485,53,48,210,209,490,61,440,489,426,452,49,462,449,499,200,219,439,44,179,445,17,78,435,424,108,140,487,418,305,185,470,201,419,23,481,454,463,96,110,109,448,488,301,453,464,198,456,422,441,163,64,107,69,51,28,491,484,158,496,436,420,183,446,221,451,468,134,186,443,161,129,213,493,433,146,184,458,304,127,143,461,25,494,425,5,444,90,121,467,142,16,258,472,22,8,459,460,504,455,465,404,2,82,442,167,421,450,506,46,103,492,302,159,457,503,91,182,160",
+      "countrycode": "vn",
+      "districts": "5342",
+      "distance": "3.49",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "from": "01:00",
+        "until": "12:00"
+      },
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 0,
+      "soldout": 0,
+      "district_id": 5342,
+      "class_is_estimated": 0,
+      "min_total_price": 5546480,
+      "is_no_prepayment_block": 1,
+      "deals": {
+        "deal_events_killswitch": 0,
+        "deals_available": {},
+        "deal_attributes": {}
+      },
+      "city": "Da Nang",
+      "review_recommendation": "",
+      "urgency_room_msg": "Quadruple Room with Balcony",
+      "review_score_word": "Exceptional",
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 419435262,
+      "badges": [],
+      "has_free_parking": 1,
+      "address_trans": " 03 An Thuong 32, Ngu Hanh Son",
+      "is_free_cancellable": 1,
+      "native_ads_tracking": "",
+      "review_nr": 333,
+      "booking_home": {
+        "quality_class": 0,
+        "segment": 1,
+        "is_single_unit_property": "",
+        "group": "apartment_like",
+        "is_booking_home": 1
+      },
+      "preferred": 1,
+      "currency_code": "VND",
+      "type": "property_card",
+      "is_geo_rate": 1,
+      "zip": "",
+      "class": 3,
+      "hotel_include_breakfast": 0,
+      "wishlist_count": 0,
+      "hotel_id": 2835975,
+      "address": " 03 An Thuong 32, Ngu Hanh Son",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 201,
+      "is_mobile_deal": 0,
+      "city_name_en": "Da Nang",
+      "updated_checkout": null,
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "has_incalculable_charges": 0,
+        "all_inclusive_price": 5797451.95,
+        "gross_price": "5546480.00",
+        "currency": "VND",
+        "sum_excluded_raw": 250971.95
+      },
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "localized_area": null,
+          "unit_type_id": 4
+        }
+      },
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "hotel_name": "Beach Hotel",
+      "in_best_district": 0,
+      "longitude": 108.246333466271,
+      "district": "My Khe Beach",
+      "native_ad_id": "",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/419435262.jpg?k=16a27be62d510c8a4394417ca20f4d50aa1bae13693a0a484dc03ecb60bba668&o=",
+      "is_genius_deal": 0,
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "city_in_trans": "in Danang",
+      "native_ads_cpc": 0,
+      "cant_book": 0,
+      "review_score": 9.5,
+      "latitude": 16.0509458131712,
+      "price_is_final": 0,
+      "cc_required": 1,
+      "cc1": "vn",
+      "hotel_name_trans": "Beach Hotel",
+      "url": "https://www.booking.com/hotel/vn/dominika-1bdr-apartment.html"
+    },
+    {
+      "latitude": 16.043621,
+      "cant_book": 0,
+      "review_score": 9,
+      "url": "https://www.booking.com/hotel/vn/khach-san-lavencos-da-nang.html",
+      "hotel_name_trans": "Lavencos Hotel Da Nang",
+      "cc1": "vn",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "district": "Bac My An Beach",
+      "longitude": 108.247605,
+      "hotel_name": "Lavencos Hotel Da Nang",
+      "in_best_district": 0,
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "city_in_trans": "in Danang",
+      "native_ads_cpc": 0,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/415670135.jpg?k=1575fecf0c05fb07b8c3d5811acea3aada47b0656eb0577b6f3accb0f7d2c590&o=",
+      "is_genius_deal": 0,
+      "native_ad_id": "",
+      "is_mobile_deal": 1,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 204,
+      "address": "360 - 362 Vo Nguyen Giap",
+      "hotel_id": 8486141,
+      "zip": "",
+      "class": 4,
+      "hotel_include_breakfast": 1,
+      "wishlist_count": 0,
+      "is_smart_deal": 0,
+      "default_wishlist_name": "Danang",
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 4,
+          "localized_area": null
+        }
+      },
+      "updated_checkout": null,
+      "city_name_en": "Da Nang",
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "currency": "VND",
+        "sum_excluded_raw": "0.00",
+        "gross_price": "8824394.00",
+        "all_inclusive_price": 8824394,
+        "has_incalculable_charges": 0,
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0
+      },
+      "preferred": 1,
+      "native_ads_tracking": "",
+      "review_nr": 196,
+      "is_geo_rate": "",
+      "type": "property_card",
+      "currency_code": "VND",
+      "urgency_room_msg": "Standard Queen Room with Two Queen Beds",
+      "review_score_word": "Wonderful",
+      "review_recommendation": "",
+      "city": "Da Nang",
+      "address_trans": "360 - 362 Vo Nguyen Giap",
+      "is_free_cancellable": 1,
+      "badges": [
+        {
+          "badge_variant": "constructive",
+          "id": "Mobile Rate",
+          "text": "Mobile-only price"
+        }
+      ],
+      "has_free_parking": 1,
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 415670135,
+      "district_id": 5343,
+      "soldout": 0,
+      "is_no_prepayment_block": 1,
+      "deals": {
+        "deal_events_killswitch": 0,
+        "deals_available": {},
+        "deal_attributes": {}
+      },
+      "min_total_price": 8824394,
+      "class_is_estimated": 0,
+      "countrycode": "vn",
+      "children_not_allowed": 0,
+      "hotel_facilities": "201,117,466,23,481,454,505,10,110,96,109,471,438,488,301,119,223,11,198,422,64,478,107,51,491,28,479,47,124,475,423,253,497,437,14,205,485,81,48,53,210,209,490,489,426,241,222,49,462,480,449,499,200,44,477,445,495,78,17,424,140,487,418,305,470,169,467,142,16,192,3,104,472,22,8,459,482,504,6,455,2,465,172,75,421,450,506,220,46,492,15,302,457,160,503,91,484,158,496,436,420,502,183,446,221,451,194,468,134,161,129,493,474,433,483,146,476,304,127,461,143,174,193,133,494,473,425,5,444",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 1557246,
+      "country_trans": "Vietnam",
+      "checkout": {
+        "from": "01:00",
+        "until": "12:00"
+      },
+      "districts": "5343",
+      "distance": "4.10",
+      "distance_to_cc": "4.10",
+      "id": "property_card_8486141",
+      "default_language": "vi",
+      "block_ids": [
+        "848614112_359649825_3_1_0"
+      ],
+      "accommodation_type_name": "Hotels",
+      "currencycode": "VND",
+      "updated_checkin": null,
+      "has_swimming_pool": 1,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "from": "14:00",
+        "until": "00:00"
+      },
+      "selected_review_topic": null,
+      "extended": 0,
+      "is_city_center": 0,
+      "ufi": -3712125
+    },
+    {
+      "badges": [
+        {
+          "id": "Mobile Rate",
+          "text": "Mobile-only price",
+          "badge_variant": "constructive"
+        }
+      ],
+      "address_trans": "269 Tran Hung Dao Str., An Hai Bac Ward, Son Tra Dist, Da Nang City",
+      "is_free_cancellable": 1,
+      "hotel_has_vb_boost": 1,
+      "main_photo_id": 358362711,
+      "review_recommendation": "",
+      "urgency_room_msg": "Superior Twin Room with Partial River View",
+      "review_score_word": "Very Good",
+      "city": "Đà Nẵng",
+      "min_total_price": 5939388,
+      "is_no_prepayment_block": 1,
+      "deals": {
+        "deals_available": {},
+        "deal_events_killswitch": 0,
+        "deal_attributes": {}
+      },
+      "class_is_estimated": 0,
+      "soldout": 0,
+      "district_id": 5453,
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 659932,
+      "districts": "5453",
+      "distance": "1.33",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "from": "",
+        "until": "12:00"
+      },
+      "children_not_allowed": 0,
+      "hotel_facilities": "109,96,463,498,466,201,505,454,464,491,28,107,51,422,456,453,119,301,81,485,20,452,426,489,209,210,490,48,47,177,497,199,423,447,140,487,305,418,44,499,200,219,462,43,449,49,108,424,495,17,78,445,460,8,459,22,455,504,6,16,467,3,104,503,91,457,15,492,450,506,220,421,468,194,433,493,129,158,176,72,484,221,446,451,420,502,436,496,127,143,7,444,5,425,494,203,458,304",
+      "countrycode": "vn",
+      "selected_review_topic": null,
+      "extended": 0,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "until": "",
+        "from": "14:00"
+      },
+      "ufi": -3712125,
+      "is_city_center": 0,
+      "block_ids": [
+        "537326801_350965327_2_2_0"
+      ],
+      "id": "property_card_5373268",
+      "distance_to_cc": "1.35",
+      "default_language": "vi",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "currencycode": "VND",
+      "accommodation_type_name": "Hotels",
+      "hotel_name_trans": "Glamour Hotel Da Nang",
+      "url": "https://www.booking.com/hotel/vn/glamour-da-nang.html",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "cc1": "vn",
+      "cant_book": 0,
+      "review_score": 8.2,
+      "latitude": 16.075931,
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "native_ad_id": "",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/358362711.jpg?k=879b74297f8698e3e213608a9a76cbd899d60113511a22f3cf38e5d4fb04b5e5&o=",
+      "is_genius_deal": 0,
+      "district": "Han River",
+      "hotel_name": "Glamour Hotel Da Nang",
+      "in_best_district": 0,
+      "longitude": 108.228862,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "localized_area": null,
+          "unit_type_id": 8
+        }
+      },
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "updated_checkout": null,
+      "city_name_en": "Đà Nẵng",
+      "price_breakdown": {
+        "sum_excluded_raw": "890908.20",
+        "currency": "VND",
+        "all_inclusive_price": 6830296.2,
+        "gross_price": "5939388.00",
+        "has_incalculable_charges": 0,
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0
+      },
+      "preferred_plus": 1,
+      "address": "269 Tran Hung Dao Str., An Hai Bac Ward, Son Tra Dist, Da Nang City",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "is_mobile_deal": 1,
+      "accommodation_type": 204,
+      "zip": "",
+      "class": 4,
+      "hotel_include_breakfast": 0,
+      "wishlist_count": 0,
+      "hotel_id": 5373268,
+      "type": "property_card",
+      "is_geo_rate": "",
+      "currency_code": "VND",
+      "preferred": 1,
+      "native_ads_tracking": "",
+      "review_nr": 466
+    },
+    {
+      "children_not_allowed": 0,
+      "hotel_facilities": "108,424,495,17,78,445,179,477,44,499,480,462,449,49,470,305,418,487,140,111,101,497,199,423,180,447,253,475,124,47,145,479,452,426,241,222,54,489,490,53,48,81,485,118,11,453,166,119,301,488,27,28,491,107,51,64,478,240,456,422,252,226,198,505,454,481,466,23,50,419,201,498,471,110,96,109,463,141,10,458,304,476,146,483,444,5,425,494,473,25,174,127,143,461,7,486,446,221,242,451,420,183,502,436,496,158,484,433,474,493,257,468,134,194,492,46,450,506,220,167,421,75,465,2,91,503,457,243,15,302,114,472,3,104,258,16,142,467,455,504,460,482,459,8,22",
+      "countrycode": "vn",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 667285,
+      "districts": "5342",
+      "distance": "3.17",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "until": "12:00",
+        "from": "01:00"
+      },
+      "block_ids": [
+        "657760003_363800334_0_2_0"
+      ],
+      "default_language": "vi",
+      "id": "property_card_6577600",
+      "distance_to_cc": "3.20",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "accommodation_type_name": "Hotels",
+      "currencycode": "VND",
+      "selected_review_topic": null,
+      "extended": 0,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "from": "14:00",
+        "until": "00:00"
+      },
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "review_recommendation": "",
+      "urgency_room_msg": "Superior Double Room",
+      "review_score_word": "Excellent",
+      "city": "Ngu Hanh Sơn",
+      "badges": [
+        {
+          "id": "Mobile Rate",
+          "text": "Mobile-only price",
+          "badge_variant": "constructive"
+        }
+      ],
+      "has_free_parking": 1,
+      "address_trans": "10 An Thuong 36",
+      "is_free_cancellable": 1,
+      "hotel_has_vb_boost": 1,
+      "main_photo_id": 364597149,
+      "soldout": 0,
+      "district_id": 5342,
+      "min_total_price": 5398940,
+      "deals": {
+        "deal_attributes": {},
+        "deal_events_killswitch": 0,
+        "deals_available": {}
+      },
+      "is_no_prepayment_block": 1,
+      "class_is_estimated": 0,
+      "address": "10 An Thuong 36",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "is_mobile_deal": 1,
+      "accommodation_type": 204,
+      "class": 4,
+      "zip": "",
+      "hotel_include_breakfast": 0,
+      "wishlist_count": 0,
+      "hotel_id": 6577600,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 9,
+          "localized_area": null
+        }
+      },
+      "is_smart_deal": 0,
+      "default_wishlist_name": "Danang",
+      "updated_checkout": null,
+      "city_name_en": "Ngu Hanh Sơn",
+      "price_breakdown": {
+        "all_inclusive_price": 6208781,
+        "gross_price": "5398940.00",
+        "currency": "VND",
+        "sum_excluded_raw": "809841.00",
+        "has_tax_exceptions": 0,
+        "has_fine_print_charges": 0,
+        "has_incalculable_charges": 0
+      },
+      "preferred_plus": 0,
+      "preferred": 1,
+      "native_ads_tracking": "",
+      "review_nr": 420,
+      "type": "property_card",
+      "is_geo_rate": "",
+      "currency_code": "VND",
+      "cant_book": 0,
+      "review_score": 8.7,
+      "latitude": 16.052832,
+      "hotel_name_trans": "Adela Boutique Hotel",
+      "url": "https://www.booking.com/hotel/vn/adela-boutique.html",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "cc1": "vn",
+      "district": "My Khe Beach",
+      "in_best_district": 0,
+      "hotel_name": "Adela Boutique Hotel",
+      "longitude": 108.244117,
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "native_ad_id": "",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/364597149.jpg?k=360d0af5f86430faaa46daa7692c1ddffd57a6a0358fac27a7be146c1889c70b&o=",
+      "is_genius_deal": 0
+    },
+    {
+      "type": "property_card",
+      "is_geo_rate": "",
+      "currency_code": "VND",
+      "preferred": 1,
+      "review_nr": 903,
+      "native_ads_tracking": "",
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 8,
+          "localized_area": null
+        }
+      },
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "price_breakdown": {
+        "all_inclusive_price": 3550412.25,
+        "gross_price": "3073950.00",
+        "sum_excluded_raw": 476462.25,
+        "currency": "VND",
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "has_incalculable_charges": 0
+      },
+      "preferred_plus": 0,
+      "updated_checkout": null,
+      "city_name_en": "Danang",
+      "address": "19 Le Binh Street, An Hai Bac Ward, Son Tra District",
+      "accommodation_type": 204,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "is_mobile_deal": 0,
+      "hotel_include_breakfast": 0,
+      "wishlist_count": 0,
+      "class": 3,
+      "zip": "",
+      "hotel_id": 2325640,
+      "city_in_trans": "in Danang",
+      "native_ads_cpc": 0,
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "native_ad_id": "",
+      "is_genius_deal": 0,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/382103718.jpg?k=745602e1d326dc060d8c565112a42a5e6cf229a7763ce936be2869178731d797&o=",
+      "district": "My Khe Beach",
+      "in_best_district": 0,
+      "hotel_name": "Sapphire Boutique Hotel Da Nang",
+      "longitude": 108.2423451,
+      "hotel_name_trans": "Sapphire Boutique Hotel Da Nang",
+      "url": "https://www.booking.com/hotel/vn/happy-sky.html",
+      "cc_required": 1,
+      "price_is_final": 1,
+      "cc1": "vn",
+      "review_score": 9,
+      "cant_book": 0,
+      "latitude": 16.0745856,
+      "extended": 0,
+      "selected_review_topic": null,
+      "checkin": {
+        "until": "",
+        "from": "14:00"
+      },
+      "genius_discount_percentage": 0,
+      "ufi": -3712125,
+      "is_city_center": 0,
+      "block_ids": [
+        "232564012_270320441_2_0_0"
+      ],
+      "id": "property_card_2325640",
+      "distance_to_cc": "2.60",
+      "default_language": "vi",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "currencycode": "VND",
+      "accommodation_type_name": "Hotels",
+      "mobile_discount_percentage": 0,
+      "city_trans": "Danang",
+      "distance": "2.57",
+      "districts": "5342",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "until": "12:00",
+        "from": ""
+      },
+      "hotel_facilities": "75,82,2,404,46,492,421,506,450,457,503,160,91,302,15,16,142,467,104,472,8,459,482,460,22,455,6,504,483,146,203,476,304,458,184,174,486,143,461,127,5,444,473,494,425,158,484,72,502,420,52,451,446,221,496,436,194,468,493,474,433,12,161,129,488,223,453,181,301,119,464,198,51,107,28,491,163,422,64,478,23,466,481,201,117,70,505,454,110,109,96,463,498,200,499,44,49,449,462,480,78,495,17,108,477,179,445,140,487,418,305,47,135,479,177,497,14,475,447,81,485,118,205,489,222,426,452,53,48,411,490,209,210",
+      "children_not_allowed": 0,
+      "countrycode": "vn",
+      "min_total_price": 3073950,
+      "is_no_prepayment_block": 1,
+      "deals": {
+        "deals_available": {
+          "has_flash_deal": 1
+        },
+        "deal_events_killswitch": 0,
+        "deal_attributes": {}
+      },
+      "class_is_estimated": 0,
+      "soldout": 0,
+      "district_id": 5342,
+      "has_free_parking": 1,
+      "badges": [
+        {
+          "badge_variant": "constructive",
+          "id": "Limited Time Deal",
+          "text": "Limited-time Deal"
+        }
+      ],
+      "is_free_cancellable": 1,
+      "address_trans": "19 Le Binh Street, An Hai Bac Ward, Son Tra District",
+      "main_photo_id": 382103718,
+      "hotel_has_vb_boost": 1,
+      "review_recommendation": "",
+      "review_score_word": "Wonderful",
+      "urgency_room_msg": "Superior Twin Room",
+      "city": "Danang"
+    },
+    {
+      "review_nr": 406,
+      "native_ads_tracking": "",
+      "preferred": 1,
+      "currency_code": "VND",
+      "type": "property_card",
+      "is_geo_rate": "",
+      "hotel_include_breakfast": 0,
+      "wishlist_count": 0,
+      "class": 0,
+      "zip": "",
+      "hotel_id": 5631223,
+      "address": "59 Cao Bá Quát",
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 204,
+      "is_mobile_deal": 1,
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "has_tax_exceptions": 0,
+        "has_fine_print_charges": 0,
+        "has_incalculable_charges": 0,
+        "gross_price": "6075000.00",
+        "all_inclusive_price": 6075000,
+        "sum_excluded_raw": "0.00",
+        "currency": "VND"
+      },
+      "updated_checkout": null,
+      "city_name_en": "Sơn Trà",
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "localized_area": "40",
+          "unit_type_id": 12
+        }
+      },
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "in_best_district": 0,
+      "hotel_name": "Benzen Boutique Stays",
+      "longitude": 108.230769,
+      "district": "Han River",
+      "native_ad_id": "",
+      "is_genius_deal": 0,
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/220258680.jpg?k=d67b9c1f9862299d477212443463927d57e1c4bdf17637eb61b20c94436f0675&o=",
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "review_score": 8.5,
+      "cant_book": 0,
+      "latitude": 16.063708,
+      "cc_required": 1,
+      "price_is_final": 1,
+      "cc1": "vn",
+      "hotel_name_trans": "Benzen Boutique Stays",
+      "url": "https://www.booking.com/hotel/vn/benzen-boutique-stays.html",
+      "updated_checkin": null,
+      "accommodation_type_name": "Hotels",
+      "currencycode": "VND",
+      "block_ids": [
+        "563122304_295543952_0_2_0"
+      ],
+      "id": "property_card_5631223",
+      "default_language": "vi",
+      "distance_to_cc": "1.35",
+      "is_city_center": 0,
+      "ufi": -3712125,
+      "extended": 0,
+      "selected_review_topic": null,
+      "checkin": {
+        "from": "14:00",
+        "until": "00:00"
+      },
+      "genius_discount_percentage": 0,
+      "hotel_facilities": "72,484,158,436,496,451,446,221,183,502,420,468,443,129,493,203,136,184,304,143,461,7,127,174,425,494,444,5,467,16,22,460,8,459,6,504,455,172,2,75,506,450,421,442,492,46,91,503,182,457,159,135,408,124,47,423,101,437,14,497,205,118,73,81,485,490,209,210,53,411,222,426,489,440,449,462,49,439,219,499,445,108,424,435,17,495,78,487,140,305,418,470,117,419,454,505,141,463,407,109,96,448,498,438,488,453,441,456,422,491,28,107",
+      "children_not_allowed": 0,
+      "countrycode": "vn",
+      "distance": "1.34",
+      "districts": "5453",
+      "checkout": {
+        "until": "13:00",
+        "from": "12:00"
+      },
+      "country_trans": "Vietnam",
+      "mobile_discount_percentage": 674999.999999999,
+      "city_trans": "Danang",
+      "soldout": 0,
+      "district_id": 5453,
+      "class_is_estimated": 0,
+      "min_total_price": 6075000,
+      "is_no_prepayment_block": 0,
+      "deals": {
+        "deal_events_killswitch": 0,
+        "deals_available": {},
+        "deal_attributes": {}
+      },
+      "city": "Sơn Trà",
+      "review_recommendation": "",
+      "review_score_word": "Very Good",
+      "urgency_room_msg": "King Studio",
+      "main_photo_id": 220258680,
+      "hotel_has_vb_boost": 0,
+      "has_free_parking": 1,
+      "badges": [
+        {
+          "badge_variant": "constructive",
+          "text": "Mobile-only price",
+          "id": "Mobile Rate"
+        }
+      ],
+      "is_free_cancellable": 1,
+      "address_trans": "59 Cao Bá Quát"
+    },
+    {
+      "currency_code": "VND",
+      "is_geo_rate": "",
+      "type": "property_card",
+      "native_ads_tracking": "",
+      "review_nr": 73,
+      "booking_home": {
+        "quality_class": 0,
+        "group": "apartment_like",
+        "is_single_unit_property": "",
+        "is_booking_home": 1,
+        "segment": 1
+      },
+      "preferred": 1,
+      "updated_checkout": null,
+      "city_name_en": "Da Nang",
+      "preferred_plus": 1,
+      "price_breakdown": {
+        "gross_price": "23341500.00",
+        "all_inclusive_price": 23341500,
+        "currency": "VND",
+        "sum_excluded_raw": "0.00",
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0,
+        "has_incalculable_charges": 0
+      },
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 1,
+          "localized_area": "75"
+        }
+      },
+      "hotel_id": 7253378,
+      "class": 4,
+      "zip": "",
+      "wishlist_count": 0,
+      "hotel_include_breakfast": 0,
+      "is_mobile_deal": 1,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "accommodation_type": 201,
+      "address": "20 An Thượng 28",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/351302984.jpg?k=a4767832f5dd721102e6b73c2958c20075545d9624f082d1ee021b1bcd542bd2&o=",
+      "is_genius_deal": 0,
+      "native_ad_id": "",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "city_in_trans": "in Danang",
+      "native_ads_cpc": 0,
+      "longitude": 108.245676,
+      "in_best_district": 0,
+      "hotel_name": "Louis Mo Apartment",
+      "district": "My Khe Beach",
+      "cc1": "vn",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "url": "https://www.booking.com/hotel/vn/luis-mo-boutique.html",
+      "hotel_name_trans": "Louis Mo Apartment",
+      "latitude": 16.053117,
+      "cant_book": 0,
+      "review_score": 9.3,
+      "ufi": -3712125,
+      "is_city_center": 0,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "from": "14:00",
+        "until": ""
+      },
+      "selected_review_topic": null,
+      "extended": 0,
+      "currencycode": "VND",
+      "accommodation_type_name": "Apartments",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "id": "property_card_7253378",
+      "default_language": "en",
+      "distance_to_cc": "3.30",
+      "block_ids": [
+        "725337802_351894612_0_0_0"
+      ],
+      "checkout": {
+        "from": "",
+        "until": "12:00"
+      },
+      "country_trans": "Vietnam",
+      "districts": "5342",
+      "distance": "3.30",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 2593500,
+      "countrycode": "vn",
+      "children_not_allowed": 0,
+      "hotel_facilities": "449,203,49,445,184,424,108,495,143,7,486,174,425,305,418,444,5,47,436,447,253,180,423,451,221,437,420,52,194,118,81,257,48,222,433,426,2,465,488,119,450,301,421,167,492,11,223,64,163,15,422,91,491,28,457,107,419,142,16,104,22,8,110,96,109,455,438",
+      "class_is_estimated": 0,
+      "is_no_prepayment_block": 1,
+      "deals": {
+        "deals_available": {},
+        "deal_events_killswitch": 0,
+        "deal_attributes": {}
+      },
+      "min_total_price": 23341500,
+      "district_id": 5342,
+      "soldout": 0,
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 351302984,
+      "address_trans": "20 An Thượng 28",
+      "is_free_cancellable": 1,
+      "badges": [
+        {
+          "text": "Mobile-only price",
+          "id": "Mobile Rate",
+          "badge_variant": "constructive"
+        }
+      ],
+      "city": "Da Nang",
+      "urgency_room_msg": "Superior Apartment",
+      "review_score_word": "Wonderful",
+      "review_recommendation": ""
+    },
+    {
+      "min_total_price": 9268512,
+      "deals": {
+        "deal_attributes": {},
+        "deals_available": {},
+        "deal_events_killswitch": 0
+      },
+      "is_no_prepayment_block": 0,
+      "class_is_estimated": 0,
+      "soldout": 0,
+      "district_id": 5343,
+      "badges": [],
+      "has_free_parking": 1,
+      "address_trans": "67 Chế Lan Viên, Bắc Mỹ An",
+      "is_free_cancellable": 1,
+      "hotel_has_vb_boost": 0,
+      "main_photo_id": 431734506,
+      "review_recommendation": "",
+      "urgency_room_msg": "Double Room with Garden View",
+      "review_score_word": "Exceptional",
+      "city": "Ngũ Hành Sơn",
+      "selected_review_topic": null,
+      "extended": 0,
+      "genius_discount_percentage": 0,
+      "checkin": {
+        "until": "",
+        "from": "14:00"
+      },
+      "ufi": -3712125,
+      "is_city_center": 0,
+      "block_ids": [
+        "587339501_359884779_2_1_0"
+      ],
+      "default_language": "xu",
+      "id": "property_card_5873395",
+      "distance_to_cc": "4.25",
+      "has_swimming_pool": 1,
+      "updated_checkin": null,
+      "currencycode": "VND",
+      "accommodation_type_name": "Hotels",
+      "city_trans": "Danang",
+      "mobile_discount_percentage": 0,
+      "districts": "5343",
+      "distance": "4.25",
+      "country_trans": "Vietnam",
+      "checkout": {
+        "from": "",
+        "until": "12:00"
+      },
+      "children_not_allowed": 0,
+      "hotel_facilities": "436,496,446,451,420,183,502,484,158,176,443,129,433,493,468,134,184,304,425,494,444,5,461,104,3,258,467,16,504,225,455,22,8,459,450,506,442,421,492,46,465,2,75,15,91,503,160,457,423,447,180,101,14,497,145,177,124,47,209,210,490,48,53,452,20,426,222,440,501,489,205,118,485,81,445,108,424,78,495,17,449,49,439,44,499,219,305,418,487,140,454,505,117,23,448,109,110,96,119,301,488,64,422,500,441,163,28,491,107,51,198",
+      "countrycode": "vn",
+      "bwallet": {
+        "hotel_eligibility": 0
+      },
+      "native_ads_cpc": 0,
+      "city_in_trans": "in Danang",
+      "native_ad_id": "",
+      "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/431734506.jpg?k=4df50d144ece16292f5cbc9590722d97412b3c74dd282a27cad9d26b68ecd2ba&o=",
+      "is_genius_deal": 0,
+      "district": "Bac My An Beach",
+      "in_best_district": 0,
+      "hotel_name": "Daisy Boutique Hotel",
+      "longitude": 108.246561,
+      "hotel_name_trans": "Daisy Boutique Hotel",
+      "url": "https://www.booking.com/hotel/vn/daisy-boutique-ngu-hanh-son1.html",
+      "price_is_final": 1,
+      "cc_required": 1,
+      "cc1": "vn",
+      "cant_book": 0,
+      "review_score": 9.6,
+      "latitude": 16.04064,
+      "type": "property_card",
+      "is_geo_rate": 1,
+      "currency_code": "VND",
+      "preferred": 1,
+      "native_ads_tracking": "",
+      "review_nr": 331,
+      "matching_units_configuration": {
+        "matching_units_common_config": {
+          "unit_type_id": 9,
+          "localized_area": null
+        }
+      },
+      "default_wishlist_name": "Danang",
+      "is_smart_deal": 0,
+      "city_name_en": "Ngũ Hành Sơn",
+      "updated_checkout": null,
+      "preferred_plus": 0,
+      "price_breakdown": {
+        "currency": "VND",
+        "sum_excluded_raw": "0.00",
+        "gross_price": "9268512.00",
+        "all_inclusive_price": 9268512,
+        "has_incalculable_charges": 0,
+        "has_fine_print_charges": 0,
+        "has_tax_exceptions": 0
+      },
+      "address": "67 Chế Lan Viên, Bắc Mỹ An",
+      "accommodation_type": 204,
+      "timezone": "Asia/Ho_Chi_Minh",
+      "is_mobile_deal": 0,
+      "zip": "550000",
+      "class": 3,
+      "hotel_include_breakfast": 1,
+      "wishlist_count": 0,
+      "hotel_id": 5873395
+    }
+  ],
+  "unfiltered_count": 1142,
+  "is_beach_ufi": 21,
+  "search_metadata": "last_x_property_ids=5873395,hotels_cc1=vn",
+  "copyright": [],
+  "search_radius": 0,
+  "search_id": "f49892cdcf1677968482520bbca6fbd2293:10:121",
+  "total_count_with_filters": 687,
+  "room_distribution": [
+    {
+      "children": [
+        5,
+        7
+      ],
+      "adults": "1"
+    }
+  ],
+  "applied_filters": []
+}

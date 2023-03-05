@@ -1,5 +1,5 @@
 import { bookingInstance } from "@lib";
-import { BookingLocation } from "@types";
+import { BookingLocation, HotelParams } from "@types";
 import { AxiosResponse } from "axios";
 
 /*
@@ -18,9 +18,15 @@ export const getLocations = (
     },
   });
 };
-export const getHotels = (): Promise<AxiosResponse<any>> => {
-  return bookingInstance.get("/hotels", {
-    params: { api_key: import.meta.env.VITE_API_KEY },
+/** get List of hotels */
+export const getHotels = (
+  paramsHotels: HotelParams
+): Promise<AxiosResponse<any>> => {
+  return bookingInstance.get("/properties/list", {
+    params: {
+      api_key: import.meta.env.VITE_API_KEY,
+      ...paramsHotels,
+    },
   });
 };
 

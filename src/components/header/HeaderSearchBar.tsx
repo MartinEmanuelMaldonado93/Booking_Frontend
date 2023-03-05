@@ -38,7 +38,6 @@ export default function HeaderSearchBar() {
 
   useEffect(() => {
     if (!data) return;
-
     dispatch!({
       type: "NEW_SEARCH",
       payload: {
@@ -49,14 +48,13 @@ export default function HeaderSearchBar() {
         options,
       },
     });
-
-    // navigate(PUBLIC.HOTELS_LIST);
+    navigate(PUBLIC.HOTELS_LIST);
   }, [data]);
 
   async function handleNewSearch() {
     setRefetch((p) => !p);
   }
-
+  
   return (
     <div className='px-2 text-white '>
       <RecreationOptions />
