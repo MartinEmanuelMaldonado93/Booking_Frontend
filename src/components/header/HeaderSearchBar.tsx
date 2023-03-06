@@ -7,7 +7,7 @@ import {
   OptionsHotel,
   RecreationOptions,
 } from "@components";
-import { LocationInfo, optionsHotel } from "@types";
+import { optionsHotel } from "@types";
 import { AuthContext, SearchContext } from "@context";
 import { PUBLIC } from "@models";
 import { useLocationsSWR } from "@constants";

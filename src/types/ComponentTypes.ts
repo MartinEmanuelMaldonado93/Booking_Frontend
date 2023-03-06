@@ -22,7 +22,7 @@ export type HotelByType = {
 };
 
 export type optionsHotel = {
-  adult?: number;
+  adult: number;
   children?: number;
   room?: number;
 };

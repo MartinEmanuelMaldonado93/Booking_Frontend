@@ -3,7 +3,7 @@ import { Dispatch, createContext, useReducer } from "react";
 import type { Range } from "react-date-range/index";
 
 export type SearchedDestination = {
-  city?: string;
+  city: string;
   destination_id?: number;
   type?: string;
   dates: Range[] | [];
@@ -21,12 +21,12 @@ type DestinationContext = {
 };
 
 const initialState: SearchedDestination = {
-  city: undefined,
-  dates: [],
+  city: "argentina",
+  dates: [{ startDate: new Date(), endDate: new Date(), key: "selection" }],
   options: {
-    adult: undefined,
-    children: undefined,
-    room: undefined,
+    adult: 1,
+    children: 0,
+    room: 0,
   },
 };
 

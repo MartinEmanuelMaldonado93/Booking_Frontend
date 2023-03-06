@@ -10,36 +10,55 @@ import type { Range } from "react-date-range/index";
 import { HotelsResponse, optionsHotel } from "@types";
 import { createHotel } from "@adapters";
 import { SearchContext } from "@context";
-import { useHotelsSWR } from "@constants";
-import { formatDate, uuid } from "@utils";
+import { useHotelsSWR, useLocationsSWR } from "@constants";
+import { createParamsHotelsSwr, formatDate, uuid } from "@utils";
 
 const HotelList = () => {
   const { state, dispatch } = useContext(SearchContext);
-  const [destination, setDestination] = useState(state.city || "Madrid");
+  const [destination, setDestination] = useState<string>(state.city);
   const [options, setOptions] = useState<optionsHotel>(state.options);
-  const [dates, setDates] = useState<Range[]>(
-    state.dates || {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    }
-  );
+  const [dates, setDates] = useState<Range[]>(state.dates);
   const [minPrice, setMin] = useState<number>(50);
   const [maxPrice, setMax] = useState<number>(999);
-  // formatDate(state.dates[0].startDate), formatDate(state.dates[0].endDate);
-  const { data, isLoading, error } = useHotelsSWR<HotelsResponse>(destination, {
-    offset: 10 + "",
-    arrival_date: "2023-4-13",
-    departure_date: "2023-4-23",
-    guest_qty: state.options.adult + "",
-    dest_ids: state.destination_id + "",
-    room_qty: state.options.room + "",
-    search_type: state.type + "",
-  });
 
-  function handleSearch() {
-    // reFetchData();
+  const [refetchHotel, setRefetchHotel] = useState<boolean>(true);
+  const [fetchLocation, setFetchLocation] = useState<boolean>(true);
+
+  const { data, isLoading, error } = useHotelsSWR<HotelsResponse>(
+    refetchHotel ? destination : null,
+    createParamsHotelsSwr(state)
+  );
+
+  const {
+    data: dataLocation,
+    error: ErrorLocation,
+    isLoading: loadingLocation,
+  } = useLocationsSWR(fetchLocation ? destination : null);
+
+  useEffect(() => {
+    if (!data) return;
+    setRefetchHotel(false);
+  }, [data]);
+
+  async function handleSearch() {
+    //update search state then trigger a new call !
+    // But  i need locationID first so two calls needed...
+    setFetchLocation(true);
+    if (dataLocation) {
+      dispatch!({
+        type: "NEW_SEARCH",
+        payload: {
+          city: destination,
+          destination_id: +dataLocation[0].dest_id,
+          type: dataLocation[0].dest_type,
+          dates,
+          options,
+        },
+      });
+      setRefetchHotel(true);
+    }
   }
+  
   return (
     <>
       <div className='px-4 bg-blue-600 w-full flex justify-center'>
@@ -49,7 +68,7 @@ const HotelList = () => {
         </div>
       </div>
       <div className='flex justify-center flex-wrap lg:flex-nowrap p-2 max-w-[70rem]  m-auto'>
-        {/* Hotel list by Location */}
+        {/* Hotel list searcher */}
         <aside className='grid sm:gap-2 p-2 rounded-md max-w-xs max-h-[40rem] shadow-sm bg-yellow-500'>
           <h2 className='text-xl font-bold'>Search</h2>
           <div className='font-bold'>Destination</div>
@@ -130,6 +149,7 @@ const HotelList = () => {
             Search
           </button>
         </aside>
+        {/** List of hotels */}
         <div className='p-2'>
           <div className='p-2 rounded-md bg-gray-100 text-gray-700 capitalize font-bold text-2xl'>
             {data ? (data.result ? data.result[0].city : null) : null}

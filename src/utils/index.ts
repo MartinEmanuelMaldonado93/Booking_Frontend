@@ -1,5 +1,6 @@
 export * from './authHeader';
 export * from './constants';
+export { default as createParamsHotelsSwr } from './createParamsHotelsSwr';
 export * from './formatDate';
 export { default as getAxiosOptions } from './getAxiosOptions';
 export * from './getCityAutosuggestion';
