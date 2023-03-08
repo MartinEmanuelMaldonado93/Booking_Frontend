@@ -4,7 +4,7 @@ import type { Range } from "react-date-range/index";
 
 export type SearchedDestination = {
   city: string;
-  destination_id?: number;
+  destination_id?: number | string;
   type?: string;
   dates: Range[] | [];
   options: optionsHotel;
@@ -22,13 +22,26 @@ type DestinationContext = {
 
 const initialState: SearchedDestination = {
   city: "argentina",
-  dates: [{ startDate: new Date(), endDate: new Date(), key: "selection" }],
+  dates: [defaultDates()],
+  type: "city",
+  destination_id: "-979186",// corresponds to argentina
   options: {
     adult: 1,
     children: 0,
     room: 0,
   },
 };
+
+function defaultDates(): Range {
+  const start = new Date();
+  const end = new Date();
+  end.setDate(start.getDate() + 7);
+  return {
+    startDate: start,
+    endDate: end,
+    key: "selection",
+  };
+}
 
 const initialContext: DestinationContext = {
   state: initialState,

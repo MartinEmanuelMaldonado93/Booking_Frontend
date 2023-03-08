@@ -5,9 +5,9 @@ import {
   CalendarDays,
   OptionsHotel,
 } from "@components";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import type { Range } from "react-date-range/index";
-import { HotelsResponse, optionsHotel } from "@types";
+import { Hotel, HotelsResponse, SingleHotel, optionsHotel } from "@types";
 import { createHotel } from "@adapters";
 import { SearchContext } from "@context";
 import { useHotelsSWR, useLocationsSWR } from "@constants";
@@ -15,50 +15,53 @@ import { createParamsHotelsSwr, formatDate, uuid } from "@utils";
 
 const HotelList = () => {
   const { state, dispatch } = useContext(SearchContext);
-  const [destination, setDestination] = useState<string>(state.city);
+  const destinationRef = useRef<string>(state.city);
   const [options, setOptions] = useState<optionsHotel>(state.options);
   const [dates, setDates] = useState<Range[]>(state.dates);
   const [minPrice, setMin] = useState<number>(50);
   const [maxPrice, setMax] = useState<number>(999);
 
-  const [refetchHotel, setRefetchHotel] = useState<boolean>(true);
-  const [fetchLocation, setFetchLocation] = useState<boolean>(true);
+  const [hotelsReceived, setHotelsReceived] = useState<SingleHotel[]>();
+  const [fetchLocation, setFetchLocation] = useState<boolean>(false);
 
-  const { data, isLoading, error } = useHotelsSWR<HotelsResponse>(
-    refetchHotel ? destination : null,
-    createParamsHotelsSwr(state)
-  );
+  const {
+    data: dataHotel,
+    isLoading,
+    error,
+  } = useHotelsSWR<HotelsResponse>(state.city, createParamsHotelsSwr(state));
+  useEffect(() => {
+    if (!dataHotel) return;
+    if (!dataHotel.result) return;
+
+    setHotelsReceived(dataHotel.result);
+    setFetchLocation(false);
+  }, [dataHotel]);
 
   const {
     data: dataLocation,
     error: ErrorLocation,
     isLoading: loadingLocation,
-  } = useLocationsSWR(fetchLocation ? destination : null);
-
+  } = useLocationsSWR(fetchLocation ? destinationRef.current : null);
   useEffect(() => {
-    if (!data) return;
-    setRefetchHotel(false);
-  }, [data]);
+    if (!dataLocation) return;
+    if (!dataLocation[0]) return;
 
-  async function handleSearch() {
-    //update search state then trigger a new call !
-    // But  i need locationID first so two calls needed...
+    dispatch!({
+      type: "NEW_SEARCH",
+      payload: {
+        dates,
+        options,
+        city: dataLocation[0].city_name,
+        destination_id: +dataLocation[0].dest_id,
+        type: dataLocation[0].dest_type,
+      },
+    });
+  }, [dataLocation]);
+  /**triggers the fetch of location to get the id of the hotel */
+  function handleSearch() {
     setFetchLocation(true);
-    if (dataLocation) {
-      dispatch!({
-        type: "NEW_SEARCH",
-        payload: {
-          city: destination,
-          destination_id: +dataLocation[0].dest_id,
-          type: dataLocation[0].dest_type,
-          dates,
-          options,
-        },
-      });
-      setRefetchHotel(true);
-    }
   }
-  
+
   return (
     <>
       <div className='px-4 bg-blue-600 w-full flex justify-center'>
@@ -74,17 +77,15 @@ const HotelList = () => {
           <div className='font-bold'>Destination</div>
           <input
             className='input py-1 w-full max-w-xs capitalize'
-            placeholder={destination}
-            onChange={({ target }) => setDestination(target.value)}
+            placeholder={destinationRef.current}
+            onChange={({ target }) => (destinationRef.current = target.value)}
             type='text'
           />
-
           <div className='font-bold'>Check-in Date</div>
           <div className='bg-base-200 rounded-md p-2'>
             <CalendarDays dates={dates} setDates={setDates} />
             <OptionsHotel options={options} setOptions={setOptions} />
           </div>
-
           <h2 className='font-bold'>Options</h2>
           <div className='grid justify-items-end gap-2 grid-cols-2 p-3'>
             <div className=''>
@@ -152,11 +153,10 @@ const HotelList = () => {
         {/** List of hotels */}
         <div className='p-2'>
           <div className='p-2 rounded-md bg-gray-100 text-gray-700 capitalize font-bold text-2xl'>
-            {data ? (data.result ? data.result[0].city : null) : null}
+            {hotelsReceived ? hotelsReceived[0].city_trans : null}
           </div>
-          {isLoading ? <div>Loading...</div> : null}
-          {data
-            ? data.result?.map((singleHotel) => (
+          {hotelsReceived
+            ? hotelsReceived.map((singleHotel: SingleHotel) => (
                 <div key={uuid()}>
                   <SearchItem hotel={createHotel(singleHotel)} />
                 </div>

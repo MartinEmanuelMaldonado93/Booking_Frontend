@@ -13,24 +13,14 @@ import { PUBLIC } from "@models";
 import { useLocationsSWR } from "@constants";
 
 export default function HeaderSearchBar() {
-  const [dates, setDates] = useState<Range[]>([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
-  ]);
-  const [options, setOptions] = useState<optionsHotel>({
-    adult: 1,
-    children: 1,
-    room: 1,
-  });
+  const { state: stateSearch ,dispatch } = useContext(SearchContext);
+  const [dates, setDates] = useState<Range[]>(stateSearch.dates);
+  const [options, setOptions] = useState<optionsHotel>(stateSearch.options);
   const [destination, setDestination] = useState<string>("");
-
   const [refetch, setRefetch] = useState(false);
+
   const navigate = useNavigate();
-  const { state } = useContext(AuthContext);
-  const { dispatch } = useContext(SearchContext);
+  const { state: stateUser } = useContext(AuthContext);
 
   const { data, error, isLoading } = useLocationsSWR(
     refetch ? destination : null
@@ -66,7 +56,7 @@ export default function HeaderSearchBar() {
           Get rewarded for your travels – unlock instant savings of 10% or more
           with a free Lamabooking account
         </p>
-        {!state.user ? (
+        {!stateUser.user ? (
           <button className='btn py-3 px-2 min-h-0 h-auto  text-black bg-cyan-50 border-none hover:bg-pink-500 '>
             Sign in / Register
           </button>

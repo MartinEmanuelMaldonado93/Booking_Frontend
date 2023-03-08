@@ -1,28 +1,32 @@
+import { BookingLocation, HotelParams, HotelsResponse } from "@types";
 import { bookingInstance } from "@lib";
-import { BookingLocation, HotelParams } from "@types";
+import { routes } from "@constants";
 import { AxiosResponse } from "axios";
+import { createParamsHotelsSwr, formatDate } from "@utils";
+import { SearchedDestination } from "@context";
 
 /*
  * This file contains basic request declarations
  * (fetcher function that calls an endpoint)
  */
 
-/** get Locations - autocomplete,  BookingLocation */
+/** get Locations - autocomplete */
 export const getLocations = (
   destination: string
 ): Promise<AxiosResponse<BookingLocation[]>> => {
-  return bookingInstance.get("locations/auto-complete", {
+  return bookingInstance.get(routes.LOCATIONS, {
     params: {
       text: destination,
       languagecode: "en-us",
     },
   });
 };
+
 /** get List of hotels */
 export const getHotels = (
   paramsHotels: HotelParams
 ): Promise<AxiosResponse<any>> => {
-  return bookingInstance.get("/properties/list", {
+  return bookingInstance.get(routes.PROPERTIES, {
     params: {
       api_key: import.meta.env.VITE_API_KEY,
       ...paramsHotels,
@@ -30,4 +34,15 @@ export const getHotels = (
   });
 };
 
-/** Reserve  */
+/** get List of hotels featured */
+export const getHotelsFeatured = (
+  params: HotelParams
+): Promise<AxiosResponse<HotelsResponse>> => {
+  return bookingInstance.get(routes.PROPERTIES, {
+    params: {
+      order_by: "deals",
+      ...params,
+      api_key: import.meta.env.VITE_API_KEY,
+    },
+  });
+};
