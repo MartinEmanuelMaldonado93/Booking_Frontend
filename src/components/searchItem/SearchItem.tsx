@@ -6,11 +6,11 @@ type props = {
   hotel: Hotel;
 };
 function SearchItem({ hotel }: props) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   function handleSearch() {
-    navigate(PUBLIC.HOTEL_SELECTED, {
-      state: { _id: hotel._id },
-    });
+    // navigate(PUBLIC.HOTEL_SELECTED, {
+    //   state: { _id: hotel._id },
+    // });
   }
 
   return (
