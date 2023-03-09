@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Footer, MailList, Navbar, RecreationOptions } from "@components";
 import { FaSearchLocation } from "react-icons/fa";
 import { useFetchBooking } from "@hooks";
-import { Hotel, HotelAPI } from "@types";
+import { Hotel} from "@types";
 import { getDifferenceOfDays } from "@utils";
 import { SearchContext } from "@context";
 import { BASE_URL, PRIVATE, PUBLIC } from "@models";
@@ -14,38 +14,38 @@ const HotelSelected = () => {
   const { state, dispatch } = useContext(SearchContext);
   const hotelSelected = useRef<Hotel>();
 
-  const opt = {
-    method: "GET",
-    url: `${BASE_URL}/hotels/search`,
-    params: {
-      room_number: state.options.room,
-      checkout_date: "2023-08-19",
-      dest_type: "city",
-      dest_id: state.destination_id,
-      adults_number: state.options.adult,
-      locale: "en-us",
-      checkin_date: "2023-08-18",
-      order_by: "popularity",
-      filter_by_currency: "USD",
-      units: "metric",
-      page_number: "0",
-      children_number: state.options.children,
-      include_adjacency: "true",
-      categories_filter_ids: "class::2,class::4,free_cancellation::1",
-      children_ages: "5,0",
-    },
-    headers: {
-      "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
-      "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
-    },
-  };
-  const { data, loading, error, reFetchData } = useFetchBooking<any>(opt);
+  // const opt = {
+  //   method: "GET",
+  //   url: `${BASE_URL}/hotels/search`,
+  //   params: {
+  //     room_number: state.options.room,
+  //     checkout_date: "2023-08-19",
+  //     dest_type: "city",
+  //     dest_id: state.destination_id,
+  //     adults_number: state.options.adult,
+  //     locale: "en-us",
+  //     checkin_date: "2023-08-18",
+  //     order_by: "popularity",
+  //     filter_by_currency: "USD",
+  //     units: "metric",
+  //     page_number: "0",
+  //     children_number: state.options.children,
+  //     include_adjacency: "true",
+  //     categories_filter_ids: "class::2,class::4,free_cancellation::1",
+  //     children_ages: "5,0",
+  //   },
+  //   headers: {
+  //     "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
+  //     "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
+  //   },
+  // };
+  // const { data, loading, error, reFetchData } = useFetchBooking<any>(opt);
 
-  useEffect(() => {
-    if (data) {
-      hotelSelected.current = createHotel(data.result[0]);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     hotelSelected.current = createHotel(data.result[0]);
+  //   }
+  // }, [data]);
 
   let totalDays: number | undefined = getDifferenceOfDays(state);
 
