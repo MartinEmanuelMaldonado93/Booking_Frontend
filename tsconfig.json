@@ -23,7 +23,7 @@
       "@types": ["src/types"],
       "@models": ["src/models"],
       "@hooks": ["src/hooks"],
-      "@constants": ["src/api"],
+      "@api": ["src/api"],
       "@utils": ["src/utils"],
       "@services": ["src/services"],
       "@context": ["src/context"],

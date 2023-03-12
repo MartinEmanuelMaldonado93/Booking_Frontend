@@ -11,7 +11,7 @@ import {
 import { optionsHotel } from "@types";
 import { AuthContext, SearchContext } from "@context";
 import { PUBLIC } from "@models";
-import { useLocationsSWR } from "@constants";
+import { useLocationsSWR } from "@api";
 
 export default function HeaderSearchBar() {
   const { state: stateSearch, dispatch } = useContext(SearchContext);

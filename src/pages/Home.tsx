@@ -7,7 +7,7 @@ import {
   MailList,
   HeaderSearchBar,
 } from "@components";
-import { useHotelsSWR, useLocationsSWR } from "@constants";
+import { useHotelsSWR, useLocationsSWR } from "@api";
 import { HotelParams } from "@types";
 import axios from "axios";
 import { useEffect } from "react";
@@ -15,7 +15,10 @@ import { useEffect } from "react";
 function Home() {
   return (
     <div className='h-screen w-full flex flex-col justify-between gap-16 content-center items-center mx-auto bg-white overflow-x-hidden'>
-      <div className='px-4 bg-blue-600 w-full flex justify-center'>
+      <div
+        className='px-4 bg-blue-600 w-full flex justify-center relative
+    z-30'
+      >
         <div className='max-w-[70rem]'>
           <Navbar />
           <HeaderSearchBar />

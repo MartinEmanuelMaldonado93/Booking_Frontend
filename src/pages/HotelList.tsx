@@ -12,13 +12,8 @@ import type { Range } from "react-date-range/index";
 import { Hotel, HotelsResponse, SingleHotel, optionsHotel } from "@types";
 import { createHotel } from "@adapters";
 import { SearchContext } from "@context";
-import { useHotelsSWR, useLocationsSWR } from "@constants";
-import {
-  createParamsHotelsSwr,
-  featuredPropertyData,
-  formatDate,
-  uuid,
-} from "@utils";
+import { useHotelsSWR, useLocationsSWR, featuredPropertyData } from "@api";
+import { createParamsHotelsSwr, formatDate, uuid } from "@utils";
 
 const HotelList = () => {
   const { state, dispatch } = useContext(SearchContext);

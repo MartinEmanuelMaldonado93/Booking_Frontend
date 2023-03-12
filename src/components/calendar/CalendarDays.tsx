@@ -25,7 +25,7 @@ function CalendarDays({ dates, setDates }: props) {
         className='dropdown-content menu relative max-w-xs p-2 border rounded-md bg-base-100 border-gray shadow-md text-center'
       >
         <DateRange
-          className='hover:z-10'
+          className=''
           editableDateInputs={true}
           onChange={(item) => setDates([item.selection])}
           moveRangeOnFirstSelection={false}

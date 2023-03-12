@@ -13,7 +13,7 @@ type props = {
 /** Input of destination */
 function Destination({ destination, setDestination }: props) {
   return (
-    <div className='flex items-center gap-1'>
+    <div className='flex items-center gap-1  w-full md:w-auto  '>
       <FaBed />
       <input
         type='text'

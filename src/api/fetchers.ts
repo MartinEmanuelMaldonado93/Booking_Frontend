@@ -1,6 +1,6 @@
 import { BookingLocation, HotelParams, HotelsResponse } from "@types";
 import { bookingInstance } from "@lib";
-import { routes } from "@constants";
+import { routes } from "@api";
 import { AxiosResponse } from "axios";
 import { createParamsHotelsSwr, formatDate } from "@utils";
 import { SearchedDestination } from "@context";

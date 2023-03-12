@@ -1,5 +1,5 @@
 import { Hotel } from "@types";
-import { featuredPropertyData } from "@utils";
+import { featuredPropertyData } from "@api";
 /** Fetch specifically featured `Hotels` */
 const FeaturedProperties = () => {
   return (

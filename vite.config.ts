@@ -17,9 +17,6 @@ export default defineConfig(({ command, mode }) => {
     plugins: [react()],
     base: "./",
     resolve: {
-      // alias: {// 3
-      //   // "@components": path.resolve("src/components/*"),
-      // },
       alias: [
         {
           find: "@lib",
@@ -42,7 +39,7 @@ export default defineConfig(({ command, mode }) => {
           replacement: path.resolve(__dirname, "src/hooks"),
         },
         {
-          find: "@constants",
+          find: "@api",
           replacement: path.resolve(__dirname, "src/api"),
         },
         {
@@ -52,10 +49,6 @@ export default defineConfig(({ command, mode }) => {
         {
           find: "@context",
           replacement: path.resolve(__dirname, "src/context"),
-        },
-        {
-          find: "@reduxStore",
-          replacement: path.resolve(__dirname, "src/redux"),
         },
         {
           find: "@services",

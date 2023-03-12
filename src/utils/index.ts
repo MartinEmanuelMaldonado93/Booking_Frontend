@@ -1,6 +1,3 @@
-export * from './FeaturedData';
-export * from './FeaturedPropertyData';
-export * from './PropertyListData';
 export * from './authHeader';
 export * from './constants';
 export { default as createParamsHotelsSwr } from './createParamsHotelsSwr';
