@@ -6,6 +6,7 @@ import {
   Destination,
   OptionsHotel,
   RecreationOptions,
+  SearchBtnLoading,
 } from "@components";
 import { optionsHotel } from "@types";
 import { AuthContext, SearchContext } from "@context";
@@ -13,11 +14,11 @@ import { PUBLIC } from "@models";
 import { useLocationsSWR } from "@constants";
 
 export default function HeaderSearchBar() {
-  const { state: stateSearch ,dispatch } = useContext(SearchContext);
+  const { state: stateSearch, dispatch } = useContext(SearchContext);
   const [dates, setDates] = useState<Range[]>(stateSearch.dates);
   const [options, setOptions] = useState<optionsHotel>(stateSearch.options);
   const [destination, setDestination] = useState<string>("");
-  const [refetch, setRefetch] = useState(false);
+  const [refetch, setRefetch] = useState<boolean>(false);
 
   const navigate = useNavigate();
   const { state: stateUser } = useContext(AuthContext);
@@ -44,7 +45,7 @@ export default function HeaderSearchBar() {
   async function handleNewSearch() {
     setRefetch((p) => !p);
   }
-  
+
   return (
     <div className='px-2 text-white '>
       <RecreationOptions />
@@ -70,12 +71,16 @@ export default function HeaderSearchBar() {
         <CalendarDays dates={dates} setDates={setDates} />
         <OptionsHotel options={options} setOptions={setOptions} />
         <div className='headerSearchItem'>
-          <button
-            className='btn border-none py-3 px-2 min-h-0 h-auto bg-blue-700 hover:bg-blue-800'
-            onClick={handleNewSearch}
-          >
-            Search
-          </button>
+          {refetch ? (
+            <SearchBtnLoading />
+          ) : (
+            <button
+              className='btn border-none py-3 px-2 min-h-0 h-auto bg-blue-700 hover:bg-blue-800'
+              onClick={handleNewSearch}
+            >
+              Search
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@ import {
   RecreationOptions,
   CalendarDays,
   OptionsHotel,
+  SearchItemLoading,
+  HotelListTitleLoading,
 } from "@components";
 import { useContext, useEffect, useRef, useState } from "react";
 import type { Range } from "react-date-range/index";
@@ -11,7 +13,12 @@ import { Hotel, HotelsResponse, SingleHotel, optionsHotel } from "@types";
 import { createHotel } from "@adapters";
 import { SearchContext } from "@context";
 import { useHotelsSWR, useLocationsSWR } from "@constants";
-import { createParamsHotelsSwr, formatDate, uuid } from "@utils";
+import {
+  createParamsHotelsSwr,
+  featuredPropertyData,
+  formatDate,
+  uuid,
+} from "@utils";
 
 const HotelList = () => {
   const { state, dispatch } = useContext(SearchContext);
@@ -57,6 +64,7 @@ const HotelList = () => {
       },
     });
   }, [dataLocation]);
+
   /**triggers the fetch of location to get the id of the hotel */
   function handleSearch() {
     setFetchLocation(true);
@@ -70,9 +78,9 @@ const HotelList = () => {
           <RecreationOptions />
         </div>
       </div>
-      <div className='flex justify-center flex-wrap lg:flex-nowrap p-2 max-w-[70rem]  m-auto'>
+      <div className='flex flex-wrap sm:flex-nowrap justify-center p-2 max-w-[70rem]  m-auto'>
         {/* Hotel list searcher */}
-        <aside className='grid sm:gap-2 p-2 rounded-md max-w-xs max-h-[40rem] shadow-sm bg-yellow-500'>
+        <aside className='grid sm:gap-2 p-2 rounded-md max-w-xs h-min shadow-sm bg-yellow-500'>
           <h2 className='text-xl font-bold'>Search</h2>
           <div className='font-bold'>Destination</div>
           <input
@@ -151,17 +159,24 @@ const HotelList = () => {
           </button>
         </aside>
         {/** List of hotels */}
-        <div className='p-2'>
-          <div className='p-2 rounded-md bg-gray-100 text-gray-700 capitalize font-bold text-2xl'>
-            {hotelsReceived ? hotelsReceived[0].city_trans : null}
-          </div>
-          {hotelsReceived
-            ? hotelsReceived.map((singleHotel: SingleHotel) => (
-                <div key={uuid()}>
-                  <SearchItem hotel={createHotel(singleHotel)} />
-                </div>
-              ))
-            : null}
+        <div className='p-2 w-full'>
+          {hotelsReceived ? (
+            <div className='p-2 rounded-md bg-gray-100 text-gray-700 capitalize font-bold text-2xl'>
+              {hotelsReceived[0].city_trans}
+            </div>
+          ) : (
+            <HotelListTitleLoading />
+          )}
+
+          {hotelsReceived ? (
+            hotelsReceived.map((singleHotel: SingleHotel) => (
+              <div key={uuid()}>
+                <SearchItem hotel={createHotel(singleHotel)} />
+              </div>
+            ))
+          ) : (
+            <SearchItemLoading />
+          )}
         </div>
       </div>
     </>
