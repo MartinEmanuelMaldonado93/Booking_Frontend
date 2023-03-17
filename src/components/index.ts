@@ -1,3 +1,4 @@
+export * from './HOC';
 export * from './calendar/CalendarDays';
 export * from './destination/Destination';
 export { default as NotFound } from './errorBoundary/NotFound';

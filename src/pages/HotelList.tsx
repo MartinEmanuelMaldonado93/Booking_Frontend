@@ -6,6 +6,7 @@ import {
   OptionsHotel,
   SearchItemLoading,
   HotelListTitleLoading,
+  HeaderLayout,
 } from "@components";
 import { useContext, useEffect, useRef, useState } from "react";
 import type { Range } from "react-date-range/index";
@@ -40,26 +41,26 @@ const HotelList = () => {
     setFetchLocation(false);
   }, [dataHotel]);
 
-  const {
-    data: dataLocation,
-    error: ErrorLocation,
-    isLoading: loadingLocation,
-  } = useLocationsSWR(fetchLocation ? destinationRef.current : null);
-  useEffect(() => {
-    if (!dataLocation) return;
-    if (!dataLocation[0]) return;
+  // const {
+  //   data: dataLocation,
+  //   error: ErrorLocation,
+  //   isLoading: loadingLocation,
+  // } = useLocationsSWR(fetchLocation ? destinationRef.current : null);
+  // useEffect(() => {
+  //   if (!dataLocation) return;
+  //   if (!dataLocation[0]) return;
 
-    dispatch!({
-      type: "NEW_SEARCH",
-      payload: {
-        dates,
-        options,
-        city: dataLocation[0].city_name,
-        destination_id: +dataLocation[0].dest_id,
-        type: dataLocation[0].dest_type,
-      },
-    });
-  }, [dataLocation]);
+  //   dispatch!({
+  //     type: "NEW_SEARCH",
+  //     payload: {
+  //       dates,
+  //       options,
+  //       city: dataLocation[0].city_name,
+  //       destination_id: +dataLocation[0].dest_id,
+  //       type: dataLocation[0].dest_type,
+  //     },
+  //   });
+  // }, [dataLocation]);
 
   /**triggers the fetch of location to get the id of the hotel */
   function handleSearch() {
@@ -68,12 +69,10 @@ const HotelList = () => {
 
   return (
     <>
-      <div className='px-4 bg-blue-600 w-full flex justify-center'>
-        <div className='max-w-[70rem]'>
-          <Navbar />
-          <RecreationOptions />
-        </div>
-      </div>
+      <HeaderLayout>
+        <Navbar />
+        <RecreationOptions />
+      </HeaderLayout>
       <div className='flex flex-wrap sm:flex-nowrap justify-center p-2 max-w-[70rem]  m-auto'>
         {/* Hotel list searcher */}
         <aside className='grid sm:gap-2 p-2 rounded-md max-w-xs h-min shadow-sm bg-yellow-500'>
@@ -166,9 +165,7 @@ const HotelList = () => {
 
           {hotelsReceived ? (
             hotelsReceived.map((singleHotel: SingleHotel) => (
-              <div key={uuid()}>
-                <SearchItem hotel={adaptHotel(singleHotel)} />
-              </div>
+              <SearchItem key={uuid()} hotel={adaptHotel(singleHotel)} />
             ))
           ) : (
             <SearchItemLoading />

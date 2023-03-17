@@ -32,17 +32,6 @@ const initialState: SearchedDestination = {
   },
 };
 
-function defaultDates(): Range {
-  const start = new Date();
-  const end = new Date();
-  end.setDate(start.getDate() + 7);
-  return {
-    startDate: start,
-    endDate: end,
-    key: "selection",
-  };
-}
-
 const initialContext: DestinationContext = {
   state: initialState,
 };
@@ -72,3 +61,16 @@ export const SearchContextProvider = ({ children }: props) => {
     </SearchContext.Provider>
   );
 };
+
+/** utils */
+
+function defaultDates(): Range {
+  const start = new Date();
+  const end = new Date();
+  end.setDate(start.getDate() + 7);
+  return {
+    startDate: start,
+    endDate: end,
+    key: "selection",
+  };
+}

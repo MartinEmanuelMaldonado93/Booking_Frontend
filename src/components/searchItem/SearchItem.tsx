@@ -18,7 +18,7 @@ function SearchItem({ hotel }: props) {
       <img
         src={hotel.photos![0]}
         alt='hotel photography'
-        className='rounded-sm shadow-md max-w-[14rem] h-full aspect-square m-2'
+        className='rounded-sm shadow-md min-w-[8rem] max-w-[14rem] h-full aspect-square m-2'
       />
       <div className='grid gap-2 w-full'>
         <h1 className='text-lg font-bold'>{hotel.name}</h1>
