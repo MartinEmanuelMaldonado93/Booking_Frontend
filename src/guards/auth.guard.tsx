@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { PUBLIC } from "@models";
 import { useContext } from "react";
+import { PUBLIC } from "@routes";
 import { AuthContext } from "@context";
 
 function AuthGuard() {

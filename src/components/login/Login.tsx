@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext, useState } from "react";
-import { BASE_URL, PUBLIC } from "@models";
+import { BASE_URL, PUBLIC } from "@routes";
 import { FaAirbnb } from "react-icons/fa";
 import { AuthContext } from "@context";
 import { useNavigate } from "react-router-dom";

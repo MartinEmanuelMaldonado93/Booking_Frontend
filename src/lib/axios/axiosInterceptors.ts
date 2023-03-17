@@ -2,7 +2,7 @@ import { AxiosInstance, AxiosRequestConfig } from "axios";
 
 export const addBaseInterceptors = (instance: AxiosInstance) => {
   instance.interceptors.request.use((config: any) => {
-    if (config.headers === undefined) {
+    if (!config.headers) {
       config.headers = {};
     }
 

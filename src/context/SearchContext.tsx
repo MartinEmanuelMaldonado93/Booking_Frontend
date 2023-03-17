@@ -1,4 +1,4 @@
-import { optionsHotel } from "@types";
+import { OptionsHotelType } from "@types";
 import { Dispatch, createContext, useReducer } from "react";
 import type { Range } from "react-date-range/index";
 
@@ -7,7 +7,7 @@ export type SearchedDestination = {
   destination_id?: number | string;
   type?: string;
   dates: Range[] | [];
-  options: optionsHotel;
+  options: OptionsHotelType;
 };
 
 type SearchAction = {
@@ -24,7 +24,7 @@ const initialState: SearchedDestination = {
   city: "argentina",
   dates: [defaultDates()],
   type: "city",
-  destination_id: "-979186",// corresponds to argentina
+  destination_id: "-979186", // corresponds to Argentina
   options: {
     adult: 1,
     children: 0,

@@ -2,7 +2,7 @@ import { AuthContext } from "@context";
 import { useContext } from "react";
 import { FaAirbnb } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { PUBLIC } from "@models";
+import { PUBLIC } from "@routes";
 
 const Navbar = () => {
   const { state } = useContext(AuthContext);

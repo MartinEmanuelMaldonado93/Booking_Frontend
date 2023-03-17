@@ -1,4 +1,4 @@
-import { BASE_URL } from "@models";
+import { BASE_URL } from "@routes";
 import { RawAxiosRequestConfig } from "axios";
 
 type props = {
@@ -6,6 +6,8 @@ type props = {
   url: string;
   method: string;
 };
+
+/** fetch options for Booking.com api */
 function createAxiosOptions({
   destination,
   url,

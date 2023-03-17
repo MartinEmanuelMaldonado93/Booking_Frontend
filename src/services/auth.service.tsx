@@ -1,18 +1,21 @@
 import { UserInfo } from "@types";
 
+/** Express application */
+
 // const baseLocalUrl = "http://localhost:8800";
 const baseLocalUrl =
   "https://expressjs-mongoose-production-75ad.up.railway.app";
-const userUrl = baseLocalUrl.concat("/user");
+
 /**
  * fetch called to api to
  * @returns User logged in
  */
 export default async function getUser() {
-  const res = await fetch(userUrl);
+  const res = await fetch(baseLocalUrl + "/user");
   const res_1 = await res.json();
   return res_1.results[0] satisfies UserInfo;
 }
+
 /*
 gets this type of object
 {

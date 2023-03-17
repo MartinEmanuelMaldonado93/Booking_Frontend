@@ -8,15 +8,15 @@ import {
   RecreationOptions,
   SearchBtnLoading,
 } from "@components";
-import { optionsHotel } from "@types";
+import { OptionsHotelType } from "@types";
 import { AuthContext, SearchContext } from "@context";
-import { PUBLIC } from "@models";
+import { PUBLIC } from "@routes";
 import { useLocationsSWR } from "@api";
 
 export default function HeaderSearchBar() {
   const { state: stateSearch, dispatch } = useContext(SearchContext);
   const [dates, setDates] = useState<Range[]>(stateSearch.dates);
-  const [options, setOptions] = useState<optionsHotel>(stateSearch.options);
+  const [options, setOptions] = useState<OptionsHotelType>(stateSearch.options);
   const [destination, setDestination] = useState<string>("");
   const [refetch, setRefetch] = useState<boolean>(false);
 

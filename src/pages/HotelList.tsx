@@ -9,16 +9,17 @@ import {
 } from "@components";
 import { useContext, useEffect, useRef, useState } from "react";
 import type { Range } from "react-date-range/index";
-import { Hotel, HotelsResponse, SingleHotel, optionsHotel } from "@types";
-import { createHotel } from "@adapters";
+import { Hotel, HotelsResponse, SingleHotel, OptionsHotelType } from "@types";
+import { adaptHotel } from "@adapters";
 import { SearchContext } from "@context";
 import { useHotelsSWR, useLocationsSWR, featuredPropertyData } from "@api";
-import { createParamsHotelsSwr, formatDate, uuid } from "@utils";
+import { formatDate, uuid } from "@utils";
+import { createParamsHotelsSwr } from "@lib";
 
 const HotelList = () => {
   const { state, dispatch } = useContext(SearchContext);
   const destinationRef = useRef<string>(state.city);
-  const [options, setOptions] = useState<optionsHotel>(state.options);
+  const [options, setOptions] = useState<OptionsHotelType>(state.options);
   const [dates, setDates] = useState<Range[]>(state.dates);
   const [minPrice, setMin] = useState<number>(50);
   const [maxPrice, setMax] = useState<number>(999);
@@ -166,7 +167,7 @@ const HotelList = () => {
           {hotelsReceived ? (
             hotelsReceived.map((singleHotel: SingleHotel) => (
               <div key={uuid()}>
-                <SearchItem hotel={createHotel(singleHotel)} />
+                <SearchItem hotel={adaptHotel(singleHotel)} />
               </div>
             ))
           ) : (

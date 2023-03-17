@@ -23,8 +23,8 @@ export default defineConfig(({ command, mode }) => {
           replacement: path.resolve(__dirname, "src/lib"),
         },
         {
-          find: "@models",
-          replacement: path.resolve(__dirname, "src/models"),
+          find: "@routes",
+          replacement: path.resolve(__dirname, "src/routes"),
         },
         {
           find: "@adapters",

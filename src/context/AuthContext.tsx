@@ -2,7 +2,6 @@ import { getUserFromLocalStorage, setUserToLocalStorage } from "@utils";
 import { Dispatch, createContext, useEffect, useReducer } from "react";
 import { UserInfo } from "@types";
 import { KEY_STORAGE } from "@utils";
-import { useLocalStorage } from "@hooks";
 
 type AuthUserStatus = {
   user?: UserInfo | null;

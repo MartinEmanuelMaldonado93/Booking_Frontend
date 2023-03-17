@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Hotel } from "@types";
-import { PUBLIC } from "@models";
+import { PUBLIC } from "@routes";
 
 type props = {
   hotel: Hotel;
@@ -34,7 +34,7 @@ function SearchItem({ hotel }: props) {
       <div className=''>
         {hotel.rating && (
           <div className='siRating'>
-            <span>Excellent{" "}</span>
+            <span>Excellent </span>
             <button>{hotel.rating}</button>
           </div>
         )}

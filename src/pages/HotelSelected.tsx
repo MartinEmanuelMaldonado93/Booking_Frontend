@@ -2,12 +2,11 @@ import { useContext, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Footer, MailList, Navbar, RecreationOptions } from "@components";
 import { FaSearchLocation } from "react-icons/fa";
-import { useFetchBooking } from "@hooks";
-import { Hotel} from "@types";
+import { Hotel } from "@types";
 import { getDifferenceOfDays } from "@utils";
 import { SearchContext } from "@context";
-import { BASE_URL, PRIVATE, PUBLIC } from "@models";
-import { createHotel } from "@adapters";
+import { BASE_URL, PRIVATE, PUBLIC } from "@routes";
+import { adaptHotel } from "@adapters";
 
 const HotelSelected = () => {
   const navigate = useNavigate();

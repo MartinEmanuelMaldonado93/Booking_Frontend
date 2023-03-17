@@ -1,14 +1,12 @@
 import { CalendarDays, OptionsHotel } from "@components";
 import { SearchContext } from "@context";
-import { optionsHotel } from "@types";
+import { OptionsHotelType } from "@types";
 import { useContext, useState } from "react";
-type props = {
-  
-}
+
 function SearchAside() {
   const { state, dispatch } = useContext(SearchContext);
   const [destination, setDestination] = useState(state.city || "Madrid");
-  const [options, setOptions] = useState<optionsHotel>(state.options);
+  const [options, setOptions] = useState<OptionsHotelType>(state.options);
   const [dates, setDates] = useState(state.dates);
   const [minPrice, setMin] = useState<number>(50);
   const [maxPrice, setMax] = useState<number>(999);

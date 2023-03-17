@@ -6,7 +6,6 @@ import {
   useState,
 } from "react";
 
-// import { useEventCallback, useEventListener }
 import useEventCallback from "./useEventCallback";
 import useEventListener from "./useEventListener";
 

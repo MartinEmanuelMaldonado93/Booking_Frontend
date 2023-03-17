@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import HotelSelected from "./pages/HotelSelected";
 import HotelList from "./pages/HotelList";
-import { PRIVATE, PUBLIC } from "./models";
+import { PRIVATE, PUBLIC } from "./routes";
 import { Login, NotFound, Reserved } from "@components";
 import AuthGuard from "./guards/auth.guard";
 import "./index.css";

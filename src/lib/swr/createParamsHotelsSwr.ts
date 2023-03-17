@@ -1,6 +1,7 @@
 import { SearchedDestination } from "@context";
 import { formatDate } from "@utils";
 
+/** params fetch to use with apidojo from state of context*/
 export default function createParamsHotelsSWR(state: SearchedDestination) {
   return {
     offset: 10 + "",

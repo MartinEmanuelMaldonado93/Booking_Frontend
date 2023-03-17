@@ -1,2 +1,2 @@
-export { default as createHotel } from './createHotel';
+export { default as adaptHotel } from './adaptHotel';
 export * from './createUserAdapter';

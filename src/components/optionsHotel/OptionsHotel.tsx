@@ -1,14 +1,14 @@
-import { optionsHotel } from "@types";
+import { OptionsHotelType } from "@types";
 import { Dispatch, SetStateAction, useState } from "react";
 import { FaPersonBooth } from "react-icons/fa";
 type props = {
-  options: optionsHotel;
-  setOptions: Dispatch<SetStateAction<optionsHotel>>;
+  options: OptionsHotelType;
+  setOptions: Dispatch<SetStateAction<OptionsHotelType>>;
 };
 function OptionsHotel({ options, setOptions }: props) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOption = (name: keyof optionsHotel, operation: string) => {
+  const handleOption = (name: keyof OptionsHotelType, operation: string) => {
     let prevCount = options[name] || 0;
     const actualCount = operation === "i" ? ++prevCount : --prevCount;
 

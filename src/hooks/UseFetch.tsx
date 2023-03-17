@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import axios, { RawAxiosRequestConfig } from "axios";
 
-/** Receive exact route url */
+/** recieves url and axios options 
+ * @returns data , isLoading, error, refetch functions
+*/
 function UseFetch<T>(url: string, options?: RawAxiosRequestConfig) {
   const [data, setData] = useState<T>();
-  const [loading, setLoading] = useState<boolean>();
+  const [isLoading, setLoading] = useState<boolean>();
   const [error, setError] = useState<Error | unknown>();
 
   useEffect(() => {
@@ -38,7 +40,7 @@ function UseFetch<T>(url: string, options?: RawAxiosRequestConfig) {
     setLoading(false);
   };
 
-  return { data, loading, error, reFetchData };
+  return { data, loading: isLoading, error, reFetchData };
 }
 
 export default UseFetch;

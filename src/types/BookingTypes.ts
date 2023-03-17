@@ -1,5 +1,7 @@
 import { SingleHotel } from "./BookingSingleHotel";
 
+/** Booking api */
+
 // locations
 export interface BookingLocation {
   latitude: number;
