@@ -1,7 +1,6 @@
 export * from './HOC';
 export * from './calendar/CalendarDays';
 export * from './destination/Destination';
-export { default as NotFound } from './errorBoundary/NotFound';
 export * from './featured/Featured';
 export * from './featuredProperty/FeatureProperty';
 export * from './footer/Footer';
@@ -14,6 +13,7 @@ export { default as SearchItemLoading } from './loading/SearchItemLoading';
 export { default as Login } from './login/Login';
 export * from './mailList/MailList';
 export * from './navbar/Navbar';
+export { default as NotFound } from './notFound/NotFound';
 export * from './optionsHotel/OptionsHotel';
 export * from './propertyList/PropertyList';
 export { default as Reserved } from './reserved/Reserved';

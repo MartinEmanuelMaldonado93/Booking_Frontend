@@ -23,11 +23,6 @@ function Login() {
       payload: {},
     });
 
-    // const options: RequestInit = {
-    //   method: "POST",
-    //   // ...authHeader(),
-    //   body: `${JSON.stringify(credentials)}`,
-    // };
 
     try {
       const response = await axios.post(

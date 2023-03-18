@@ -1,50 +1,21 @@
-import { useContext, useEffect, useRef } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Footer, MailList, Navbar, RecreationOptions } from "@components";
+import { useContext, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Footer,
+  HeaderLayout,
+  MailList,
+  Navbar,
+  RecreationOptions,
+} from "@components";
 import { FaSearchLocation } from "react-icons/fa";
 import { Hotel } from "@types";
 import { getDifferenceOfDays } from "@utils";
 import { SearchContext } from "@context";
-import { BASE_URL, PRIVATE, PUBLIC } from "@routes";
-import { adaptHotel } from "@adapters";
-
+import { PRIVATE, PUBLIC } from "@routes";
 const HotelSelected = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(SearchContext);
   const hotelSelected = useRef<Hotel>();
-
-  // const opt = {
-  //   method: "GET",
-  //   url: `${BASE_URL}/hotels/search`,
-  //   params: {
-  //     room_number: state.options.room,
-  //     checkout_date: "2023-08-19",
-  //     dest_type: "city",
-  //     dest_id: state.destination_id,
-  //     adults_number: state.options.adult,
-  //     locale: "en-us",
-  //     checkin_date: "2023-08-18",
-  //     order_by: "popularity",
-  //     filter_by_currency: "USD",
-  //     units: "metric",
-  //     page_number: "0",
-  //     children_number: state.options.children,
-  //     include_adjacency: "true",
-  //     categories_filter_ids: "class::2,class::4,free_cancellation::1",
-  //     children_ages: "5,0",
-  //   },
-  //   headers: {
-  //     "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
-  //     "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
-  //   },
-  // };
-  // const { data, loading, error, reFetchData } = useFetchBooking<any>(opt);
-
-  // useEffect(() => {
-  //   if (data) {
-  //     hotelSelected.current = createHotel(data.result[0]);
-  //   }
-  // }, [data]);
 
   let totalDays: number | undefined = getDifferenceOfDays(state);
 
@@ -52,12 +23,11 @@ const HotelSelected = () => {
 
   return (
     <div className='h-screen flex flex-col gap-16 justify-between content-center items-center mx-auto'>
-      <div className='px-4 bg-blue-600 w-full flex justify-center'>
-        <div className='max-w-[70rem]'>
-          <Navbar />
-          <RecreationOptions />
-        </div>
-      </div>
+      <HeaderLayout>
+        <Navbar />
+        <RecreationOptions />
+      </HeaderLayout>
+
       <div className='max-w-[70rem]'>
         {/* images carousel */}
         <div className='flex flex-wrap  justify-between m-8'>

@@ -1,6 +1,7 @@
 import { OptionsHotelType } from "@types";
 import { Dispatch, SetStateAction, useState } from "react";
 import { FaPersonBooth } from "react-icons/fa";
+
 type props = {
   options: OptionsHotelType;
   setOptions: Dispatch<SetStateAction<OptionsHotelType>>;
@@ -8,7 +9,7 @@ type props = {
 function OptionsHotel({ options, setOptions }: props) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOption = (name: keyof OptionsHotelType, operation: string) => {
+  function handleOption(name: keyof OptionsHotelType, operation: string) {
     let prevCount = options[name] || 0;
     const actualCount = operation === "i" ? ++prevCount : --prevCount;
 
@@ -16,7 +17,7 @@ function OptionsHotel({ options, setOptions }: props) {
       ...prev,
       [name]: actualCount,
     }));
-  };
+  }
   const { adult, children, room } = options;
 
   return (
@@ -33,7 +34,7 @@ function OptionsHotel({ options, setOptions }: props) {
         tabIndex={0}
         className='dropdown-content translate-x-1/2 menu bg-base-100 relative max-w-xs p-2 border border-gray rounded-md shadow-md text-center'
       >
-        <div className='optionItem'>
+        <div className=''>
           <span className='text-lg'>Adult</span>
           <div className='optionCounter'>
             <button
@@ -52,7 +53,7 @@ function OptionsHotel({ options, setOptions }: props) {
             </button>
           </div>
         </div>
-        <div className='optionItem'>
+        <div className=''>
           <span className='text-lg'>Children</span>
           <div className='optionCounter'>
             <button
@@ -71,7 +72,7 @@ function OptionsHotel({ options, setOptions }: props) {
             </button>
           </div>
         </div>
-        <div className='optionItem'>
+        <div className=''>
           <span className='text-lg'>Room</span>
           <div className='optionCounter'>
             <button

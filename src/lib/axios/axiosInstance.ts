@@ -1,7 +1,7 @@
-import Axios from "axios";
+import Axios, { CreateAxiosDefaults } from "axios";
 import { addBaseInterceptors } from "./axiosInterceptors";
 
-export const apiDojoConfig = {
+const apiDojoConfig: CreateAxiosDefaults = {
   baseURL: "https://apidojo-booking-v1.p.rapidapi.com",
   headers: {
     "X-RapidAPI-Host": "apidojo-booking-v1.p.rapidapi.com",
@@ -9,6 +9,16 @@ export const apiDojoConfig = {
   },
 };
 
-export const bookingInstance = Axios.create(apiDojoConfig);
+const apiBookingExpressConfig: CreateAxiosDefaults = {
+  baseURL: "martin-booking-production.up.railway.app",
+  headers: {},
+};
+
+const apiBookingExpressLocalConfig: CreateAxiosDefaults = {
+  baseURL: "localhost://3000",
+  headers: {},
+};
+
+export const bookingInstance = Axios.create(apiBookingExpressConfig);
 
 addBaseInterceptors(bookingInstance);

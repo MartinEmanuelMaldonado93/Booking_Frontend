@@ -1,7 +1,7 @@
 import { CalendarDays, OptionsHotel } from "@components";
 import { SearchContext } from "@context";
 import { OptionsHotelType } from "@types";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 function SearchAside() {
   const { state, dispatch } = useContext(SearchContext);
@@ -10,7 +10,18 @@ function SearchAside() {
   const [dates, setDates] = useState(state.dates);
   const [minPrice, setMin] = useState<number>(50);
   const [maxPrice, setMax] = useState<number>(999);
-  function handleSearch() {}
+
+  function handleSearch() {
+    dispatch!({
+      type: "NEW_SEARCH",
+      payload: {
+        dates,
+        options,
+        city: destination,
+        destination_id: 0,
+      },
+    });
+  }
 
   return (
     <aside className='grid sm:gap-2 p-2 rounded-md max-w-xs shadow-sm bg-yellow-500'>

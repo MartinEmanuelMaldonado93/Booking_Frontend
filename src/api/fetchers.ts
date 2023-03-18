@@ -1,12 +1,19 @@
-import { BookingLocation, HotelParams, HotelsResponse } from "@types";
+import { BookingLocation, Hotel, HotelParams, HotelsResponse } from "@types";
 import { bookingInstance, createParamsHotelsSwr } from "@lib";
-import { routes } from "@api";
+import { routes, routeExpress } from "@api";
 import { AxiosResponse } from "axios";
 
-/*
- * This file contains basic request declarations
- * (fetcher function that calls an endpoint)
- */
+/** Booking express api */
+
+export const getHotelsExpress = (
+  paramsHotels: any
+): Promise<AxiosResponse<Hotel[]>> => {
+  return bookingInstance.get(routeExpress.HOTELS, {
+    params: {
+      ...paramsHotels,
+    },
+  });
+};
 
 /** get Locations - autocomplete */
 export const getLocations = (

@@ -53,11 +53,11 @@ export default function HeaderSearchBar() {
           Get rewarded for your travels – unlock instant savings of 10% or more
           with a free Lamabooking account
         </p>
-        {!stateUser.user ? (
+        {stateUser.user && (
           <button className='btn py-3 px-2 min-h-0 h-auto  text-black bg-cyan-50 border-none hover:bg-pink-500 '>
             Sign in / Register
           </button>
-        ) : null}
+        )}
       </div>
       <div className='flex flex-wrap gap-2 p-2 py-1 justify-between items-center translate-y-2/4 rounded-md border-2 border-yellow-300 bg-white text-gray-700 hover:border-yellow-400'>
         <Destination
