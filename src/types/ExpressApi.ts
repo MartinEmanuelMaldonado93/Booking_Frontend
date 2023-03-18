@@ -1,6 +1,7 @@
 import type { Range } from "react-date-range/index";
 
-/** Express application types */
+/** Express api */
+
 export type Hotel = {
   _id?: number;
   name: string;
@@ -54,34 +55,3 @@ export type UserInfo = {
   id?: string;
   token?: string;
 };
-
-export interface LocationInfo {
-  type: string;
-  hotels: number;
-  cc1: string;
-  region: string;
-  label: string;
-  dest_type: string;
-  latitude: number;
-  city_name: string;
-  lc: string;
-  rtl: number;
-  b_max_los_data: BMaxLosData_1;
-  image_url: string;
-  longitude: number;
-  city_ufi?: number;
-  timezone: string;
-  dest_id: string;
-  name: string;
-  nr_hotels: number;
-  country: string;
-}
-
-export interface BMaxLosData_1 {
-  extended_los: number;
-  experiment: string;
-  has_extended_los: number;
-  default_los: number;
-  is_fullon: number;
-  max_allowed_los: number;
-}

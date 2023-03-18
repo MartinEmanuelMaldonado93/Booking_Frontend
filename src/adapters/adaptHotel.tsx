@@ -1,5 +1,5 @@
 import { Hotel } from "@types";
-import { SingleHotel } from "src/types/BookingSingleHotel";
+import { SingleHotel } from "src/types/BookingDojo";
 
 /** Return `hotel`type object created by adapting data from an API */
 export default function adaptHotel(hotel: SingleHotel): Hotel {

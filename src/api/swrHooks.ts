@@ -1,5 +1,5 @@
 import { getHotels, getHotelsFeatured, getLocations } from "./fetchers";
-import { SWRCacheKey, useSWRAxios } from "@lib";
+import { useSWRAxios } from "@lib";
 import { HotelParams } from "@types";
 
 /*
@@ -19,7 +19,7 @@ export const useHotelsSWR = <T>(
   return useSWRAxios<T>(destination, () => getHotels(params));
 };
 
-/** get featured/deals hotels 
+/** get featured/deals hotels
  */
 export const useHotelsFeaturedSWR = (
   destination: string | null,
@@ -27,3 +27,5 @@ export const useHotelsFeaturedSWR = (
 ) => {
   return useSWRAxios(destination, () => getHotelsFeatured(params));
 };
+
+export const useBooking = () => null;

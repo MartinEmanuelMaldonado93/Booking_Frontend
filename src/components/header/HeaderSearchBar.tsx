@@ -42,10 +42,6 @@ export default function HeaderSearchBar() {
     navigate(PUBLIC.HOTELS_LIST);
   }, [data]);
 
-  async function handleNewSearch() {
-    setRefetch((p) => !p);
-  }
-
   return (
     <div className='px-2 text-white '>
       <RecreationOptions />
@@ -63,7 +59,7 @@ export default function HeaderSearchBar() {
           </button>
         ) : null}
       </div>
-      <div className='flex flex-wrap gap-2 p-2 py-1 justify-between items-center translate-y-2/4 rounded-md border-2 border-yellow-200 bg-white text-gray-700 hover:border-yellow-400'>
+      <div className='flex flex-wrap gap-2 p-2 py-1 justify-between items-center translate-y-2/4 rounded-md border-2 border-yellow-300 bg-white text-gray-700 hover:border-yellow-400'>
         <Destination
           destination={destination}
           setDestination={setDestination}
@@ -76,7 +72,7 @@ export default function HeaderSearchBar() {
           ) : (
             <button
               className='btn border-none py-3 px-2 min-h-0 h-auto bg-blue-700 hover:bg-blue-800'
-              onClick={handleNewSearch}
+              onClick={() => setRefetch((p) => !p)}
             >
               Search
             </button>

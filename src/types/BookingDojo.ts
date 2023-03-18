@@ -1,3 +1,6 @@
+
+/** bookingdojo */
+
 export interface SingleHotel {
   currency_code: string;
   is_geo_rate: string;

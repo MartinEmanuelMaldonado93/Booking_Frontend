@@ -1,4 +1,4 @@
-import { SingleHotel } from "./BookingSingleHotel";
+import { SingleHotel } from "./BookingDojo";
 
 /** Booking api */
 
