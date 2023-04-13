@@ -1,6 +1,6 @@
-import { OptionsHotelType } from "@types";
-import { Dispatch, createContext, useReducer } from "react";
-import type { Range } from "react-date-range/index";
+import { OptionsHotelType } from '@types';
+import { Dispatch, createContext, useReducer } from 'react';
+import type { Range } from 'react-date-range/index';
 
 export type SearchedDestination = {
   city: string;
@@ -11,7 +11,7 @@ export type SearchedDestination = {
 };
 
 type SearchAction = {
-  type: "NEW_SEARCH" | "RESET_SEARCH"; // literal type ideally besides enums.
+  type: 'NEW_SEARCH' | 'RESET_SEARCH'; // literal type ideally besides enums.
   payload: SearchedDestination;
 };
 
@@ -21,10 +21,10 @@ type DestinationContext = {
 };
 
 const initialState: SearchedDestination = {
-  city: "argentina",
+  city: 'argentina',
   dates: [defaultDates()],
-  type: "city",
-  destination_id: "-979186", // corresponds to Argentina
+  type: 'city',
+  destination_id: '-979186', // corresponds to Argentina
   options: {
     adult: 1,
     children: 0,
@@ -46,12 +46,12 @@ export const SearchContextProvider = ({ children }: props) => {
 
   function setSearch(state: SearchedDestination, action: SearchAction) {
     switch (action.type) {
-      case "NEW_SEARCH":
+      case 'NEW_SEARCH':
         return action.payload; // new data
-      case "RESET_SEARCH":
+      case 'RESET_SEARCH':
         return initialState;
       default:
-        throw new Error("No action defined in context provider");
+        throw new Error('No action defined in context provider');
     }
   }
 
@@ -64,6 +64,7 @@ export const SearchContextProvider = ({ children }: props) => {
 
 /** utils */
 
+/** generate random dates */
 function defaultDates(): Range {
   const start = new Date();
   const end = new Date();
@@ -71,6 +72,6 @@ function defaultDates(): Range {
   return {
     startDate: start,
     endDate: end,
-    key: "selection",
+    key: 'selection',
   };
 }

@@ -1,11 +1,11 @@
-import { CalendarDays, OptionsHotel } from "@components";
-import { SearchContext } from "@context";
-import { OptionsHotelType } from "@types";
-import { useContext, useEffect, useState } from "react";
+import { CalendarDays, OptionsHotel } from '@components';
+import { SearchContext } from '@context';
+import { OptionsHotelType } from '@types';
+import { useContext, useEffect, useState } from 'react';
 
 function SearchAside() {
   const { state, dispatch } = useContext(SearchContext);
-  const [destination, setDestination] = useState(state.city || "Madrid");
+  const [destination, setDestination] = useState(state.city || 'Madrid');
   const [options, setOptions] = useState<OptionsHotelType>(state.options);
   const [dates, setDates] = useState(state.dates);
   const [minPrice, setMin] = useState<number>(50);
@@ -13,7 +13,7 @@ function SearchAside() {
 
   function handleSearch() {
     dispatch!({
-      type: "NEW_SEARCH",
+      type: 'NEW_SEARCH',
       payload: {
         dates,
         options,

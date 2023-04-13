@@ -7,7 +7,7 @@ import {
   MailList,
   HeaderSearchBar,
   HeaderLayout,
-} from "@components";
+} from '@components';
 
 function Home() {
   return (

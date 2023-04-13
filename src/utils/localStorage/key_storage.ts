@@ -1,1 +1,1 @@
-export const KEY_STORAGE = "user_martinbooking";
+export const KEY_STORAGE = 'user_martinbooking';

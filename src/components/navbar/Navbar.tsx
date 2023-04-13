@@ -1,8 +1,8 @@
-import { AuthContext } from "@context";
-import { useContext } from "react";
-import { FaAirbnb } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
-import { PUBLIC } from "@routes";
+import { AuthContext } from '@context';
+import { useContext } from 'react';
+import { FaAirbnb } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import { PUBLIC } from '@routes';
 
 const Navbar = () => {
   const { state } = useContext(AuthContext);
@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const handleLogin = () => navigate(PUBLIC.LOGIN);
-  
+
   return (
     <div className='navbar justify-center sm:justify-between  flex-wrap w-full text-white '>
       <Link to='/' className='btn btn-ghost normal-case text-xl'>

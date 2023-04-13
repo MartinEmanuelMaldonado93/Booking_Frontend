@@ -1,5 +1,5 @@
-import { SearchedDestination } from "@context";
-import type { Range } from "react-date-range/index";
+import { SearchedDestination } from '@context';
+import type { Range } from 'react-date-range/index';
 
 const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
 /** Return difference or 0 if any of the parameters don't have */

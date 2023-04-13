@@ -1,14 +1,13 @@
-export const BASE_URL =
-  "https://apidojo-booking-v1.p.rapidapi.com";
+export const BASE_URL = 'https://apidojo-booking-v1.p.rapidapi.com';
 
 export const PUBLIC = {
-  HOME: "/",
-  LOGIN: "/login",
-  HOTELS_LIST: "/hotels",
-  HOTEL_SELECTED: "/hotels/hotelselected",
+  HOME: '/',
+  LOGIN: '/login',
+  HOTELS_LIST: '/hotels',
+  HOTEL_SELECTED: '/hotels/hotelselected',
 };
 
 export const PRIVATE = {
-  DASHBOARD: "/dashboard",
-  PURCHASE: "/purchase",
+  DASHBOARD: '/dashboard',
+  PURCHASE: '/purchase',
 };

@@ -1,7 +1,7 @@
-import { BookingLocation, Hotel, HotelParams, HotelsResponse } from "@types";
-import { bookingInstance, createParamsHotelsSwr } from "@lib";
-import { routes, routeExpress } from "@api";
-import { AxiosResponse } from "axios";
+import { BookingLocation, Hotel, HotelParams, HotelsResponse } from '@types';
+import { bookingInstance, createParamsHotelsSwr } from '@lib';
+import { routes, routeExpress } from '@api';
+import { AxiosResponse } from 'axios';
 
 /** Booking express api */
 
@@ -15,6 +15,8 @@ export const getHotelsExpress = (
   });
 };
 
+/** booking.com official api */
+
 /** get Locations - autocomplete */
 export const getLocations = (
   destination: string
@@ -22,7 +24,7 @@ export const getLocations = (
   return bookingInstance.get(routes.LOCATIONS, {
     params: {
       text: destination,
-      languagecode: "en-us",
+      languagecode: 'en-us',
     },
   });
 };
@@ -45,7 +47,7 @@ export const getHotelsFeatured = (
 ): Promise<AxiosResponse<HotelsResponse>> => {
   return bookingInstance.get(routes.PROPERTIES, {
     params: {
-      order_by: "deals",
+      order_by: 'deals',
       ...params,
       api_key: import.meta.env.VITE_API_KEY,
     },

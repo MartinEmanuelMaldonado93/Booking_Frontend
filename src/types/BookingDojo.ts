@@ -1,4 +1,3 @@
-
 /** bookingdojo */
 
 export interface SingleHotel {

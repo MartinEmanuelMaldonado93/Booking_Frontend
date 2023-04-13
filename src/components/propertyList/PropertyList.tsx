@@ -1,5 +1,5 @@
-import { uuid } from "@utils";
-import { propertiesData } from "@api";
+import { uuid } from '@utils';
+import { propertiesData } from '@api';
 
 /** Show properties by type like hotels, apartment, etc.. */
 function PropertyList() {

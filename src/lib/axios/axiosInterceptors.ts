@@ -1,4 +1,4 @@
-import { AxiosInstance, AxiosRequestConfig } from "axios";
+import { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 export const addBaseInterceptors = (instance: AxiosInstance) => {
   instance.interceptors.request.use((config: any) => {

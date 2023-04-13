@@ -1,4 +1,4 @@
-import { FaBed, FaCar, FaMosque, FaPlane, FaTaxi } from "react-icons/fa";
+import { FaBed, FaCar, FaMosque, FaPlane, FaTaxi } from 'react-icons/fa';
 
 function RecreationOptions() {
   return (

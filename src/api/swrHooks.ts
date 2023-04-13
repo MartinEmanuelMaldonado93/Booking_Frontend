@@ -3,9 +3,9 @@ import {
   getHotelsExpress,
   getHotelsFeatured,
   getLocations,
-} from "./fetchers";
-import { useSWRAxios } from "@lib";
-import { HotelParams } from "@types";
+} from './fetchers';
+import { useSWRAxios } from '@lib';
+import { HotelParams } from '@types';
 
 /*
  * This file contains reusable swr hooks
@@ -20,7 +20,7 @@ export const useLocationsSWR = (destination: string | null) =>
 export const useHotelsSWR = (destination: string | null, params: any) =>
   // return useSWRAxios<T>(destination, () => getHotels(params));//
   useSWRAxios(destination, getHotelsExpress);
-  
+
 /** get featured/deals hotels
  */
 export const useHotelsFeaturedSWR = (

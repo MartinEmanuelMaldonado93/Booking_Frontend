@@ -1,19 +1,20 @@
-import { useContext, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Footer,
   HeaderLayout,
   MailList,
   Navbar,
   RecreationOptions,
-} from "@components";
-import { FaSearchLocation } from "react-icons/fa";
-import { Hotel } from "@types";
-import { getDifferenceOfDays } from "@utils";
-import { SearchContext } from "@context";
-import { PRIVATE, PUBLIC } from "@routes";
+} from '@components';
+import { FaSearchLocation } from 'react-icons/fa';
+import { Hotel } from '@types';
+import { getDifferenceOfDays } from '@utils';
+import { SearchContext } from '@context';
+import { PRIVATE, PUBLIC } from '@routes';
 const HotelSelected = () => {
   const navigate = useNavigate();
+
   const { state, dispatch } = useContext(SearchContext);
   const hotelSelected = useRef<Hotel>();
 
@@ -66,7 +67,8 @@ const HotelSelected = () => {
             {totalDays ? (
               <>
                 <h1 className='font-bold text-gray-700'>
-                  Perfect for a {totalDays}-night stay!
+                  Perfect for a {totalDays}
+                  -night stay!
                 </h1>
                 <span>
                   Located in the real heart of Krakow, this property has an

@@ -1,4 +1,4 @@
-import type { Range } from "react-date-range/index";
+import type { Range } from 'react-date-range/index';
 
 /** Express api */
 

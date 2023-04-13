@@ -1,9 +1,9 @@
 export const routes = {
-    LOCATIONS: "/locations/auto-complete",
-    PROPERTIES: "/properties/list",
+  LOCATIONS: '/locations/auto-complete',
+  PROPERTIES: '/properties/list',
 };
 
 export const routeExpress = {
-    HOTELS: "/hotels",
-    // HOTELS: "/hotels"
-}
+  HOTELS: '/hotels',
+  // HOTELS: "/hotels"
+};

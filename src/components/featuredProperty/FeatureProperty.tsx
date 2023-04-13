@@ -1,5 +1,5 @@
-import { Hotel } from "@types";
-import { featuredPropertyData } from "@api";
+import { Hotel } from '@types';
+import { featuredPropertyData } from '@api';
 
 /** Fetch specifically featured `Hotels` */
 const FeaturedProperties = () => {
@@ -20,8 +20,7 @@ const FeaturedProperties = () => {
               Starting from ${hotel.cheapestPrice}
             </div>
             <div className=''>
-              {hotel.rating}{" "}
-              {"☆".repeat(Math.ceil(Math.random() * 9) / 2)}
+              {hotel.rating} {'☆'.repeat(Math.ceil(Math.random() * 9) / 2)}
               <span className='p-2 text-white bg-blue-600'>Excellent</span>
             </div>
           </div>

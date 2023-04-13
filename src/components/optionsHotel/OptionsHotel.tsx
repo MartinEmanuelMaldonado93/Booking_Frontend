@@ -1,6 +1,6 @@
-import { OptionsHotelType } from "@types";
-import { Dispatch, SetStateAction, useState } from "react";
-import { FaPersonBooth } from "react-icons/fa";
+import { OptionsHotelType } from '@types';
+import { Dispatch, SetStateAction, useState } from 'react';
+import { FaPersonBooth } from 'react-icons/fa';
 
 type props = {
   options: OptionsHotelType;
@@ -11,7 +11,7 @@ function OptionsHotel({ options, setOptions }: props) {
 
   function handleOption(name: keyof OptionsHotelType, operation: string) {
     let prevCount = options[name] || 0;
-    const actualCount = operation === "i" ? ++prevCount : --prevCount;
+    const actualCount = operation === 'i' ? ++prevCount : --prevCount;
 
     setOptions((prev) => ({
       ...prev,
@@ -40,14 +40,14 @@ function OptionsHotel({ options, setOptions }: props) {
             <button
               disabled={adult! <= 1}
               className='btn btn-primary btn-sm'
-              onClick={() => handleOption("adult", "d")}
+              onClick={() => handleOption('adult', 'd')}
             >
               -
             </button>
             <span className='text-lg mx-2'>{adult}</span>
             <button
               className='btn btn-primary btn-sm'
-              onClick={() => handleOption("adult", "i")}
+              onClick={() => handleOption('adult', 'i')}
             >
               +
             </button>
@@ -59,14 +59,14 @@ function OptionsHotel({ options, setOptions }: props) {
             <button
               disabled={(children ?? 0) <= 0}
               className='btn btn-primary btn-sm'
-              onClick={() => handleOption("children", "d")}
+              onClick={() => handleOption('children', 'd')}
             >
               -
             </button>
             <span className='text-lg mx-2'>{children}</span>
             <button
               className='btn btn-primary btn-sm'
-              onClick={() => handleOption("children", "i")}
+              onClick={() => handleOption('children', 'i')}
             >
               +
             </button>
@@ -78,14 +78,14 @@ function OptionsHotel({ options, setOptions }: props) {
             <button
               disabled={(room ?? 0) <= 1}
               className='btn btn-primary btn-sm'
-              onClick={() => handleOption("room", "d")}
+              onClick={() => handleOption('room', 'd')}
             >
               -
             </button>
             <span className='text-lg mx-2'>{room}</span>
             <button
               className='btn btn-primary btn-sm'
-              onClick={() => handleOption("room", "i")}
+              onClick={() => handleOption('room', 'i')}
             >
               +
             </button>

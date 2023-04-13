@@ -6,13 +6,15 @@ import {
   HotelListTitleLoading,
   HeaderLayout,
   SearchAside,
-} from "@components";
-import { useContext } from "react";
-import { SearchContext } from "@context";
-import { useHotelsSWR } from "@api";
-import { uuid } from "@utils";
+  
+} from '@components';
+import { useContext } from 'react';
+import { SearchContext } from '@context';
+import { useHotelsSWR } from '@api';
+import { uuid } from '@utils';
 
 const HotelList = () => {
+  
   const { state, dispatch } = useContext(SearchContext);
 
   const {

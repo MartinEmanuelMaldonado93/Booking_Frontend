@@ -1,11 +1,11 @@
-import { Navbar } from "@components";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navbar } from '@components';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Reserved() {
   const navigate = useNavigate();
   useEffect(() => {
-    setTimeout(() => navigate("/"), 2000);
+    setTimeout(() => navigate('/'), 2000);
   }, []);
 
   return (

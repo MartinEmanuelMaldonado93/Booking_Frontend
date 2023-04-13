@@ -1,5 +1,5 @@
-import { featuredData } from "@api";
-import { uuid } from "@utils";
+import { featuredData } from '@api';
+import { uuid } from '@utils';
 
 function Featured() {
   return (

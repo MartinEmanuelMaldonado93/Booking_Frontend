@@ -1,4 +1,4 @@
-import { SingleHotel } from "./BookingDojo";
+import { SingleHotel } from './BookingDojo';
 
 /** Booking api */
 
@@ -55,15 +55,15 @@ Value of dest_id or city_ufi field from locations/auto-complete API (Don't pass 
   search_id?: string;
   price_filter_currencycode?: string;
   order_by?:
-    | "popularity"
-    | "distance"
-    | "class_descending"
-    | "class_ascending"
-    | "deals"
-    | "review_score"
-    | "price";
+    | 'popularity'
+    | 'distance'
+    | 'class_descending'
+    | 'class_ascending'
+    | 'deals'
+    | 'review_score'
+    | 'price';
   languagecode?: string;
-  travel_purpose?: "leisure" | "business";
+  travel_purpose?: 'leisure' | 'business';
 }
 
 // Response hotels req

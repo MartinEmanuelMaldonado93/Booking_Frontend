@@ -1,5 +1,5 @@
-import useSWR, { SWRConfiguration, SWRResponse } from "swr";
-import { AxiosResponse, AxiosError } from "axios";
+import useSWR, { SWRConfiguration, SWRResponse } from 'swr';
+import { AxiosResponse, AxiosError } from 'axios';
 
 /* Inspired by SWR Example:
  * https://github.com/vercel/swr/blob/main/examples/axios-typescript/libs/useRequest.ts
@@ -8,7 +8,7 @@ import { AxiosResponse, AxiosError } from "axios";
 interface Return<Data, Error>
   extends Pick<
     SWRResponse<AxiosResponse<Data>, AxiosError<Error>>,
-    "isValidating" | "error" | "mutate"
+    'isValidating' | 'error' | 'mutate'
   > {
   data: Data | undefined;
   response: AxiosResponse<Data> | undefined;
@@ -18,7 +18,7 @@ interface Return<Data, Error>
 export interface Config<Data = unknown, Error = unknown>
   extends Omit<
     SWRConfiguration<AxiosResponse<Data>, AxiosError<Error>>,
-    "fallbackData"
+    'fallbackData'
   > {
   fallbackData?: Data;
 }

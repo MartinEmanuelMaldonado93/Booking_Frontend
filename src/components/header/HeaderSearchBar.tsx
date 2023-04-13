@@ -1,23 +1,23 @@
-import { useContext, useEffect, useState } from "react";
-import type { Range } from "react-date-range/index";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from 'react';
+import type { Range } from 'react-date-range/index';
+import { useNavigate } from 'react-router-dom';
 import {
   CalendarDays,
   Destination,
   OptionsHotel,
   RecreationOptions,
   SearchBtnLoading,
-} from "@components";
-import { OptionsHotelType } from "@types";
-import { AuthContext, SearchContext } from "@context";
-import { PUBLIC } from "@routes";
-import { useLocationsSWR } from "@api";
+} from '@components';
+import { OptionsHotelType } from '@types';
+import { AuthContext, SearchContext } from '@context';
+import { PUBLIC } from '@routes';
+import { useLocationsSWR } from '@api';
 
 export default function HeaderSearchBar() {
   const { state: stateSearch, dispatch } = useContext(SearchContext);
   const [dates, setDates] = useState<Range[]>(stateSearch.dates);
   const [options, setOptions] = useState<OptionsHotelType>(stateSearch.options);
-  const [destination, setDestination] = useState<string>("");
+  const [destination, setDestination] = useState<string>('');
   const [refetch, setRefetch] = useState<boolean>(false);
 
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ export default function HeaderSearchBar() {
   useEffect(() => {
     if (!data) return;
     dispatch!({
-      type: "NEW_SEARCH",
+      type: 'NEW_SEARCH',
       payload: {
         city: destination,
         destination_id: +data[0].dest_id,

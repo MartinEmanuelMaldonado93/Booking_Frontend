@@ -1,5 +1,5 @@
-import { BASE_URL } from "@routes";
-import { RawAxiosRequestConfig } from "axios";
+import { BASE_URL } from '@routes';
+import { RawAxiosRequestConfig } from 'axios';
 
 type props = {
   destination: string;
@@ -11,15 +11,15 @@ type props = {
 function createAxiosOptions({
   destination,
   url,
-  method = "GET",
+  method = 'GET',
 }: props): RawAxiosRequestConfig {
   return {
     method: method,
     url: `${BASE_URL}/${url}`,
-    params: { text: destination, languagecode: "en-us" },
+    params: { text: destination, languagecode: 'en-us' },
     headers: {
-      "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
-      "X-RapidAPI-Host": BASE_URL,
+      'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
+      'X-RapidAPI-Host': BASE_URL,
     },
   };
 }

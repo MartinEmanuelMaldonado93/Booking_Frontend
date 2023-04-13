@@ -1,5 +1,5 @@
 const booking = {
-  MAIN: "hotels",
+  MAIN: 'hotels',
 };
 
 export const SWRCacheKey = {

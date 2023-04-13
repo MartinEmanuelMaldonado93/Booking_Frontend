@@ -1,16 +1,17 @@
-import { ChangeEvent, useContext, useState } from "react";
-import { BASE_URL, PUBLIC } from "@routes";
-import { FaAirbnb } from "react-icons/fa";
-import { AuthContext } from "@context";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { ChangeEvent, useContext, useState } from 'react';
+import { BASE_URL, PUBLIC } from '@routes';
+import { FaAirbnb } from 'react-icons/fa';
+import { AuthContext } from '@context';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Login() {
   const [credentials, setCredentials] = useState({
-    userName: "",
-    password: "",
+    userName: '',
+    password: '',
   });
   const { state, dispatch } = useContext(AuthContext);
+  
   const navigate = useNavigate();
 
   async function handleLogin(
@@ -19,10 +20,9 @@ function Login() {
     event.preventDefault();
 
     dispatch!({
-      type: "LOGIN_START",
+      type: 'LOGIN_START',
       payload: {},
     });
-
 
     try {
       const response = await axios.post(
@@ -32,13 +32,13 @@ function Login() {
       const user = await response.data;
 
       dispatch!({
-        type: "LOGIN_SUCCESS",
+        type: 'LOGIN_SUCCESS',
         payload: { user },
       });
       navigate(PUBLIC.HOME);
     } catch (error) {
       dispatch!({
-        type: "LOGIN_FAILURE",
+        type: 'LOGIN_FAILURE',
         payload: {
           error: 505,
         },
