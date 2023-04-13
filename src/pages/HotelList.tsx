@@ -16,12 +16,12 @@ import { uuid } from '@utils';
 const HotelList = () => {
   
   const { state, dispatch } = useContext(SearchContext);
-
   const {
-    data: hotelsReceived,
+	  data: hotelsReceived,
     isLoading,
     error,
-  } = useHotelsSWR(state.city, null);
+	} = useHotelsSWR(state.city, null);
+	console.log(hotelsReceived)
 
   return (
     <>

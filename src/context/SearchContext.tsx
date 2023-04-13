@@ -21,7 +21,7 @@ type DestinationContext = {
 };
 
 const initialState: SearchedDestination = {
-  city: 'argentina',
+  city: 'madrid',
   dates: [defaultDates()],
   type: 'city',
   destination_id: '-979186', // corresponds to Argentina

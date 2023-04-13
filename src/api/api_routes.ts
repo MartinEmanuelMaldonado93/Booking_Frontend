@@ -5,6 +5,6 @@ export const routes = {
 
 /** Own Booking express api */
 export const routeExpress = {
-  HOTELS: '/hotels',
+  HOTELS: '/hotels/',
   LOCATIONS: 'hotels/locationCity/'
 };

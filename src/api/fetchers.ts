@@ -7,11 +7,11 @@ import { AxiosResponse } from 'axios';
 
 /** Own Booking express api */
 export const getHotelsExpress = (
-	paramsHotels: any
+	destination: string
 ): Promise<AxiosResponse<Hotel[]>> => {
 	return bookingInstance.get(routeExpress.HOTELS, {
 		params: {
-			...paramsHotels,
+			city: destination,
 		},
 	});
 };
