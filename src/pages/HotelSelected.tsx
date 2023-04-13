@@ -11,7 +11,8 @@ import { FaSearchLocation } from 'react-icons/fa';
 import { Hotel } from '@types';
 import { getDifferenceOfDays } from '@utils';
 import { SearchContext } from '@context';
-import { PRIVATE, PUBLIC } from '@routes';
+import { PRIVATE, PUBLIC } from '../routes';
+
 const HotelSelected = () => {
   const navigate = useNavigate();
 

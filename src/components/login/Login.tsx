@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext, useState } from 'react';
-import { BASE_URL, PUBLIC } from '@routes';
+import { PUBLIC } from '@routes';
 import { FaAirbnb } from 'react-icons/fa';
 import { AuthContext } from '@context';
 import { useNavigate } from 'react-router-dom';
@@ -14,37 +14,37 @@ function Login() {
   
   const navigate = useNavigate();
 
-  async function handleLogin(
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) {
-    event.preventDefault();
+//   async function handleLogin(
+//     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+//   ) {
+//     event.preventDefault();
 
-    dispatch!({
-      type: 'LOGIN_START',
-      payload: {},
-    });
+//     dispatch!({
+//       type: 'LOGIN_START',
+//       payload: {},
+//     });
 
-    try {
-      const response = await axios.post(
-        `${BASE_URL}/api/auth/login`,
-        credentials
-      );
-      const user = await response.data;
+//     try {
+//       const response = await axios.post(
+//         `${BASE_URL}/api/auth/login`,
+//         credentials
+//       );
+//       const user = await response.data;
 
-      dispatch!({
-        type: 'LOGIN_SUCCESS',
-        payload: { user },
-      });
-      navigate(PUBLIC.HOME);
-    } catch (error) {
-      dispatch!({
-        type: 'LOGIN_FAILURE',
-        payload: {
-          error: 505,
-        },
-      });
-    }
-  }
+//       dispatch!({
+//         type: 'LOGIN_SUCCESS',
+//         payload: { user },
+//       });
+//       navigate(PUBLIC.HOME);
+//     } catch (error) {
+//       dispatch!({
+//         type: 'LOGIN_FAILURE',
+//         payload: {
+//           error: 505,
+//         },
+//       });
+//     }
+//   }
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     event.preventDefault();
@@ -77,9 +77,9 @@ function Login() {
         type='password'
         className='input input-bordered bg-white w-full max-w-xs'
       />
-      <button onClick={handleLogin} className='btn btn-primary'>
+      {/* <button onClick={handleLogin} className='btn btn-primary'>
         Login
-      </button>
+      </button> */}
       {state.error ? <span>{state.error.message}</span> : null}
     </div>
   );

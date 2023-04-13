@@ -1,6 +1,10 @@
-export * from './fakeData/FeaturedData';
-export * from './fakeData/FeaturedPropertyData';
-export * from './fakeData/PropertyListData';
+export * from './api_routes';
 export * from './fetchers';
-export * from './routes';
+export * from './lib/axios';
+export * from './lib/dummyData/FeaturedData';
+export * from './lib/dummyData/FeaturedPropertyData';
+export * from './lib/dummyData/PropertyListData';
+export * from './lib';
+export { default as createParamsHotelsSwr } from './lib/swr/createParamsHotelsSwr';
+export * from './lib/swr/useSWRAxios';
 export * from './swrHooks';

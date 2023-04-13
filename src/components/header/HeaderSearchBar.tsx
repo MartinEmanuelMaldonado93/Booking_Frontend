@@ -33,8 +33,6 @@ export default function HeaderSearchBar() {
       type: 'NEW_SEARCH',
       payload: {
         city: destination,
-        destination_id: +data[0].dest_id,
-        type: data[0].dest_type,
         dates,
         options,
       },
@@ -66,7 +64,7 @@ export default function HeaderSearchBar() {
         />
         <CalendarDays dates={dates} setDates={setDates} />
         <OptionsHotel options={options} setOptions={setOptions} />
-        <div className='headerSearchItem'>
+        <div>
           {refetch ? (
             <SearchBtnLoading />
           ) : (

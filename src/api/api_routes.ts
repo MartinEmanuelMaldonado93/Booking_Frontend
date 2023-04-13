@@ -3,7 +3,8 @@ export const routes = {
   PROPERTIES: '/properties/list',
 };
 
+/** Own Booking express api */
 export const routeExpress = {
   HOTELS: '/hotels',
-  // HOTELS: "/hotels"
+  LOCATIONS: 'hotels/locationCity/'
 };

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Hotel } from '@types';
-import { PUBLIC } from '@routes';
+import { PUBLIC } from 'src/routes';
 
 type props = {
   hotel: Hotel;

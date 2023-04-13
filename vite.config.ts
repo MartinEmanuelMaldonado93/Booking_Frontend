@@ -20,7 +20,7 @@ export default defineConfig(({ command, mode }) => {
 			alias: [
 				{
 					find: '@lib',
-					replacement: path.resolve(__dirname, 'src/lib'),
+					replacement: path.resolve(__dirname, 'src/api/lib'),
 				},
 				{
 					find: '@routes',

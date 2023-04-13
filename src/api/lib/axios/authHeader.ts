@@ -1,6 +1,6 @@
 import { UserInfo } from '@types';
 import { KEY_STORAGE } from '@utils';
-import getUserFromLocalStorage from '../localStorage/getUserFromLocalStorage';
+import getUserFromLocalStorage from '../../../utils/localStorage/getUserFromLocalStorage';
 
 /** function to set headers to a express project */
 export function getAuthHeader() {
