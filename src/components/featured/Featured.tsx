@@ -18,7 +18,7 @@ function Featured() {
         }}
         initial={'hidde'}
         whileInView={'show'}
-        className='flex sm:flex-wrap md:justify-between gap-2 my-4 z-0'
+        className='flex gap-2 p-4  my-4 z-0 sm:flex-wrap md:justify-between '
       >
         {featuredData?.map((hotel, i) => (
           <motion.div
@@ -34,7 +34,7 @@ function Featured() {
                 },
               },
             }}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.06 }}
             key={uuid()}
             className='sm:translate-x-0 bg-base-100 shadow-lg box-border min-w-[10rem] max-w-[10rem] sm:max-w-[15rem]'
           >
