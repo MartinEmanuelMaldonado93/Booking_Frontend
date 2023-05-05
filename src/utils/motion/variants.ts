@@ -4,7 +4,7 @@ type fadeInXProps = {
 	mass?: 2,
 	damping?: 10,
 }
-const fadeInX = (props: fadeInXProps) => ({
+export const fadeInX = (props: fadeInXProps) => ({
 	hidde: { opacity: 0, translateX: props.translateX },
 	show: {
 		transition: {
