@@ -10,7 +10,6 @@ export { default as HotelListTitleLoading } from './loading/HotelListTitleLoadin
 export { default as Loading } from './loading/Loading';
 export { default as SearchBtnLoading } from './loading/SearchBtnLoading';
 export { default as SearchItemLoading } from './loading/SearchItemLoading';
-export { default as Login } from './login/Login';
 export * from './mailList/MailList';
 export * from './navbar/Navbar';
 export { default as NotFound } from './notFound/NotFound';
