@@ -64,7 +64,7 @@ export default function HeaderSearchBar() {
         />
         <CalendarDays dates={dates} setDates={setDates} />
         <OptionsHotel options={options} setOptions={setOptions} />
-        <div>
+        <div className='w-full sm:w-min text-center'>
           {refetch ? (
             <SearchBtnLoading />
           ) : (

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 /** Show properties by type like hotels, apartment, etc.. */
 function PropertyList() {
   return (
-    <div className='px-4 overflow-x-auto sm:overflow-x-auto'>
+    <div className='sm:px-4 overflow-x-auto sm:overflow-x-auto'>
       <div className='text-2xl text-gray-900'>Browse by property type</div>
       <motion.div
         variants={{
@@ -20,7 +20,7 @@ function PropertyList() {
         }}
         initial={'hidde'}
         whileInView={'show'}
-        className='py-2 flex translate-x-[60%] sm:translate-x-0 sm:flex-wrap justify-evenly sm:justify-between overflow-hidden'
+        className='px-2 py-4 sm:py-2 flex sm:translate-x-0 sm:flex-wrap   sm:justify-between overflow-y-hidden'
       >
         {propertiesData.map((property) => (
           <motion.div
@@ -29,14 +29,14 @@ function PropertyList() {
               show: {
                 transition: {
                   type: 'spring',
-                  stiffness: 50,
-			mass: 2,
+                  stiffness: 80,
+                  mass: 2.5,
                 },
                 opacity: 1,
                 translateX: 0,
               },
             }}
-		whileHover={{scale:1.1}}
+            whileHover={{ scale: 1.1 }}
             className='card duration-300 hover:shadow-xl'
             key={uuid()}
           >

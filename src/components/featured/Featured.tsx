@@ -1,12 +1,43 @@
 import { featuredData } from '@api';
 import { uuid } from '@utils';
+import { motion } from 'framer-motion';
 
 function Featured() {
   return (
     <div className='mt-12 px-4 overflow-x-scroll sm:overflow-x-auto'>
-      <div className='flex sm:flex-wrap justify-around md:justify-between gap-2 my-4 z-0'>
+      <motion.div
+        variants={{
+          hidde: {},
+          show: {
+            transition: {
+              delayChildren: 0.3,
+              staggerChildren: 0.05,
+              when: 'beforeChildren',
+            },
+          },
+        }}
+        initial={'hidde'}
+        whileInView={'show'}
+        className='flex sm:flex-wrap md:justify-between gap-2 my-4 z-0'
+      >
         {featuredData?.map((hotel, i) => (
-          <div key={uuid()} className='translate-x-[55%] sm:translate-x-0 bg-base-100 shadow-lg box-border min-w-[10rem] max-w-[10rem] sm:max-w-[15rem]'>
+          <motion.div
+            variants={{
+              hidde: { opacity: 0, translateX: '50%' },
+              show: {
+                opacity: 1,
+                translateX: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 80,
+                  mass: 2.5,
+                },
+              },
+            }}
+            whileHover={{ scale: 1.1 }}
+            key={uuid()}
+            className='sm:translate-x-0 bg-base-100 shadow-lg box-border min-w-[10rem] max-w-[10rem] sm:max-w-[15rem]'
+          >
             <img
               src={hotel.imgUrl}
               alt={hotel.city}
@@ -18,9 +49,9 @@ function Featured() {
                 {Math.floor(Math.random() * 9)} properties
               </h2>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
