@@ -24,7 +24,7 @@ function SearchAside() {
   }
 
   return (
-    <aside className='grid sm:gap-2 p-2 rounded-md max-w-xs shadow-sm bg-yellow-500'>
+    <aside className='grid sm:gap-2 p-2 h-min rounded-md max-w-xs shadow-sm bg-yellow-500'>
       <h2 className='text-xl font-bold'>Search</h2>
       <div className='font-bold'>Destination</div>
       <input

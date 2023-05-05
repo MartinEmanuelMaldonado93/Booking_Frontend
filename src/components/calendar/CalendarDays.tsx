@@ -1,10 +1,11 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { format } from 'date-fns';
 import { DateRange } from 'react-date-range';
 import type { Range } from 'react-date-range/index';
 import { FaCalendarDay } from 'react-icons/fa';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import "./CalendarDays.css";
 
 type props = {
   dates: Range[];

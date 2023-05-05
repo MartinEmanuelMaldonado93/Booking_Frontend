@@ -6,7 +6,6 @@ import {
   HotelListTitleLoading,
   HeaderLayout,
   SearchAside,
-  
 } from '@components';
 import { useContext } from 'react';
 import { SearchContext } from '@context';
@@ -14,14 +13,13 @@ import { useHotelsSWR } from '@api';
 import { uuid } from '@utils';
 
 const HotelList = () => {
-  
   const { state, dispatch } = useContext(SearchContext);
   const {
-	  data: hotelsReceived,
+    data: hotelsReceived,
     isLoading,
     error,
-	} = useHotelsSWR(state.city, null);
-	console.log(hotelsReceived)
+  } = useHotelsSWR(state.city, null);
+  console.log(hotelsReceived);
 
   return (
     <>

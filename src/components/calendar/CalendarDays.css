@@ -1,0 +1,13 @@
+.dropdown-content {
+	translate: -1rem 0;
+}
+.rdrMonth {
+	max-width: 23em;
+}
+
+/* mobile-l 425px */
+@media (min-width: 26.56rem) {
+	.dropdown-content {
+		translate: 0 0;
+	}
+}
