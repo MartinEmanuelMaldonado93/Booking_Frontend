@@ -1,10 +1,10 @@
-export const routes = {
+export const RapidApi = {
   LOCATIONS: '/locations/auto-complete',
   PROPERTIES: '/properties/list',
 };
 
 /** Own Booking express api */
-export const routeExpress = {
+export const Express = {
   HOTELS: '/hotels/',
-  LOCATIONS: 'hotels/locationCity/'
+  locationCity: 'hotels/locationCity/'
 };

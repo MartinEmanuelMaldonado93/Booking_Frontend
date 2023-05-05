@@ -19,6 +19,10 @@ export default defineConfig(({ command, mode }) => {
 		resolve: {
 			alias: [
 				{
+					find: '@pages',
+					replacement: path.resolve(__dirname, 'src/pages'),
+				},
+				{
 					find: '@lib',
 					replacement: path.resolve(__dirname, 'src/api/lib'),
 				},

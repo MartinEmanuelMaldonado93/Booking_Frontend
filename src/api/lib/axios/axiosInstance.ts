@@ -15,7 +15,7 @@ const RailWayConfig: CreateAxiosDefaults = {
 };
 
 const KoyebConfig: CreateAxiosDefaults = {
-  baseURL: 'booking-api-martinemanuelmaldonado93.koyeb.app',
+  baseURL: 'https://booking-api-martinemanuelmaldonado93.koyeb.app/api',
   headers: {},
 };
 
@@ -24,6 +24,6 @@ const ExpressLocalConfig: CreateAxiosDefaults = {
   headers: {},
 };
 
-export const bookingInstance = Axios.create(ExpressLocalConfig);
+export const bookingInstance = Axios.create(KoyebConfig);
 
 addBaseInterceptors(bookingInstance);

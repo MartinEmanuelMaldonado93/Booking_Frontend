@@ -5,7 +5,7 @@ import { AuthContext } from '@context';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function Login() {
+function LoginPage() {
   const [credentials, setCredentials] = useState({
     userName: '',
     password: '',
@@ -86,4 +86,4 @@ function Login() {
     </div>
   );
 }
-export default Login;
+export default LoginPage;

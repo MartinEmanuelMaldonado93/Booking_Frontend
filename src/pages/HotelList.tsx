@@ -9,7 +9,7 @@ import {
 } from '@components';
 import { useContext } from 'react';
 import { SearchContext } from '@context';
-import { useHotelsSWR } from '@api';
+import { useHotelsSWR, useLocationsSWR } from '@api';
 import { uuid } from '@utils';
 
 const HotelList = () => {
@@ -18,8 +18,7 @@ const HotelList = () => {
     data: hotelsReceived,
     isLoading,
     error,
-  } = useHotelsSWR(state.city, null);
-  console.log(hotelsReceived);
+  } = useLocationsSWR(state.city);
 
   return (
     <>
